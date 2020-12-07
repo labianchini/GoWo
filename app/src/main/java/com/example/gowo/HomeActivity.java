@@ -24,11 +24,11 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbarmain = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
 
-        MyAdapter myAdapter = new MyAdapter(this);
+        /*MyAdapter myAdapter = new MyAdapter(this);
         RecyclerView rvFeed = findViewById(R.id.rvFeed);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvFeed.setLayoutManager(layoutManager);
-        rvFeed.setAdapter(myAdapter);
+        rvFeed.setAdapter(myAdapter);*/
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.gowo;
+/*package com.example.gowo;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,4 +10,4 @@ public class MyAdapter extends RecyclerView.Adapter {
     public MyAdapter(MainActivity mainActivity){
         this.mainActivity = mainActivity;
     }
-}
+}*/
