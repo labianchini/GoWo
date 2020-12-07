@@ -3,12 +3,16 @@ package com.example.gowo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -17,8 +21,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarMain);  // tornar a toolbar principal
+        Toolbar toolbarmain = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
+
+        MyAdapter myAdapter = new MyAdapter(this);
+        RecyclerView rvFeed = findViewById(R.id.rvFeed);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        rvFeed.setLayoutManager(layoutManager);
+        rvFeed.setAdapter(myAdapter);
     }
 
     @Override
