@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -19,6 +21,15 @@ public class PerfilActivity extends AppCompatActivity {
 
         Toolbar toolbarmain = findViewById(R.id.toolbarPerfil);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
+
+        Button imgBtnTeste2 = findViewById(R.id.btnTeste2);  // coloquei esse código só para eu conseguir mudar de página
+        imgBtnTeste2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PerfilActivity.this, CadastrarServico.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

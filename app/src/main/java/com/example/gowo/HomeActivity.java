@@ -12,9 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
+
+    MyAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +27,20 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbarmain = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
 
-        /*MyAdapter myAdapter = new MyAdapter(this);
+        /*myAdapter = new MyAdapter(this);
         RecyclerView rvFeed = findViewById(R.id.rvFeed);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvFeed.setLayoutManager(layoutManager);
         rvFeed.setAdapter(myAdapter);*/
+
+        Button imgBtnTeste = findViewById(R.id.btnTeste);  // coloquei esse código só para eu conseguir mudar de página
+        imgBtnTeste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, ServicoActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
