@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CadastrarServico"></activity>
-        <activity android:name=".ServicoActivity" />
+        <activity android:name=".MeusServicosActivity" android:parentActivityName=".PerfilActivity"></activity>
+        <activity android:name=".CadastrarUsuarioActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".CadastrarServico" android:parentActivityName=".MeusServicosActivity"/>
+        <activity android:name=".ServicoActivity" android:parentActivityName=".HomeActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".HomeActivity" />

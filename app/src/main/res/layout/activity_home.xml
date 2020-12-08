@@ -21,9 +21,8 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTeste"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imgViewEmpr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarHome">
@@ -37,7 +36,11 @@
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFFFFF">
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#E1DBDB">
 
             </SearchView>
 
@@ -56,6 +59,7 @@
                         style="@style/Widget.AppCompat.ImageButton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -66,6 +70,7 @@
                         android:id="@+id/ImgBtnIconeFerramenta"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -76,6 +81,7 @@
                         android:id="@+id/ImgBtnIconeFood"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -86,6 +92,7 @@
                         android:id="@+id/ImgBtnIconeLaptop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FDFDFD"
                         android:cropToPadding="false"
@@ -96,6 +103,7 @@
                         android:id="@+id/ImgBtnIconeMaquina"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -106,6 +114,7 @@
                         android:id="@+id/ImgBtnIconePincel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -116,6 +125,7 @@
                         android:id="@+id/ImgBtnIconePet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:adjustViewBounds="true"
                         android:background="#FFFFFF"
                         android:cropToPadding="false"
@@ -125,22 +135,90 @@
 
             </HorizontalScrollView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvFeed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/imgViewEmpr"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:srcCompat="@drawable/icone_camera_verde" />
+
     <Button
         android:id="@+id/btnTeste"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="teste"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="0dp"
+        android:text="Ver Mais"
+        android:textAllCaps="false"
+        android:textColor="#00a39b"
+        android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/txtViewLocal"
+        app:layout_constraintTop_toTopOf="@+id/txtViewNota" />
+
+    <TextView
+        android:id="@+id/txtViewNomeEmpr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:text="Confeitaria"
+        android:textColor="#0C0C0C"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
+    <ImageView
+        android:id="@+id/imgViewStar"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:tint="#FFBF00"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr"
+        app:srcCompat="@android:drawable/btn_star" />
+
+    <TextView
+        android:id="@+id/txtViewNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:text="4,5"
+        android:textColor="#FFBF00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgViewStar"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr" />
+
+    <TextView
+        android:id="@+id/txtViewLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Jardim Camburi - Vitória"
+        android:textColor="#494646"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewStar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

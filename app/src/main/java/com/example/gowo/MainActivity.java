@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        ImageButton imgBtnGoogle = findViewById(R.id.imgBtnGoogle);
+        imgBtnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button BtnEntrar = findViewById(R.id.btnEntrar);
+        BtnEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button BtnCliqueAqui = findViewById(R.id.btnCliqueAqui);
+        BtnCliqueAqui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CadastrarUsuarioActivity.class);
                 startActivity(i);
             }
         });
