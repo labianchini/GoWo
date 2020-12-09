@@ -150,7 +150,7 @@
         app:srcCompat="@drawable/icone_camera_verde" />
 
     <Button
-        android:id="@+id/btnTeste"
+        android:id="@+id/btnVerMais"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

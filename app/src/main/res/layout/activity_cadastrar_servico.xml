@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastrarServico">
+    tools:context=".CadastrarServicoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
@@ -131,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/emailServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -145,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/telefone" />
 
     <EditText
-        android:id="@+id/respEmail"
+        android:id="@+id/respEmailServ"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -156,11 +156,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintStart_toEndOf="@+id/emailServ"
         app:layout_constraintTop_toBottomOf="@+id/telefone" />
 
     <TextView
-        android:id="@+id/cep"
+        android:id="@+id/cepServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -174,7 +174,7 @@
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
     <EditText
-        android:id="@+id/respCep"
+        android:id="@+id/respCepServ"
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -183,10 +183,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cep" />
+        app:layout_constraintTop_toBottomOf="@+id/cepServ" />
 
     <TextView
-        android:id="@+id/rua"
+        android:id="@+id/ruaServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -196,23 +196,23 @@
         android:textColor="#00a39B"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respCep"
+        app:layout_constraintStart_toEndOf="@+id/respCepServ"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
     <EditText
-        android:id="@+id/respRua"
-        android:layout_width="wrap_content"
+        android:id="@+id/respRuaServ"
+        android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/respCep"
-        app:layout_constraintTop_toBottomOf="@+id/rua" />
+        app:layout_constraintStart_toEndOf="@+id/respCepServ"
+        app:layout_constraintTop_toBottomOf="@+id/ruaServ" />
 
     <TextView
-        android:id="@+id/numero"
+        android:id="@+id/numeroServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -226,8 +226,8 @@
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
     <EditText
-        android:id="@+id/respNumero"
-        android:layout_width="50dp"
+        android:id="@+id/respNumeroServ"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -237,11 +237,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/respRua"
-        app:layout_constraintTop_toBottomOf="@+id/numero" />
+        app:layout_constraintStart_toEndOf="@+id/respRuaServ"
+        app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
 
     <TextView
-        android:id="@+id/bairro"
+        android:id="@+id/bairroServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -252,10 +252,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respCep" />
+        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
 
     <EditText
-        android:id="@+id/respBairro"
+        android:id="@+id/respBairroServ"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -264,10 +264,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bairro" />
+        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
     <TextView
-        android:id="@+id/cidade"
+        android:id="@+id/cidadeServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -277,11 +277,11 @@
         android:textColor="#00a39B"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respBairro"
-        app:layout_constraintTop_toBottomOf="@+id/respCep" />
+        app:layout_constraintStart_toEndOf="@+id/respBairroServ"
+        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
 
     <EditText
-        android:id="@+id/respCidade"
+        android:id="@+id/respCidadeServ"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -289,11 +289,11 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/respBairro"
-        app:layout_constraintTop_toBottomOf="@+id/bairro" />
+        app:layout_constraintStart_toEndOf="@+id/respBairroServ"
+        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
     <TextView
-        android:id="@+id/estado"
+        android:id="@+id/estadoServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -303,11 +303,11 @@
         android:textColor="#00a39B"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respCidade"
-        app:layout_constraintTop_toBottomOf="@+id/respCep" />
+        app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
+        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/repEsatadoServ"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -318,11 +318,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/respCidade"
-        app:layout_constraintTop_toBottomOf="@+id/bairro" />
+        app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
+        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnAddServ"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -331,9 +331,10 @@
         android:layout_marginRight="48dp"
         android:background="#00a39b"
         android:text="Adicionar"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respBairro" />
+        app:layout_constraintTop_toBottomOf="@+id/respBairroServ" />
 
     <TextView
         android:id="@+id/localizacao"
@@ -347,7 +348,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/emailServ" />
 
     <ImageButton
         android:id="@+id/imageButton"

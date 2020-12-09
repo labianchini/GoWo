@@ -53,7 +53,7 @@ public class PerfilActivity extends AppCompatActivity {
         }
         switch (item.getItemId()){
             case R.id.chat:
-                Intent i = new Intent(PerfilActivity.this,ChatActivity.class);
+                Intent i = new Intent(PerfilActivity.this, ChatFeedActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

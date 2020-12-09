@@ -3,8 +3,6 @@ package com.example.gowo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -33,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         rvFeed.setLayoutManager(layoutManager);
         rvFeed.setAdapter(myAdapter);*/
 
-        Button imgBtnTeste = findViewById(R.id.btnTeste);  // coloquei esse código só para eu conseguir mudar de página
+        Button imgBtnTeste = findViewById(R.id.btnVerMais);  // coloquei esse código só para eu conseguir mudar de página
         imgBtnTeste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         switch (item.getItemId()){
             case R.id.chat:
-                Intent i = new Intent(HomeActivity.this,ChatActivity.class);
+                Intent i = new Intent(HomeActivity.this, ChatFeedActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

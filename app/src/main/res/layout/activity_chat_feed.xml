@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatActivity">
+    tools:context=".ChatFeedActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarChat"
+        android:id="@+id/toolbarChatFeed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -26,7 +26,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarChat"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarChatFeed"
         app:srcCompat="@drawable/icone_camera_verde" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarChat" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarChatFeed" />
 
     <TextView
         android:id="@+id/txtViewEmpr1"
@@ -115,5 +115,16 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/txtViewEmpr2" />
+
+    <Button
+        android:id="@+id/btnTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="conversa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewMsg1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

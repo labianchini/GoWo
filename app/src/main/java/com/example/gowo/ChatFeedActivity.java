@@ -9,16 +9,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatFeedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_chat_feed);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarChat);  // tornar a toolbar principal
+        Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
+
+        Button imgBtnTeste = findViewById(R.id.btnTeste);  // coloquei esse código só para eu conseguir mudar de página
+        imgBtnTeste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -34,21 +45,21 @@ public class ChatActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()){
             case R.id.home:
-                Intent i = new Intent(ChatActivity.this,HomeActivity.class);
+                Intent i = new Intent(ChatFeedActivity.this,HomeActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.chat:
-                Intent i = new Intent(ChatActivity.this,ChatActivity.class);
+                Intent i = new Intent(ChatFeedActivity.this, ChatFeedActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.perfil:
-                Intent i = new Intent(ChatActivity.this,PerfilActivity.class);
+                Intent i = new Intent(ChatFeedActivity.this,PerfilActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

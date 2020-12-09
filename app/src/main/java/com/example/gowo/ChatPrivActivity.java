@@ -6,12 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class CadastrarServico extends AppCompatActivity {
+public class ChatPrivActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastrar_servico);
+        setContentView(R.layout.activity_chat_priv);
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar); //Aqui é definido que o ActionBar da Activity é o que foi selecionado na linha de cima
