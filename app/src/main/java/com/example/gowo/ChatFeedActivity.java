@@ -19,10 +19,10 @@ public class ChatFeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_feed);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);  // tornar a toolbar principal
+        Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);
         setSupportActionBar(toolbarmain);
 
-        Button imgBtnTeste = findViewById(R.id.btnTeste);  // coloquei esse código só para eu conseguir mudar de página
+        Button imgBtnTeste = findViewById(R.id.btnTeste);
         imgBtnTeste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

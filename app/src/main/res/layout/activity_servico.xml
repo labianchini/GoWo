@@ -26,14 +26,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        tools:srcCompat="@drawable/ja_icone" />
+        tools:srcCompat="@drawable/ic_baseline_ac_unit_24" />
 
     <TextView
         android:id="@+id/txtViewNomeEmpr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00A39B"
-        android:text="JA Designer Grafico"
+        android:text="Pedreiro"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +49,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="110dp"
         android:background="#FFFFFF"
         android:text="Descrição"
         android:textColor="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewComentarios"
+        app:layout_constraintBottom_toTopOf="@+id/btnTornarCliente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -71,40 +71,7 @@
         android:scaleType="fitStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:srcCompat="@drawable/ja_icone" />
-
-    <TextView
-        android:id="@+id/textViewComentarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
-        android:text="Comentários dos clientes"
-        android:textColor="#00a39b"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <TextView
-        android:id="@+id/comentarios"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"
-        android:text="Comentários"
-        android:textColor="#00a39b"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTornarCliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewComentarios" />
+        tools:srcCompat="@drawable/ic_baseline_build_24" />
 
     <Button
         android:id="@+id/btnTornarCliente"
@@ -127,7 +94,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:tint="#FFFFFF"

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton imgBtnFacebook = findViewById(R.id.imgBtnFacebook);  // coloquei esse código só para eu conseguir mudar de página
+        ImageButton imgBtnFacebook = findViewById(R.id.imgBtnFacebook);
         imgBtnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

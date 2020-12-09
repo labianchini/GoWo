@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgViewFoto"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
@@ -32,14 +32,15 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imgBtnAddFoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#00a39b"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewFoto"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
     <TextView
@@ -51,10 +52,10 @@
         android:layout_marginTop="24dp"
         android:text="Nome"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
 
     <EditText
         android:id="@+id/respNome"
@@ -67,10 +68,11 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nome"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
 
     <TextView
         android:id="@+id/emailUsu"
@@ -81,7 +83,7 @@
         android:layout_marginTop="24dp"
         android:text="Email"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respNome" />
@@ -97,7 +99,8 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/emailUsu"
         app:layout_constraintTop_toBottomOf="@+id/respNome" />
@@ -111,7 +114,7 @@
         android:layout_marginTop="24dp"
         android:text="Senha"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respEmailUsu" />
@@ -127,7 +130,8 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/senha"
         app:layout_constraintTop_toBottomOf="@+id/respEmailUsu" />
@@ -141,7 +145,7 @@
         android:layout_marginTop="24dp"
         android:text="Cep"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respSenha" />
@@ -155,7 +159,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cepUsu" />
 
@@ -168,7 +173,7 @@
         android:layout_marginTop="24dp"
         android:text="Rua"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respCepUsu"
         app:layout_constraintTop_toBottomOf="@+id/respSenha" />
@@ -182,7 +187,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/respCepUsu"
         app:layout_constraintTop_toBottomOf="@+id/ruaUsu" />
 
@@ -195,7 +201,7 @@
         android:layout_marginTop="16dp"
         android:text="Bairro"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respCepUsu" />
@@ -209,7 +215,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bairroUsu" />
 
@@ -235,13 +242,13 @@
         android:layout_marginTop="24dp"
         android:text="Número"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respRuaUsu"
         app:layout_constraintTop_toBottomOf="@+id/respSenha" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/resNumUsu"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -251,7 +258,8 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/respRuaUsu"
         app:layout_constraintTop_toBottomOf="@+id/numeroUsu" />
@@ -265,7 +273,7 @@
         android:layout_marginTop="16dp"
         android:text="Estado"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respCidadeUsu"
         app:layout_constraintTop_toBottomOf="@+id/respCepUsu" />
@@ -279,7 +287,7 @@
         android:layout_marginTop="16dp"
         android:text="Cidade"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respBairroUsu"
         app:layout_constraintTop_toBottomOf="@+id/respCepUsu" />
@@ -293,12 +301,13 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="..."
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/respBairroUsu"
         app:layout_constraintTop_toBottomOf="@+id/cidadeUsu" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/respEstado"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -308,7 +317,8 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/respCidadeUsu"

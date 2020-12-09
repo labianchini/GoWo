@@ -26,7 +26,7 @@
         android:layout_marginTop="16dp"
         android:text="Nome do estabelecimento"
         android:textColor="#00a39b"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
@@ -42,6 +42,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
@@ -56,13 +58,13 @@
         android:layout_marginTop="8dp"
         android:text="Categoria"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
         app:layout_constraintTop_toBottomOf="@+id/respNomeEstabelecimento" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/respCategoria"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -72,6 +74,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
         app:layout_constraintTop_toBottomOf="@+id/categoria" />
@@ -96,7 +100,7 @@
         android:layout_marginTop="24dp"
         android:text="Contato"
         android:textColor="#00a39B"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
@@ -110,7 +114,7 @@
         android:layout_marginTop="16dp"
         android:text="Telefone"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
@@ -126,6 +130,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/telefone"
         app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
@@ -139,7 +145,7 @@
         android:layout_marginTop="16dp"
         android:text="Email"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefone" />
@@ -155,6 +161,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/emailServ"
         app:layout_constraintTop_toBottomOf="@+id/telefone" />
@@ -168,7 +176,7 @@
         android:layout_marginTop="8dp"
         android:text="Cep"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
@@ -182,6 +190,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cepServ" />
 
@@ -194,7 +204,7 @@
         android:layout_marginTop="8dp"
         android:text="Rua"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respCepServ"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
@@ -208,6 +218,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/respCepServ"
         app:layout_constraintTop_toBottomOf="@+id/ruaServ" />
 
@@ -220,7 +232,7 @@
         android:layout_marginRight="16dp"
         android:text="Número"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
@@ -236,6 +248,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/respRuaServ"
         app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
@@ -249,7 +263,7 @@
         android:layout_marginTop="8dp"
         android:text="Bairro"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
@@ -263,6 +277,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
@@ -275,7 +291,7 @@
         android:layout_marginTop="8dp"
         android:text="Cidade"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respBairroServ"
         app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
@@ -289,6 +305,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/respBairroServ"
         app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
@@ -301,7 +319,7 @@
         android:layout_marginTop="8dp"
         android:text="Estado"
         android:textColor="#00a39B"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
         app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
@@ -318,6 +336,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        android:padding="2dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
         app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
@@ -329,10 +349,12 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+        android:layout_marginBottom="16dp"
         android:background="#00a39b"
         android:text="Adicionar"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respBairroServ" />
 
@@ -345,7 +367,7 @@
         android:layout_marginTop="24dp"
         android:text="Localização"
         android:textColor="#00a39b"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailServ" />

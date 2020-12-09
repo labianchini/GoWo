@@ -14,9 +14,9 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_servico);
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
-        setSupportActionBar(toolbar); //Aqui é definido que o ActionBar da Activity é o que foi selecionado na linha de cima
+        setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar(); //Botão de voltar para a MainActivity
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

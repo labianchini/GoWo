@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         rvFeed.setLayoutManager(layoutManager);
         rvFeed.setAdapter(myAdapter);*/
 
-        Button imgBtnTeste = findViewById(R.id.btnVerMais);  // coloquei esse código só para eu conseguir mudar de página
+        Button imgBtnTeste = findViewById(R.id.btnVerMais);
         imgBtnTeste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {  // funcão quando apertar em cada item
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()){
             case R.id.home:
