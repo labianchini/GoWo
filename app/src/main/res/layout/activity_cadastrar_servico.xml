@@ -17,79 +17,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/nomeEstabelecimento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Nome do estabelecimento"
-        android:textColor="#00a39b"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
-
-    <EditText
-        android:id="@+id/respNomeEstabelecimento"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint=" Nome do estabelecimento:"
         android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="16sp"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimento" />
+        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintTop_toTopOf="@+id/imgBtn" />
 
-    <TextView
+    <EditText
         android:id="@+id/categoria"
-        android:layout_width="wrap_content"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Categoria"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toBottomOf="@+id/respNomeEstabelecimento" />
-
-    <EditText
-        android:id="@+id/respCategoria"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint=" Categoria:"
         android:inputType="textPersonName"
         android:padding="2dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toBottomOf="@+id/categoria" />
-
-    <ImageView
-        android:id="@+id/imgServico"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimento" />
 
     <TextView
         android:id="@+id/tvcontato"
@@ -103,250 +69,155 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn" />
 
-    <TextView
+    <EditText
         android:id="@+id/telefone"
-        android:layout_width="wrap_content"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Telefone"
-        android:textColor="#00a39B"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Telefone:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
         android:textSize="18sp"
-        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
 
     <EditText
-        android:id="@+id/respTelefone"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/telefone"
-        app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
-
-    <TextView
         android:id="@+id/emailServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Email"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefone" />
-
-    <EditText
-        android:id="@+id/respEmailServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/emailServ"
-        app:layout_constraintTop_toBottomOf="@+id/telefone" />
-
-    <TextView
-        android:id="@+id/cepServ"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Cep"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
-
-    <EditText
-        android:id="@+id/respCepServ"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cepServ" />
-
-    <TextView
-        android:id="@+id/ruaServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Rua"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respCepServ"
-        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
-
-    <EditText
-        android:id="@+id/respRuaServ"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/respCepServ"
-        app:layout_constraintTop_toBottomOf="@+id/ruaServ" />
-
-    <TextView
-        android:id="@+id/numeroServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Número"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
-
-    <EditText
-        android:id="@+id/respNumeroServ"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="10"
+        android:hint="Email:"
         android:inputType="textPersonName"
         android:padding="2dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/respRuaServ"
-        app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefone" />
 
-    <TextView
-        android:id="@+id/bairroServ"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/cepServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:text="Bairro"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
-
-    <EditText
-        android:id="@+id/respBairroServ"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="Cep:"
         android:inputType="textPersonName"
         android:padding="2dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
+        app:layout_constraintTop_toBottomOf="@+id/estadoServ" />
 
-    <TextView
-        android:id="@+id/cidadeServ"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/ruaServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Rua:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cepServ" />
+
+    <EditText
+        android:id="@+id/numeroServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Cidade"
-        android:textColor="#00a39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respBairroServ"
-        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
-
-    <EditText
-        android:id="@+id/respCidadeServ"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:ems="10"
+        android:hint="Nº:"
         android:inputType="textPersonName"
         android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/respBairroServ"
-        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
-
-    <TextView
-        android:id="@+id/estadoServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Estado"
-        android:textColor="#00a39B"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
-        app:layout_constraintTop_toBottomOf="@+id/respCepServ" />
-
-    <EditText
-        android:id="@+id/repEsatadoServ"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ruaServ"
+        app:layout_constraintTop_toTopOf="@+id/ruaServ" />
+
+    <EditText
+        android:id="@+id/bairroServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Bairro:"
+        android:inputType="textPersonName"
         android:padding="2dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/respCidadeServ"
-        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cepServ"
+        app:layout_constraintTop_toTopOf="@+id/cepServ" />
+
+    <EditText
+        android:id="@+id/cidadeServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Cidade:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/estadoServ"
+        app:layout_constraintTop_toTopOf="@+id/estadoServ" />
+
+    <EditText
+        android:id="@+id/estadoServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Estado:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
     <Button
         android:id="@+id/btnAddServ"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="16dp"
@@ -356,7 +227,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respBairroServ" />
+        app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
 
     <TextView
         android:id="@+id/localizacao"
@@ -373,15 +244,15 @@
         app:layout_constraintTop_toBottomOf="@+id/emailServ" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="8dp"
-        android:background="#00a39b"
+        android:id="@+id/imgBtn"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:background="#00A39B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgServico"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

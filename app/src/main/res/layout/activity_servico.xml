@@ -125,4 +125,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="512dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
