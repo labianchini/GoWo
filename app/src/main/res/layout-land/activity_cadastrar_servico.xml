@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarServicoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nomeEstabelecimento"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="Nome do estabelecimento:"
+        android:inputType="textPersonName"
+        android:overScrollMode="ifContentScrolls"
+        android:padding="2dp"
+        android:paddingBottom="1dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/categoria"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintTop_toTopOf="@+id/imgBtn" />
+
+    <EditText
+        android:id="@+id/categoria"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint=" Categoria:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nomeEstabelecimento" />
+
+    <TextView
+        android:id="@+id/tvcontato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Contato"
+        android:textColor="#00a39B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimento" />
+
+    <EditText
+        android:id="@+id/telefone"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Telefone:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
+
+    <EditText
+        android:id="@+id/emailServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Email:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/telefone"
+        app:layout_constraintTop_toTopOf="@+id/telefone" />
+
+    <EditText
+        android:id="@+id/cepServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Cep:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estadoServ" />
+
+    <EditText
+        android:id="@+id/ruaServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Rua:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cidadeServ"
+        app:layout_constraintTop_toTopOf="@+id/estadoServ" />
+
+    <EditText
+        android:id="@+id/numeroServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Nº:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bairroServ"
+        app:layout_constraintTop_toTopOf="@+id/cepServ" />
+
+    <EditText
+        android:id="@+id/bairroServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:hint="Bairro:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/cepServ"
+        app:layout_constraintTop_toTopOf="@+id/cepServ" />
+
+    <EditText
+        android:id="@+id/cidadeServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:hint="Cidade:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/estadoServ"
+        app:layout_constraintTop_toTopOf="@+id/estadoServ" />
+
+    <EditText
+        android:id="@+id/estadoServ"
+        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Estado:"
+        android:inputType="textPersonName"
+        android:padding="2dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
+
+    <Button
+        android:id="@+id/btnAddServ"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="#00a39b"
+        android:text="Adicionar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
+
+    <TextView
+        android:id="@+id/localizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Localização"
+        android:textColor="#00a39b"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailServ" />
+
+    <ImageButton
+        android:id="@+id/imgBtn"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:background="#00A39B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
