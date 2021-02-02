@@ -29,15 +29,6 @@ public class HomeActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvFeed.setLayoutManager(layoutManager);
         rvFeed.setAdapter(myAdapter);*/
-
-        Button imgBtnTeste = findViewById(R.id.btnVerMais);
-        imgBtnTeste.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, ServicoActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     @Override
