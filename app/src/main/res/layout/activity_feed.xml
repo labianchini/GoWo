@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedActivity">
+
+    <TextView
+        android:id="@+id/nomeEmpr2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Diarista Tania Soares"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr2"
+        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr2" />
+
+    <TextView
+        android:id="@+id/descricaoEmpr2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Limpezas e faxinas em geral"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr2"
+        app:layout_constraintEnd_toEndOf="@+id/nomeEmpr2"
+        app:layout_constraintStart_toStartOf="@+id/nomeEmpr2"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr2" />
+
+    <TextView
+        android:id="@+id/nomeEmpr3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="LavaJato Dois Irmãos"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr3"
+        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr3" />
+
+    <ImageView
+        android:id="@+id/imgViewEmpr2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr1"
+        tools:srcCompat="@drawable/ic_baseline_local_florist_24" />
+
+    <TextView
+        android:id="@+id/descricaoEmpr3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Lavagem de automóveis com qualidade e preço justo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr3"
+        app:layout_constraintEnd_toEndOf="@+id/nomeEmpr3"
+        app:layout_constraintStart_toStartOf="@+id/nomeEmpr3"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr3" />
+
+    <ImageView
+        android:id="@+id/imgViewEmpr3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr2"
+        tools:srcCompat="@drawable/ic_baseline_local_car_wash_24" />
+
+    <ImageView
+        android:id="@+id/imgViewEmpr1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcategoria"
+        tools:srcCompat="@drawable/ic_baseline_ac_unit_24" />
+
+    <TextView
+        android:id="@+id/descricaoEmpr1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Limpeza de janelas, lustres, box e mais"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr1"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/nomeEmpr1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Limpa Vidros Moreira"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr1"
+        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr1" />
+
+    <TextView
+        android:id="@+id/txtcategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Limpeza"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FeedActivity"></activity>
         <activity
             android:name=".ChatPrivActivity"
-            android:parentActivityName=".ChatFeedActivity"></activity>
+            android:parentActivityName=".ChatFeedActivity" />
         <activity
             android:name=".MeusServicosActivity"
             android:parentActivityName=".PerfilActivity" />
@@ -24,14 +25,10 @@
         <activity
             android:name=".ServicoActivity"
             android:parentActivityName=".HomeActivity" />
-        <activity
-            android:name=".PerfilActivity" />
-        <activity
-            android:name=".ChatFeedActivity" />
-        <activity
-            android:name=".HomeActivity" />
-        <activity
-            android:name=".MainActivity">
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".ChatFeedActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

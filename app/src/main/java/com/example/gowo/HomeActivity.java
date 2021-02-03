@@ -26,14 +26,14 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbarmain);
 
 
-        /*ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
+        ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
         imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, MyItemHolder.class);
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
     }
 
     @Override
