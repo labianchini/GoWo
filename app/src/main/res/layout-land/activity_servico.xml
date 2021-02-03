@@ -20,11 +20,12 @@
 
     <ImageView
         android:id="@+id/imgViewEmpr"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:scaleType="fitStart"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         tools:srcCompat="@drawable/ic_baseline_ac_unit_24" />
@@ -33,13 +34,15 @@
         android:id="@+id/txtViewNomeEmpr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
         android:background="#00A39B"
         android:text="Pedreiro"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr" />
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr" />
 
     <TextView
         android:id="@+id/txtViewDescricao"
@@ -75,14 +78,14 @@
 
     <ImageButton
         android:id="@+id/imgBtnChat"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:tint="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr"
         app:srcCompat="@drawable/icone_chat" />
 
     <TextView
@@ -94,7 +97,7 @@
         android:layout_marginTop="16dp"
         android:text="Nome do serviço aqui"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -103,10 +106,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr" />
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnChat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,11 +25,15 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbarmain = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbarmain);
 
-        /*myAdapter = new MyAdapter(this);
-        RecyclerView rvFeed = findViewById(R.id.rvFeed);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        rvFeed.setLayoutManager(layoutManager);
-        rvFeed.setAdapter(myAdapter);*/
+
+        /*ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
+        imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, MyItemHolder.class);
+                startActivity(i);
+            }
+        });*/
     }
 
     @Override

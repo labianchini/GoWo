@@ -27,7 +27,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarChatFeed"
-        app:srcCompat="@drawable/ic_baseline_child_care_24" />
+        app:srcCompat="@drawable/ic_baseline_emoji_emotions_24" />
 
     <TextView
         android:id="@+id/txtViewNome1"
@@ -118,12 +118,19 @@
 
     <Button
         android:id="@+id/btnTeste"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="conversa"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toTopOf="@+id/txtViewMsg1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome2" />
+        app:layout_constraintStart_toEndOf="@+id/txtViewMsg1"
+        app:layout_constraintTop_toTopOf="@+id/txtViewEmpr1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

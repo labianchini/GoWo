@@ -4,21 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".HomeActivity">
-
-    <ImageButton
-        android:id="@+id/imgBtnMecanica"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
-        android:background="#FFFFFF"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnReforma"
-        app:layout_constraintTop_toBottomOf="@+id/txtcostura"
-        app:srcCompat="@drawable/eng_azul" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarHome"
@@ -36,9 +22,9 @@
         android:id="@+id/imgBtnFotografia"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,86 +35,81 @@
         android:id="@+id/imgBtnGerais"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toEndOf="@+id/imgBtnFotografia"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
         app:srcCompat="@drawable/icone_ferramenta_verde" />
 
     <ImageButton
         android:id="@+id/imgBtnComida"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toEndOf="@+id/imgBtnGerais"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
         app:srcCompat="@drawable/icone_food_verde" />
 
     <ImageButton
         android:id="@+id/imgBtnInformatica"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtfotografia"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnComida"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
         app:srcCompat="@drawable/icone_laptop_verde" />
 
     <ImageButton
         android:id="@+id/imgBtnCostura"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toEndOf="@+id/imgBtnInformatica"
-        app:layout_constraintTop_toBottomOf="@+id/txtservgerais"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
         app:srcCompat="@drawable/icone_maquina_verde" />
 
     <ImageButton
         android:id="@+id/imgBtnPet"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnCostura"
-        app:layout_constraintTop_toBottomOf="@+id/txtcomida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfotografia"
         app:srcCompat="@drawable/icone_pet_verde" />
 
     <ImageButton
         android:id="@+id/imgBtnReforma"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtinformatica"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnPet"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnPet"
         app:srcCompat="@drawable/icone_pincel_verde" />
 
     <TextView
         android:id="@+id/txtfotografia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="Fotografia"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnFotografia"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imgBtnFotografia"
@@ -207,6 +188,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
 
+    <ImageButton
+        android:id="@+id/imgBtnMecanica"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnReforma"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnPet"
+        app:srcCompat="@drawable/eng_azul" />
+
+    <ImageButton
+        android:id="@+id/imgBtnLimpeza"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnMecanica"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnPet"
+        app:srcCompat="@drawable/vassoura_azul" />
+
     <TextView
         android:id="@+id/txtMecanica"
         android:layout_width="0dp"
@@ -226,18 +231,5 @@
         app:layout_constraintEnd_toEndOf="@+id/imgBtnLimpeza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnLimpeza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnLimpeza" />
-
-    <ImageButton
-        android:id="@+id/imgBtnLimpeza"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"
-        android:background="#FFFFFF"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnMecanica"
-        app:layout_constraintTop_toBottomOf="@+id/txtpet"
-        app:srcCompat="@drawable/vassoura_azul" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
