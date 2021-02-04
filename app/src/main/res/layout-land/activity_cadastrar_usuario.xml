@@ -19,14 +19,13 @@
 
     <ImageButton
         android:id="@+id/imgBtnAddFoto"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#00a39b"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintEnd_toEndOf="@+id/imvPhotoPreview"
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
+        app:layout_constraintTop_toBottomOf="@+id/imvPhotoPreview"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
     <EditText
@@ -44,17 +43,14 @@
         android:padding="2dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnAddFoto"
-        app:layout_constraintTop_toTopOf="@+id/imgBtnAddFoto" />
+        app:layout_constraintStart_toEndOf="@+id/imvPhotoPreview"
+        app:layout_constraintTop_toTopOf="@+id/imvPhotoPreview" />
 
     <EditText
         android:id="@+id/emailUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -64,7 +60,7 @@
         android:padding="2dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnAddFoto"
+        app:layout_constraintStart_toStartOf="@+id/nomeUsu"
         app:layout_constraintTop_toBottomOf="@+id/nomeUsu" />
 
     <EditText
@@ -72,8 +68,6 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -83,7 +77,7 @@
         android:padding="2dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnAddFoto"
+        app:layout_constraintStart_toStartOf="@+id/emailUsu"
         app:layout_constraintTop_toBottomOf="@+id/emailUsu" />
 
     <EditText
@@ -91,15 +85,13 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Cep:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
         app:layout_constraintTop_toBottomOf="@+id/estadoUsu" />
 
     <EditText
@@ -139,15 +131,13 @@
         android:id="@+id/btnAddUsu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#00a39b"
         android:text="Adicionar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/numUsu"
         app:layout_constraintTop_toBottomOf="@+id/numUsu" />
 
     <EditText
@@ -188,8 +178,6 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
@@ -200,7 +188,18 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
+
+    <ImageView
+        android:id="@+id/imvPhotoPreview"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

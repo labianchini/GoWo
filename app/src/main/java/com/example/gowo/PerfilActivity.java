@@ -19,8 +19,8 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarPerfil);  // tornar a toolbar principal
-        setSupportActionBar(toolbarmain);
+        Toolbar toolbar = findViewById(R.id.toolbarPerfil);  // tornar a toolbar principal
+        setSupportActionBar(toolbar);
 
         Button BtnMeusServicos = findViewById(R.id.btnMeusServicos);
         BtnMeusServicos.setOnClickListener(new View.OnClickListener() {

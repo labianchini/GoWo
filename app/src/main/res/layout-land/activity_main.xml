@@ -11,7 +11,7 @@
         android:id="@+id/imgViewLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,11 +21,11 @@
         android:id="@+id/imgBtnFacebook"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
         android:background="#00a39b"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnGoogle"
+        app:layout_constraintStart_toStartOf="@+id/editTxtEmail"
         app:layout_constraintTop_toBottomOf="@+id/editTxtEmail"
         app:srcCompat="@drawable/facebook_login" />
 
@@ -33,11 +33,9 @@
         android:id="@+id/imgBtnGoogle"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:background="#00a39b"
         android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imgBtnFacebook"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtEmail"
         app:layout_constraintTop_toTopOf="@+id/imgBtnFacebook"
         app:srcCompat="@drawable/google_login" />
 
@@ -107,7 +105,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="#FFFCFC"
@@ -118,14 +116,12 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtSenha" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnGoogle" />
 
     <TextView
         android:id="@+id/txtViewNovaConta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:text="Não possui Conta?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -133,7 +129,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgBtnFacebook"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnGoogle" />
 
     <Button

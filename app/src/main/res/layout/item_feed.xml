@@ -54,8 +54,9 @@
         android:text="Limpeza"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarfeed" />
 
     <ImageView
         android:id="@+id/imgViewServiço2"
@@ -138,4 +139,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgViewServiço3"
         app:layout_constraintTop_toBottomOf="@+id/nomeEmpresa3" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

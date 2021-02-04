@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
@@ -35,8 +34,8 @@
         android:paddingBottom="1dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/categoria"
-        app:layout_constraintStart_toEndOf="@+id/imgBtn"
-        app:layout_constraintTop_toTopOf="@+id/imgBtn" />
+        app:layout_constraintStart_toEndOf="@+id/imvPhotoPrev"
+        app:layout_constraintTop_toTopOf="@+id/imvPhotoPrev" />
 
     <EditText
         android:id="@+id/categoria"
@@ -59,12 +58,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Contato"
         android:textColor="#00a39B"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintStart_toEndOf="@+id/imvPhotoPrev"
         app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimento" />
 
     <EditText
@@ -72,15 +71,13 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Telefone:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintStart_toStartOf="@+id/tvcontato"
         app:layout_constraintTop_toBottomOf="@+id/tvcontato" />
 
     <EditText
@@ -107,15 +104,13 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Cep:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/localizacao"
         app:layout_constraintTop_toBottomOf="@+id/estadoServ" />
 
     <EditText
@@ -189,15 +184,13 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Estado:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/localizacao"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
     <Button
@@ -205,42 +198,48 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#00a39b"
         android:text="Adicionar"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/numeroServ"
         app:layout_constraintTop_toBottomOf="@+id/numeroServ" />
 
     <TextView
         android:id="@+id/localizacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="Localização"
         android:textColor="#00a39b"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailServ" />
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPrev"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn" />
 
     <ImageButton
         android:id="@+id/imgBtn"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#00A39B"
+        app:layout_constraintEnd_toEndOf="@+id/imvPhotoPrev"
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPrev"
+        app:layout_constraintTop_toBottomOf="@+id/imvPhotoPrev"
+        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
+
+    <ImageView
+        android:id="@+id/imvPhotoPrev"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,26 +1,38 @@
 package com.example.gowo;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CadastrarUsuarioActivity extends AppCompatActivity {
 
-    //static int RESULT_REQUEST_PERMISSION = 2;
+    static int PHOTO_PICKER_REQUEST = 1;
+
+    Uri selectPhotoLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,39 +45,29 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        /*ImageButton imgBtnAddFoto = findViewById(R.id.imgBtnAddFoto);
+        ImageButton imgBtnAddFoto = findViewById(R.id.imgBtnAddFoto);
         imgBtnAddFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<String> permissions = new ArrayList<>(); //É criado uma lista de permissões
-                permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE); //E a permissão de inserir o arquivo extenamente
-                checkForPermissions(permissions); //É checado se o usuário concedeu todas as permissões pedidas
-
-
+                Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
             }
-        });*/
+        });
     }
 
-    /*private void checkForPermissions(List<String> permissions){ //Função para checar se todas as permissões foram concedidas
-        List<String> permissionsNotGranted = new ArrayList<>();
-
-        for(String permission : permissions){
-            if( !hasPermission(permission)) {
-                permissionsNotGranted.add(permission);
-            }
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            if (permissionsNotGranted.size() > 0){
-                requestPermissions(permissionsNotGranted.toArray(new String[permissionsNotGranted.size()]),RESULT_REQUEST_PERMISSION);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PHOTO_PICKER_REQUEST){
+            if(resultCode == Activity.RESULT_OK){
+                selectPhotoLocation = data.getData();
+                ImageView imvPhotoPreview = findViewById(R.id.imvPhotoPreview);
+                imvPhotoPreview.setImageURI(selectPhotoLocation);
             }
         }
     }
-    private boolean hasPermission(String permission){ //Função que retorna true ou false para as concessões de permissão
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
-            return ActivityCompat.checkSelfPermission(CadastrarUsuarioActivity.this, permission) == PackageManager.PERMISSION_GRANTED;
-        }
-        return false;
-    }*/
-
 }
+
+
+

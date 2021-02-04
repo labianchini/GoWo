@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
@@ -35,8 +35,8 @@
         android:paddingBottom="1dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgBtn"
-        app:layout_constraintTop_toTopOf="@+id/imgBtn" />
+        app:layout_constraintStart_toEndOf="@+id/imvPhotoPrev"
+        app:layout_constraintTop_toTopOf="@+id/imvPhotoPrev" />
 
     <EditText
         android:id="@+id/categoria"
@@ -53,8 +53,9 @@
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgBtn"
+        app:layout_constraintStart_toEndOf="@+id/imvPhotoPrev"
         app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimento" />
 
     <TextView
@@ -245,14 +246,24 @@
 
     <ImageButton
         android:id="@+id/imgBtn"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#00A39B"
+        app:layout_constraintEnd_toStartOf="@+id/categoria"
+        app:layout_constraintStart_toStartOf="@+id/imvPhotoPrev"
+        app:layout_constraintTop_toBottomOf="@+id/imvPhotoPrev"
+        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
+
+    <ImageView
+        android:id="@+id/imvPhotoPrev"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:background="#00A39B"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,8 +22,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
-        setSupportActionBar(toolbarmain);
+        Toolbar toolbar = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
+        setSupportActionBar(toolbar);
 
 
         ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);

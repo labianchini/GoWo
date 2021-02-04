@@ -139,7 +139,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnAjuda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewServiços"
-        app:srcCompat="@drawable/ic_baseline_help_24" />
+        app:srcCompat="@drawable/eng_azul" />
 
     <Button
         android:id="@+id/configuracoes"
