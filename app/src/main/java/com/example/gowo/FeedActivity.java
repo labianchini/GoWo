@@ -42,13 +42,6 @@ public class FeedActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        Button btnVerMais3 = findViewById(R.id.btnVerMais3);
-        btnVerMais3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
-                startActivity(i);
-            }
-        });
+
     }
 }
