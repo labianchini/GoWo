@@ -34,6 +34,70 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        ImageButton imgBtnFotografia = findViewById(R.id.imgBtnFotografia);
+        imgBtnFotografia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnGerais = findViewById(R.id.imgBtnGerais);
+        imgBtnGerais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnComida = findViewById(R.id.imgBtnComida);
+        imgBtnComida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnInformatica = findViewById(R.id.imgBtnInformatica);
+        imgBtnInformatica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnCostura = findViewById(R.id.imgBtnCostura);
+        imgBtnCostura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnPet = findViewById(R.id.imgBtnPet);
+        imgBtnPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnReforma = findViewById(R.id.imgBtnReforma);
+        imgBtnReforma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnMecanica = findViewById(R.id.imgBtnMecanica);
+        imgBtnMecanica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

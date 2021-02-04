@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewEmpr2" />
 
     <Button
-        android:id="@+id/btnTeste"
+        android:id="@+id/btnConversa"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

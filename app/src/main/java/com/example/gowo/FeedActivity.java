@@ -4,9 +4,14 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FeedActivity extends AppCompatActivity {
 
@@ -20,5 +25,31 @@ public class FeedActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        @SuppressLint("WrongViewCast") Button imgBtnVerMais1 = findViewById(R.id.btnVerMais1);
+        imgBtnVerMais1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
+                startActivity(i);
+            }
+        });
+
+        /*Button btnVerMais2 = findViewById(R.id.btnVerMais2);
+        btnVerMais2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
+                startActivity(i);
+            }
+        });
+        Button btnVerMais3 = findViewById(R.id.btnVerMais3);
+        btnVerMais3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
+                startActivity(i);
+            }
+        });*/
     }
 }

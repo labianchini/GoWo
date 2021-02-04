@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtViewEmpr2" />
 
     <Button
-        android:id="@+id/btnTeste"
+        android:id="@+id/btnConversa"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -133,5 +133,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtViewMsg1"
         app:layout_constraintTop_toBottomOf="@+id/txtViewNome1" />
+
+    <Button
+        android:id="@+id/btnConversa2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Conversa"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtViewMsg2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnConversa"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

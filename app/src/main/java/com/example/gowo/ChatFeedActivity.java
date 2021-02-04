@@ -22,8 +22,17 @@ public class ChatFeedActivity extends AppCompatActivity {
         Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);
         setSupportActionBar(toolbarmain);
 
-        Button imgBtnTeste = findViewById(R.id.btnTeste);
-        imgBtnTeste.setOnClickListener(new View.OnClickListener() {
+        Button imgBtnConversa = findViewById(R.id.btnConversa);
+        imgBtnConversa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button imgBtnConversa2 = findViewById(R.id.btnConversa2);
+        imgBtnConversa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);

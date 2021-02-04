@@ -7,6 +7,39 @@
     android:background="#00a39b"
     tools:context=".ServicoActivity">
 
+    <TextView
+        android:id="@+id/txtViewDescricao3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#FFFFFF"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="Limpeza e organização dos comodos"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Faxina rápida"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
         android:layout_width="match_parent"
@@ -20,23 +53,26 @@
 
     <ImageView
         android:id="@+id/imgViewEmpr"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_marginTop="16dp"
+        android:background="#E91E63"
         android:scaleType="fitStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        tools:srcCompat="@drawable/ic_baseline_ac_unit_24" />
+        tools:srcCompat="@drawable/icone_chat" />
 
     <TextView
         android:id="@+id/txtViewNomeEmpr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#00A39B"
-        android:text="Pedreiro"
+        android:text="Diarista Tania Soares"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr" />
@@ -51,27 +87,43 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="#FFFFFF"
-        android:text="Descrição"
-        android:textColor="#00a39b"
+        android:paddingLeft="8dp"
+        android:paddingRight="5dp"
+        android:text="Limpeza de todos os comodos, janelas, azulejos, armários e outros"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:background="#FFFFFF"
+        android:background="#CBFF90"
         android:scaleType="fitStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:srcCompat="@drawable/ic_baseline_build_24" />
+        tools:srcCompat="@drawable/ic_baseline_filter_vintage_24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#CBFF90"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:srcCompat="@drawable/ic_baseline_filter_vintage_24" />
 
     <ImageButton
         android:id="@+id/imgBtnChat"
@@ -80,10 +132,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
-        android:tint="#FFFFFF"
+        android:background="#00a39b"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        app:srcCompat="@drawable/icone_chat" />
+        app:srcCompat="@drawable/ic_baseline_chat_24" />
 
     <TextView
         android:id="@+id/textView2"
@@ -92,7 +144,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
-        android:text="Nome do serviço aqui"
+        android:text="Faxina Completa"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
@@ -102,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"

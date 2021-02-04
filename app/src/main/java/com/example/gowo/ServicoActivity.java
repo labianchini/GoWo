@@ -4,7 +4,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class ServicoActivity extends AppCompatActivity {
 
@@ -18,5 +21,14 @@ public class ServicoActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        ImageButton imgBtnInformatica = findViewById(R.id.imgBtnInformatica);
+        imgBtnInformatica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ServicoActivity.this, ChatPrivActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
