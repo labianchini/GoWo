@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".InfoPessoaisActivity"
+            android:parentActivityName= ".PerfilActivity" />
+        <activity
             android:name=".FeedActivity"
-            android:parentActivityName=".HomeActivity"
-        />
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".ChatPrivActivity"
             android:parentActivityName=".ChatFeedActivity" />
@@ -27,7 +29,7 @@
             android:parentActivityName=".MeusServicosActivity" />
         <activity
             android:name=".ServicoActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".FeedActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".ChatFeedActivity" />
         <activity android:name=".HomeActivity" />

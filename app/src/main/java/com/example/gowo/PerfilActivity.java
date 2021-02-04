@@ -22,8 +22,35 @@ public class PerfilActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarPerfil);  // tornar a toolbar principal
         setSupportActionBar(toolbar);
 
+        Button btnInfPessoal = findViewById(R.id.btnInfPessoal);
+        btnInfPessoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PerfilActivity.this, InfoPessoaisActivity.class);
+                startActivity(i);
+            }
+        });
+
         Button BtnMeusServicos = findViewById(R.id.btnMeusServicos);
         BtnMeusServicos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button btnAjuda = findViewById(R.id.btnAjuda);
+        btnAjuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button btnConfig = findViewById(R.id.btnConfig);
+        btnConfig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);

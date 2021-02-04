@@ -26,16 +26,15 @@ public class FeedActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        @SuppressLint("WrongViewCast") Button imgBtnVerMais1 = findViewById(R.id.btnVerMais1);
-        imgBtnVerMais1.setOnClickListener(new View.OnClickListener() {
+        Button btnVerMais1 = findViewById(R.id.btnVerMais1);
+        btnVerMais1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
                 startActivity(i);
             }
         });
-
-        /*Button btnVerMais2 = findViewById(R.id.btnVerMais2);
+        Button btnVerMais2 = findViewById(R.id.btnVerMais2);
         btnVerMais2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +49,6 @@ public class FeedActivity extends AppCompatActivity {
                 Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
     }
 }

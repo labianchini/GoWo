@@ -50,8 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#009688"
         android:text="Ver mais"
@@ -117,10 +117,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#E91E63"
+        android:background="#CBFF90"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr1"
-        tools:srcCompat="@drawable/icone_perfil" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/descricaoEmpr3"
@@ -145,10 +145,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#E91E63"
+        android:background="#CBFF90"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr2"
-        tools:srcCompat="@drawable/icone_perfil" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imgViewEmpr1"
@@ -157,10 +157,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:background="#E91E63"
+        android:background="#CBFF90"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtcategoria"
-        tools:srcCompat="@drawable/icone_perfil" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/descricaoEmpr1"
