@@ -15,8 +15,6 @@ import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
 
-    MyAdapter myAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
