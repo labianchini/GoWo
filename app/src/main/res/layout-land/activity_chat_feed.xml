@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ChatFeedActivity">
 
+    <Button
+        android:id="@+id/btnConversa2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="conversa"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toTopOf="@+id/txtViewMsg2"
+        app:layout_constraintEnd_toEndOf="@+id/btnConversa"
+        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintStart_toStartOf="@+id/btnConversa"
+        app:layout_constraintTop_toTopOf="@+id/txtViewEmpr2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarChatFeed"
         android:layout_width="0dp"
