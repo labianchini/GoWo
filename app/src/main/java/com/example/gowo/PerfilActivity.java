@@ -39,24 +39,8 @@ public class PerfilActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        
 
-        Button btnAjuda = findViewById(R.id.btnAjuda);
-        btnAjuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PerfilActivity.this, AjudaActivity.class);
-                startActivity(i);
-            }
-        });
-
-        Button btnConfig = findViewById(R.id.btnConfig);
-        btnConfig.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PerfilActivity.this, ConfiguracoesActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     @Override
