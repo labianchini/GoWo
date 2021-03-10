@@ -6,43 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".FeedActivity">
 
-    <Button
-        android:id="@+id/btnVerMais3"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#009688"
-        android:text="Ver mais"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/descricaoEmpr3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/descricaoEmpr3" />
-
-    <Button
-        android:id="@+id/btnVerMais2"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#009688"
-        android:text="Ver mais"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/descricaoEmpr2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/descricaoEmpr2" />
+    <ImageView
+        android:id="@+id/imgViewEmpr1"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:background="#CBFF90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcategoria"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/btnVerMais1"
@@ -63,123 +37,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/descricaoEmpr1" />
 
-    <TextView
-        android:id="@+id/nomeEmpr2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Diarista Tania Soares"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr2"
-        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr2" />
-
-    <TextView
-        android:id="@+id/descricaoEmpr2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:text="Limpezas e faxinas em geral"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr2"
-        app:layout_constraintEnd_toStartOf="@+id/btnVerMais2"
-        app:layout_constraintStart_toStartOf="@+id/nomeEmpr2"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr2" />
-
-    <TextView
-        android:id="@+id/nomeEmpr3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="LavaJato Dois Irmãos"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr3"
-        app:layout_constraintTop_toTopOf="@+id/imgViewEmpr3" />
-
-    <ImageView
-        android:id="@+id/imgViewEmpr2"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="395dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#CBFF90"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr1"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/descricaoEmpr3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:text="Lavagem de automóveis com qualidade e preço justo"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr3"
-        app:layout_constraintEnd_toStartOf="@+id/btnVerMais3"
-        app:layout_constraintStart_toStartOf="@+id/nomeEmpr3"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr3" />
-
-    <ImageView
-        android:id="@+id/imgViewEmpr3"
-        android:layout_width="120dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#CBFF90"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr2"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imgViewEmpr1"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:background="#CBFF90"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcategoria"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/descricaoEmpr1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:text="Limpeza de janelas, lustres, box e mais"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr1"
-        app:layout_constraintEnd_toStartOf="@+id/btnVerMais1"
-        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr1"
-        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.482" />
 
     <TextView
         android:id="@+id/nomeEmpr1"
@@ -196,6 +68,26 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr1"
         app:layout_constraintTop_toTopOf="@+id/imgViewEmpr1" />
+
+    <TextView
+        android:id="@+id/descricaoEmpr1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Limpeza de janelas, lustres, box e mais"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr1"
+        app:layout_constraintEnd_toStartOf="@+id/btnVerMais1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgViewEmpr1"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEmpr1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtcategoria"
