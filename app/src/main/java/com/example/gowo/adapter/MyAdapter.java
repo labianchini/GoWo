@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.gowo.R;
+import com.example.gowo.Servico;
+import com.example.gowo.activity.ServicoActivity;
 
 import java.util.List;
 

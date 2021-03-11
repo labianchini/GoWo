@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.example.gowo.R;
 
 public class CadastrarServicoActivity extends AppCompatActivity {
 

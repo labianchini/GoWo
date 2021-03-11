@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,12 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class ChatPrivActivity extends AppCompatActivity {
+import com.example.gowo.R;
+
+public class ConfiguracoesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_priv);
+        setContentView(R.layout.activity_configuracoes);
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);

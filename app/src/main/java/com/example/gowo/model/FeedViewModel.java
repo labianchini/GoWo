@@ -1,9 +1,12 @@
-package com.example.gowo;
+package com.example.gowo.model;
 
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
+import com.example.gowo.Servico;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,7 +19,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class FeedViewModel {
+public class FeedViewModel extends ViewModel {
 
     MutableLiveData<List<Servico>> servicos;
 

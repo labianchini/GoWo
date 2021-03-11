@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,33 +12,37 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class ChatFeedActivity extends AppCompatActivity {
+import com.example.gowo.R;
+
+public class PerfilActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_feed);
+        setContentView(R.layout.activity_perfil);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);
-        setSupportActionBar(toolbarmain);
+        Toolbar toolbar = findViewById(R.id.toolbarPerfil);  // tornar a toolbar principal
+        setSupportActionBar(toolbar);
 
-        Button imgBtnConversa = findViewById(R.id.btnConversa);
-        imgBtnConversa.setOnClickListener(new View.OnClickListener() {
+        Button btnInfPessoal = findViewById(R.id.btnInfPessoal);
+        btnInfPessoal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
+                Intent i = new Intent(PerfilActivity.this, InfoPessoaisActivity.class);
                 startActivity(i);
             }
         });
 
-        Button imgBtnConversa2 = findViewById(R.id.btnConversa2);
-        imgBtnConversa2.setOnClickListener(new View.OnClickListener() {
+        Button BtnMeusServicos = findViewById(R.id.btnMeusServicos);
+        BtnMeusServicos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
+                Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);
                 startActivity(i);
             }
         });
+        
+
     }
 
     @Override
@@ -54,21 +58,21 @@ public class ChatFeedActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()){
             case R.id.home:
-                Intent i = new Intent(ChatFeedActivity.this,HomeActivity.class);
+                Intent i = new Intent(PerfilActivity.this, HomeActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.chat:
-                Intent i = new Intent(ChatFeedActivity.this, ChatFeedActivity.class);
+                Intent i = new Intent(PerfilActivity.this, ChatFeedActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.perfil:
-                Intent i = new Intent(ChatFeedActivity.this,PerfilActivity.class);
+                Intent i = new Intent(PerfilActivity.this,PerfilActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

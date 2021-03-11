@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.adapter;
 
 import android.view.View;
 

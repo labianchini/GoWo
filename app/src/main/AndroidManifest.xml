@@ -10,36 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AjudaActivity"
-            android:parentActivityName=".PerfilActivity" />
+            android:name=".activity.AjudaActivity"
+            android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".ConfiguracoesActivity"
-            android:parentActivityName=".PerfilActivity" />
+            android:name=".activity.ConfiguracoesActivity"
+            android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".InfoPessoaisActivity"
-            android:parentActivityName=".PerfilActivity" />
+            android:name=".activity.InfoPessoaisActivity"
+            android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".FeedActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:name=".activity.FeedActivity"
+            android:parentActivityName=".activity.HomeActivity" />
         <activity
-            android:name=".ChatPrivActivity"
-            android:parentActivityName=".ChatFeedActivity" />
+            android:name=".activity.ChatPrivActivity"
+            android:parentActivityName=".activity.ChatFeedActivity" />
         <activity
-            android:name=".MeusServicosActivity"
-            android:parentActivityName=".PerfilActivity" />
+            android:name=".activity.MeusServicosActivity"
+            android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".CadastrarUsuarioActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".activity.CadastrarUsuarioActivity"
+            android:parentActivityName=".activity.MainActivity" />
         <activity
-            android:name=".CadastrarServicoActivity"
-            android:parentActivityName=".MeusServicosActivity" />
+            android:name=".activity.CadastrarServicoActivity"
+            android:parentActivityName=".activity.MeusServicosActivity" />
         <activity
-            android:name=".ServicoActivity"
-            android:parentActivityName=".FeedActivity" />
-        <activity android:name=".PerfilActivity" />
-        <activity android:name=".ChatFeedActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity">
+            android:name=".activity.ServicoActivity"
+            android:parentActivityName=".activity.FeedActivity" />
+        <activity android:name=".activity.PerfilActivity" />
+        <activity android:name=".activity.ChatFeedActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

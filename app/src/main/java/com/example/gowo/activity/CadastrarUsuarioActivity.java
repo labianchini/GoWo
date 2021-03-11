@@ -1,4 +1,4 @@
-package com.example.gowo;
+package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +24,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.gowo.R;
 
 import java.util.ArrayList;
 import java.util.List;
