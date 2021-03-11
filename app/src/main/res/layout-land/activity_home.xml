@@ -28,7 +28,7 @@
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarHome"
         app:srcCompat="@drawable/icone_camera_verde" />
 
     <ImageButton
@@ -112,6 +112,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Fotografia"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnFotografia"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imgBtnFotografia"
@@ -123,6 +124,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Serviços gerais"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnGerais"
         app:layout_constraintStart_toStartOf="@+id/imgBtnGerais"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnGerais" />
@@ -133,6 +135,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Comida"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnComida"
         app:layout_constraintStart_toStartOf="@+id/imgBtnComida"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnComida" />
@@ -143,6 +146,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Informática"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnInformatica"
         app:layout_constraintStart_toStartOf="@+id/imgBtnInformatica"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnInformatica" />
@@ -153,6 +157,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Corte e Costura"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnCostura"
         app:layout_constraintStart_toStartOf="@+id/imgBtnCostura"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnCostura" />
@@ -163,6 +168,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Cuidados Pet"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnPet"
         app:layout_constraintStart_toStartOf="@+id/imgBtnPet"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnPet" />
@@ -173,19 +179,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Reformas e Consertos"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnReforma"
         app:layout_constraintStart_toStartOf="@+id/imgBtnReforma"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnReforma" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#F3ECEC"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
 
     <ImageButton
         android:id="@+id/imgBtnMecanica"
@@ -217,6 +214,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Mecânica"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnMecanica"
         app:layout_constraintStart_toStartOf="@+id/imgBtnMecanica"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnMecanica" />
@@ -227,6 +225,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Limpeza"
+        android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnLimpeza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnLimpeza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnLimpeza" />

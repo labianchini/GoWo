@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activity.InfoPessoaisActivity">
 
+    <TextView
+        android:id="@+id/tvSobrenome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobrenome"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEditNome"
+        app:layout_constraintTop_toTopOf="@+id/tvEditNome"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="386dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSobrenome2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvSobrenome2"
+        app:layout_constraintTop_toTopOf="@+id/tvSobrenome2" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
         android:layout_width="match_parent"
@@ -19,13 +47,13 @@
 
     <TextView
         android:id="@+id/txtEditarInfoPes"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:text="Informações Pessoais"
@@ -40,13 +68,13 @@
         android:id="@+id/tvEditNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="Nome"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditFoto"
+        app:layout_constraintBottom_toTopOf="@+id/tvEditEmail"
         app:layout_constraintStart_toEndOf="@+id/imgViewPhoto"
-        app:layout_constraintTop_toTopOf="@+id/tvEditFoto" />
+        app:layout_constraintTop_toTopOf="@+id/imgViewPhoto" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -54,12 +82,12 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditNome"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSobrenome2"
         app:layout_constraintStart_toEndOf="@+id/tvEditNome"
         app:layout_constraintTop_toTopOf="@+id/tvEditNome" />
 
@@ -67,11 +95,14 @@
         android:id="@+id/tvEditEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Email"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditFoto"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewPhoto" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewPhoto"
+        app:layout_constraintStart_toEndOf="@+id/imgViewPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditNome" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -106,21 +137,25 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditSenha"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvEditSenha" />
 
     <TextView
         android:id="@+id/tvEditEstado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Estado"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditFoto"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditEmail" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewPhoto" />
 
     <TextView
         android:id="@+id/tvEditCidade"
@@ -153,10 +188,12 @@
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditCidade"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvEditCidade" />
 
     <TextView
@@ -200,10 +237,12 @@
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditCep"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvEditCep" />
 
     <TextView
@@ -246,46 +285,40 @@
         android:id="@+id/editTextTextPersonName8"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditNum"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName6"
+        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
         app:layout_constraintTop_toTopOf="@+id/tvEditNum" />
 
     <Button
         android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8" />
 
     <ImageView
         android:id="@+id/imgViewPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:background="#40CCDD"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditFoto"
-        app:layout_constraintStart_toEndOf="@+id/tvEditFoto"
-        app:layout_constraintTop_toTopOf="@+id/tvEditFoto"
-        app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEditFoto"
+        app:layout_constraintStart_toStartOf="@+id/tvEditFoto"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditFoto"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvEditFoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:text="Foto"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEditarInfoPes" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEditarInfoPes"
+        tools:layout_editor_absoluteX="27dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

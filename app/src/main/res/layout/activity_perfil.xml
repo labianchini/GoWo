@@ -22,39 +22,39 @@
         android:id="@+id/txtViewOla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="Olá, "
         android:textColor="#00a39b"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewIconeUser"
         app:layout_constraintStart_toEndOf="@+id/imgViewIconeUser"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarPerfil" />
+        app:layout_constraintTop_toTopOf="@+id/imgViewIconeUser" />
 
     <ImageView
         android:id="@+id/imgViewIconeUser"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:scaleType="fitStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarPerfil"
-        tools:srcCompat="@drawable/ja_icone" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/txtViewNomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="Usuário"
         android:textColor="#00a39b"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/txtViewOla"
         app:layout_constraintStart_toEndOf="@+id/txtViewOla"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarPerfil" />
+        app:layout_constraintTop_toTopOf="@+id/txtViewOla" />
 
     <Button
         android:id="@+id/btnInfPessoal"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="Informações Pessoais"
         android:textAllCaps="false"
         android:textColor="#00a39b"
@@ -76,13 +76,12 @@
         android:id="@+id/imgViewUser"
         android:layout_width="46dp"
         android:layout_height="0dp"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:tint="#00A39B"
         app:layout_constraintBottom_toBottomOf="@+id/btnInfPessoal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewIconeUser"
+        app:layout_constraintTop_toTopOf="@+id/btnInfPessoal"
         app:srcCompat="@drawable/icone_perfil" />
 
     <Button
@@ -105,12 +104,11 @@
         android:id="@+id/imgViewServiços"
         android:layout_width="46dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnMeusServicos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewUser"
+        app:layout_constraintTop_toTopOf="@+id/btnMeusServicos"
         app:srcCompat="@drawable/ic_baseline_work_24" />
 
     <Button
@@ -133,12 +131,11 @@
         android:id="@+id/imgAjuda"
         android:layout_width="46dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnAjuda"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewServiços"
+        app:layout_constraintTop_toTopOf="@+id/btnAjuda"
         app:srcCompat="@drawable/eng_azul" />
 
     <Button
@@ -161,12 +158,11 @@
         android:id="@+id/imageView5"
         android:layout_width="46dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnConfig"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAjuda"
+        app:layout_constraintTop_toTopOf="@+id/btnConfig"
         app:srcCompat="@drawable/ic_baseline_settings_24" />
 
     <Button
