@@ -38,6 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/descricaoEmpr1" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvServicos"
         android:layout_width="409dp"
         android:layout_height="395dp"
         android:layout_marginStart="16dp"

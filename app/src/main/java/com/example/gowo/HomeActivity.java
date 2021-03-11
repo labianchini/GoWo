@@ -3,6 +3,7 @@ package com.example.gowo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,6 @@ public class HomeActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbar);
-
 
         ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
         imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {

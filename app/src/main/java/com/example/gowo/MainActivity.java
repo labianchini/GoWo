@@ -20,25 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        ImageButton imgBtnFacebook = findViewById(R.id.imgBtnFacebook);
-        imgBtnFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(i);
-            }
-        });
-
-        ImageButton imgBtnGoogle = findViewById(R.id.imgBtnGoogle);
-        imgBtnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(i);
-            }
-        });
-
         Button BtnEntrar = findViewById(R.id.btnEntrar);
         BtnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override

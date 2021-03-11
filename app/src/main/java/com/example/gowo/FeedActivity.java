@@ -3,6 +3,9 @@ package com.example.gowo;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,6 +25,14 @@ public class FeedActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);
+
+        RecyclerView rvServicos = findViewById(R.id.rvServicos);
+        rvServicos.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        rvServicos.setLayoutManager(layoutManager);
+
+        FeedViewModel feedViewModel = new ViewModelProvider(this).get(FeedViewModel.class);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
