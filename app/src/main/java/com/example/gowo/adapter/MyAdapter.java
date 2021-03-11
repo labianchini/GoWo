@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gowo.R;
-import com.example.gowo.Servico;
+import com.example.gowo.model.Servico;
 import com.example.gowo.activity.ServicoActivity;
 
 import java.util.List;
@@ -37,16 +37,16 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Servico servico = this.servicos.get(position);
+        final Servico servico = this.servicos.get(position);
 
         ImageView imgViewEmpr = holder.itemView.findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(servico.getPhoto());
+        imgViewEmpr.setImageBitmap(servico.getPhotoServ());
 
         TextView nomeEmpr = holder.itemView.findViewById(R.id.nomeEmpr);
-        nomeEmpr.setText(servico.getName());
+        nomeEmpr.setText(servico.getNameServ());
 
         TextView tvdescription = holder.itemView.findViewById(R.id.tvDescription);
-        tvdescription.setText(servico.getDescription());
+        tvdescription.setText(servico.getDescriptionServ());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter {
                 //quando clicar no servico
 
                 Intent i = new Intent(context, ServicoActivity.class);
+                i.putExtra("id", servico.getIdServ());
                 context.startActivity(i);
             }
         });

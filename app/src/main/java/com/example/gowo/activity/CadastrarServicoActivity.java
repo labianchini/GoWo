@@ -4,9 +4,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +16,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.gowo.R;
+import com.example.gowo.model.CadastrarServicoViewModel;
+import com.example.gowo.util.Util;
 
 public class CadastrarServicoActivity extends AppCompatActivity {
 
@@ -41,6 +45,14 @@ public class CadastrarServicoActivity extends AppCompatActivity {
                 startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
             }
         });
+
+        CadastrarServicoViewModel cadastrarServicoViewModel = new ViewModelProvider(this).get(CadastrarServicoViewModel.class);
+        String currenyPhotoPath = cadastrarServicoViewModel.getCurrentPhotoPath();
+        if (!currenyPhotoPath.isEmpty()){
+            ImageView imvPhotoPrev = findViewById(R.id.imvPhotoPrev);
+            Bitmap bitmap = Util.getBitmap(currenyPhotoPath, imvPhotoPrev.getWidth(), imvPhotoPrev.getHeight());
+            imvPhotoPrev.setImageBitmap(bitmap);
+        }
     }
 
     @Override

@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.gowo.Servico;
+import com.example.gowo.model.Servico;
 import com.example.gowo.adapter.MyAdapter;
 import com.example.gowo.model.FeedViewModel;
 import com.example.gowo.R;
