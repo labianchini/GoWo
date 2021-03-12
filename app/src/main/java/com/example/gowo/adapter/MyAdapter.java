@@ -18,6 +18,7 @@ import com.example.gowo.activity.ServicoActivity;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter {
+
     Context context;
     List<Servico> servicos;
 
@@ -62,7 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return this.servicos.size();
+        return servicos.size();
     }
 }
 

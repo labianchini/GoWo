@@ -27,6 +27,10 @@ public class FeedViewModel extends ViewModel {
         return servicos;
     }
 
+    public void refreshServicos(){
+        loadServicos();
+    }
+
     void loadServicos(){
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {

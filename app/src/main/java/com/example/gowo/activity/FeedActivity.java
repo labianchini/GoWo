@@ -1,5 +1,6 @@
 package com.example.gowo.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +24,8 @@ import com.example.gowo.R;
 import java.util.List;
 
 public class FeedActivity extends AppCompatActivity {
+
+    static int ADD_PRODUCT_ACTIVITY_RESULT = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,5 +63,15 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ADD_PRODUCT_ACTIVITY_RESULT){
+            if(requestCode == Activity.RESULT_OK){
+                FeedViewModel feedViewModel= new ViewModelProvider(this).get(FeedViewModel.class);
+                feedViewModel.refreshServicos();
+            }
+        }
     }
 }

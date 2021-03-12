@@ -1,19 +1,19 @@
 package com.example.gowo.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+        import java.io.File;
+        import java.io.FileInputStream;
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.OutputStream;
+        import java.io.OutputStreamWriter;
+        import java.io.PrintWriter;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import java.net.URLConnection;
+        import java.net.URLEncoder;
+        import java.util.HashMap;
+        import java.util.Iterator;
+        import java.util.Map;
 
 /*
     A classe HttpRequest permite fazer requisicoes HTTP do tipo GET ou POST a um servidor web. Em
