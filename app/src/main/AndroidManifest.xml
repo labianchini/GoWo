@@ -24,9 +24,6 @@
             android:name=".activity.FeedActivity"
             android:parentActivityName=".activity.HomeActivity" />
         <activity
-            android:name=".activity.ChatPrivActivity"
-            android:parentActivityName=".activity.ChatFeedActivity" />
-        <activity
             android:name=".activity.MeusServicosActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
@@ -39,7 +36,7 @@
             android:name=".activity.ServicoActivity"
             android:parentActivityName=".activity.FeedActivity" />
         <activity android:name=".activity.PerfilActivity" />
-        <activity android:name=".activity.ChatFeedActivity" />
+        <activity android:name=".activity.FavoritosActivity" />
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>

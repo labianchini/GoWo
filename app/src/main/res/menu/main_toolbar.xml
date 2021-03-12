@@ -6,8 +6,8 @@
         android:icon="@drawable/icone_home"
         app:showAsAction="always" />
     <item
-        android:id="@+id/chat"
-        android:icon="@drawable/icone_chat"
+        android:id="@+id/favoritos"
+        android:icon="@drawable/icone_favoritos"
         app:showAsAction="always" />
     <item
         android:id="@+id/perfil"

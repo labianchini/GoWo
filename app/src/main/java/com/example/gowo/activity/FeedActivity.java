@@ -68,7 +68,7 @@ public class FeedActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ADD_PRODUCT_ACTIVITY_RESULT){
-            if(requestCode == Activity.RESULT_OK){
+            if(resultCode == Activity.RESULT_OK){
                 FeedViewModel feedViewModel= new ViewModelProvider(this).get(FeedViewModel.class);
                 feedViewModel.refreshServicos();
             }

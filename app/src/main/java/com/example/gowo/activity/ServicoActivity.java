@@ -55,14 +55,5 @@ public class ServicoActivity extends AppCompatActivity {
 
             }
         });
-
-        ImageButton imgBtnChat = findViewById(R.id.imgBtnChat);
-        imgBtnChat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ServicoActivity.this, ChatPrivActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }

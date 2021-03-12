@@ -117,8 +117,8 @@ public class HomeActivity extends AppCompatActivity {
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.chat:
-                Intent i = new Intent(HomeActivity.this, ChatFeedActivity.class);
+            case R.id.favoritos:
+                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

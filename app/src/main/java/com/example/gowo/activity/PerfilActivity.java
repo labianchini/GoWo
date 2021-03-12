@@ -64,8 +64,8 @@ public class PerfilActivity extends AppCompatActivity {
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.chat:
-                Intent i = new Intent(PerfilActivity.this, ChatFeedActivity.class);
+            case R.id.favoritos:
+                Intent i = new Intent(PerfilActivity.this, FavoritosActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

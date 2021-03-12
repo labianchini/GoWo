@@ -14,33 +14,15 @@ import android.widget.Button;
 
 import com.example.gowo.R;
 
-public class ChatFeedActivity extends AppCompatActivity {
+public class FavoritosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_feed);
+        setContentView(R.layout.activity_favoritos);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarChatFeed);
+        Toolbar toolbarmain = findViewById(R.id.toolbarFavoritos);
         setSupportActionBar(toolbarmain);
-
-        Button imgBtnConversa = findViewById(R.id.btnConversa);
-        imgBtnConversa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
-                startActivity(i);
-            }
-        });
-
-        Button imgBtnConversa2 = findViewById(R.id.btnConversa2);
-        imgBtnConversa2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ChatFeedActivity.this, ChatPrivActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     @Override
@@ -56,21 +38,21 @@ public class ChatFeedActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()){
             case R.id.home:
-                Intent i = new Intent(ChatFeedActivity.this, HomeActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, HomeActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.chat:
-                Intent i = new Intent(ChatFeedActivity.this, ChatFeedActivity.class);
+            case R.id.favoritos:
+                Intent i = new Intent(FavoritosActivity.this, FavoritosActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.perfil:
-                Intent i = new Intent(ChatFeedActivity.this, PerfilActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, PerfilActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

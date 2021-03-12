@@ -36,7 +36,7 @@ public class FeedViewModel extends ViewModel {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                HttpRequest httpRequest = new HttpRequest("http://gowoifes.herokuapp.com/database/list_services.php", "GET", "UTF-8");
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/list_services.php", "GET", "UTF-8");
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
