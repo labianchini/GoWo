@@ -36,7 +36,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        ImageButton imgBtn = findViewById(R.id.imgBtn);
+        ImageButton imgBtn = findViewById(R.id.imgBtnAddPhoto);
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         CadastrarServicoViewModel cadastrarServicoViewModel = new ViewModelProvider(this).get(CadastrarServicoViewModel.class);
         String currenyPhotoPath = cadastrarServicoViewModel.getCurrentPhotoPath();
         if (!currenyPhotoPath.isEmpty()){
-            ImageView imvPhotoPrev = findViewById(R.id.imvPhotoPrev);
+            ImageView imvPhotoPrev = findViewById(R.id.imvPhotoServ);
             Bitmap bitmap = Util.getBitmap(currenyPhotoPath, imvPhotoPrev.getWidth(), imvPhotoPrev.getHeight());
             imvPhotoPrev.setImageBitmap(bitmap);
         }
@@ -61,7 +61,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         if(requestCode == PHOTO_PICKER_REQUEST){
             if(resultCode == Activity.RESULT_OK){
                 selectPhotoLocation = data.getData();
-                ImageView imvPhotoPrev = findViewById(R.id.imvPhotoPrev);
+                ImageView imvPhotoPrev = findViewById(R.id.imvPhotoServ);
                 imvPhotoPrev.setImageURI(selectPhotoLocation);
             }
         }

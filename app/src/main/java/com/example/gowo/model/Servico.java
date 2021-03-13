@@ -9,6 +9,12 @@ public class Servico {
     String descriptionServ;
     Bitmap photoServ;
 
+    public Servico(String idServ, String nameServ, String descriptionServ) {
+        this.idServ = idServ;
+        this.nameServ = nameServ;
+        this.descriptionServ = descriptionServ;
+    }
+
     public Servico(String idServ, String idPrest, String nameServ, String descriptionServ, Bitmap photoServ) {
         this.idServ = idServ;
         this.idPrest = idPrest;
