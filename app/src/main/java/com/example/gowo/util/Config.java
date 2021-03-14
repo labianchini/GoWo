@@ -5,24 +5,24 @@ import android.content.SharedPreferences;
 
 public class Config {
 
-    public static void setLogin(Context context, String login) {
+    public static void setEmail(Context context, String email) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         SharedPreferences.Editor mEditor = mPrefs.edit();
-        mEditor.putString("login", login).commit();
+        mEditor.putString("login", email).commit();
     }
 
-    public static String getLogin(Context context) {
+    public static String getEmail(Context context) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         return mPrefs.getString("login", "");
     }
 
-    public static void setPassword(Context context, String password) {
+    public static void setSenha(Context context, String senha) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         SharedPreferences.Editor mEditor = mPrefs.edit();
-        mEditor.putString("password", password).commit();
+        mEditor.putString("password", senha).commit();
     }
 
-    public static String getPassword(Context context) {
+    public static String getSenha(Context context) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         return mPrefs.getString("password", "");
     }

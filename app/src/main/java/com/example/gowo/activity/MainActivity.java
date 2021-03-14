@@ -19,10 +19,7 @@ MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent i = new Intent(MainActivity.this, HomeActivity.class);
-        startActivity(i);
-
-        /*if (Config.getLogin(MainActivity.this).isEmpty()){
+        if (Config.getEmail(MainActivity.this).isEmpty()){
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(i);
             finish();
@@ -31,6 +28,6 @@ MainActivity extends AppCompatActivity {
             Intent i = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(i);
             finish();
-        }*/
+        }
     }
 }

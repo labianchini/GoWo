@@ -297,7 +297,7 @@
 
     <EditText
         android:id="@+id/pswdUsu1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -305,7 +305,7 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="   Senha"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:textColor="#00a39b"
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
@@ -323,7 +323,7 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="   Confirme sua senha"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:textColor="#00a39b"
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"

@@ -29,9 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        /*Button BtnEntrar = findViewById(R.id.btnEntrar);
-        BtnEntrar.setOnClickListener(new View.OnClickListener() {
+        Button btnEntrar = findViewById(R.id.btnEntrar);
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText etEmail = findViewById(R.id.etEmail);
@@ -44,9 +43,9 @@ public class LoginActivity extends AppCompatActivity {
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
-                        HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/login_validation.php", "POST", "UTF-8");
-                        httpRequest.addParam("usuário", email);
-                        httpRequest.addParam("pwd", senha);
+                        HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_login.php", "POST", "UTF-8");
+                        httpRequest.addParam("login", email);
+                        httpRequest.addParam("senha", senha);
 
                         try {
                             InputStream is = httpRequest.execute();
@@ -59,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Config.setLogin(LoginActivity.this, email);
-                                        Config.setPassword(LoginActivity.this, senha);
+                                        Config.setEmail(LoginActivity.this, email);
+                                        Config.setSenha(LoginActivity.this, senha);
                                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
                                         Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                                         startActivity(i);
@@ -83,7 +82,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
             }
-        });*/
+        });
+
         Button BtnCliqueAqui = findViewById(R.id.btnCliqueAqui);
         BtnCliqueAqui.setOnClickListener(new View.OnClickListener() {
             @Override
