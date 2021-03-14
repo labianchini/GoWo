@@ -8,7 +8,43 @@
     tools:context=".activity.CadastrarUsuarioActivity">
 
     <EditText
-        android:id="@+id/sobrenomeUsu2"
+        android:id="@+id/dataUsu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="   Data de nascimento"
+        android:inputType="date"
+        android:textColor="#00a39b"
+        android:textColorHighlight="#00a39b"
+        android:textColorHint="#00a39b"
+        app:layout_constraintStart_toEndOf="@+id/imgPhotoUsu"
+        app:layout_constraintTop_toBottomOf="@+id/pswdUsu1" />
+
+    <EditText
+        android:id="@+id/telUsu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="   Telefone"
+        android:inputType="phone"
+        android:textColor="#00a39b"
+        android:textColorHighlight="#00a39b"
+        android:textColorHint="#00a39b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dataUsu"
+        app:layout_constraintTop_toTopOf="@+id/dataUsu" />
+
+    <EditText
+        android:id="@+id/sobrenomeUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -44,9 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#00a39b"
-        app:layout_constraintEnd_toEndOf="@+id/imvPhotoPreview"
-        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
-        app:layout_constraintTop_toBottomOf="@+id/imvPhotoPreview"
+        app:layout_constraintEnd_toEndOf="@+id/imgPhotoUsu"
+        app:layout_constraintStart_toStartOf="@+id/imgPhotoUsu"
+        app:layout_constraintTop_toBottomOf="@+id/imgPhotoUsu"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
     <EditText
@@ -67,16 +103,16 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/sobrenomeUsu2"
-        app:layout_constraintStart_toEndOf="@+id/imvPhotoPreview"
-        app:layout_constraintTop_toTopOf="@+id/imvPhotoPreview" />
+        app:layout_constraintEnd_toStartOf="@+id/sobrenomeUsu"
+        app:layout_constraintStart_toEndOf="@+id/imgPhotoUsu"
+        app:layout_constraintTop_toTopOf="@+id/imgPhotoUsu" />
 
     <EditText
         android:id="@+id/emailUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
@@ -93,32 +129,13 @@
         app:layout_constraintTop_toBottomOf="@+id/nomeUsu" />
 
     <EditText
-        android:id="@+id/senhaUsu"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="Senha:"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textColor="#00a39b"
-        android:textColorHighlight="#00a39b"
-        android:textColorHint="#00a39b"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/emailUsu"
-        app:layout_constraintTop_toBottomOf="@+id/emailUsu" />
-
-    <EditText
         android:id="@+id/cepUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Cep:"
@@ -128,8 +145,8 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
-        app:layout_constraintTop_toBottomOf="@+id/estadoUsu" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
 
     <EditText
         android:id="@+id/ruaUsu"
@@ -138,8 +155,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Rua:"
@@ -149,9 +164,8 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cidadeUsu"
-        app:layout_constraintTop_toTopOf="@+id/cidadeUsu" />
+        app:layout_constraintStart_toEndOf="@+id/bairroUsu"
+        app:layout_constraintTop_toTopOf="@+id/bairroUsu" />
 
     <EditText
         android:id="@+id/bairroUsu"
@@ -160,6 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Bairro:"
@@ -169,13 +184,14 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/cepUsu"
-        app:layout_constraintTop_toTopOf="@+id/cepUsu" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cepUsu" />
 
     <Button
         android:id="@+id/btnAddUsu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -185,7 +201,8 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/numUsu" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numUsu" />
 
     <EditText
         android:id="@+id/numUsu"
@@ -206,16 +223,18 @@
         android:textColorHint="#00a39b"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bairroUsu"
-        app:layout_constraintTop_toTopOf="@+id/cepUsu" />
+        app:layout_constraintStart_toEndOf="@+id/ruaUsu"
+        app:layout_constraintTop_toTopOf="@+id/bairroUsu" />
 
     <EditText
         android:id="@+id/cidadeUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="28dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Cidade:"
@@ -225,15 +244,17 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/estadoUsu"
-        app:layout_constraintTop_toTopOf="@+id/estadoUsu" />
+        app:layout_constraintTop_toTopOf="@+id/cepUsu" />
 
     <EditText
         android:id="@+id/estadoUsu"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="Estado:"
@@ -243,11 +264,11 @@
         android:textColorHighlight="#00a39b"
         android:textColorHint="#00a39b"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/imvPhotoPreview"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
+        app:layout_constraintStart_toEndOf="@+id/cepUsu"
+        app:layout_constraintTop_toTopOf="@+id/cepUsu" />
 
     <ImageView
-        android:id="@+id/imvPhotoPreview"
+        android:id="@+id/imgPhotoUsu"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="8dp"
@@ -256,5 +277,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/pswdUsu1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="   Senha"
+        android:inputType="textPassword"
+        android:textColor="#00a39b"
+        android:textColorHighlight="#00a39b"
+        android:textColorHint="#00a39b"
+        app:layout_constraintStart_toEndOf="@+id/imgPhotoUsu"
+        app:layout_constraintTop_toBottomOf="@+id/emailUsu" />
+
+    <EditText
+        android:id="@+id/pswdUsu2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="   Confirme sua senha"
+        android:inputType="textPassword"
+        android:textColor="#00a39b"
+        android:textColorHighlight="#00a39b"
+        android:textColorHint="#00a39b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pswdUsu1"
+        app:layout_constraintTop_toTopOf="@+id/pswdUsu1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

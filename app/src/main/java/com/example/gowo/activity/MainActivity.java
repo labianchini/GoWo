@@ -8,30 +8,29 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.gowo.R;
+import com.example.gowo.util.Config;
 
-public class MainActivity extends AppCompatActivity {
+public class
+
+MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button BtnEntrar = findViewById(R.id.btnEntrar);
-        BtnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(i);
-            }
-        });
+        Intent i = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(i);
 
-        Button BtnCliqueAqui = findViewById(R.id.btnCliqueAqui);
-        BtnCliqueAqui.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CadastrarUsuarioActivity.class);
-                startActivity(i);
-            }
-        });
+        /*if (Config.getLogin(MainActivity.this).isEmpty()){
+            Intent i = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
+        else {
+            Intent i = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(i);
+            finish();
+        }*/
     }
 }

@@ -11,8 +11,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.gowo.R;
+import com.example.gowo.util.Config;
+import com.example.gowo.util.HttpRequest;
+import com.example.gowo.util.Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -20,6 +32,47 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        /*final String login = Config.getLogin(HomeActivity.this);
+        final String password = Config.getPassword(HomeActivity.this);
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/", "POST", "UTF-8");
+                httpRequest.addParam("login", login);
+                httpRequest.addParam("password", password);
+
+                try {
+                    InputStream is = httpRequest.execute();
+                    String result = Util.inputStream2String(is, "UTF-8");
+                    httpRequest.finish();
+
+                    JSONObject jsonObject = new JSONObject(result);
+                    final int success = jsonObject.getInt("success");
+                    if(success == 1) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //dados do usuário
+                            }
+                        });
+                    }
+                    else {
+                        final String error = jsonObject.getString("error");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(HomeActivity.this, error, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });*/
 
         Toolbar toolbar = findViewById(R.id.toolbarHome);  // tornar a toolbar principal
         setSupportActionBar(toolbar);

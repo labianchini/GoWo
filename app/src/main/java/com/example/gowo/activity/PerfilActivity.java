@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.gowo.R;
+import com.example.gowo.util.Config;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -33,16 +35,25 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        Button BtnMeusServicos = findViewById(R.id.btnMeusServicos);
-        BtnMeusServicos.setOnClickListener(new View.OnClickListener() {
+        Button btnMeusServicos = findViewById(R.id.btnMeusServicos);
+        btnMeusServicos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);
                 startActivity(i);
             }
         });
-        
-
+        // não sei se a função de sair está certa
+        /*Button btnSair = findViewById(R.id.btnSair);
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Config.setLogin(PerfilActivity.this, "");
+                Config.setPassword(PerfilActivity.this, "");
+                Intent i = new Intent(PerfilActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });*/
     }
 
     @Override

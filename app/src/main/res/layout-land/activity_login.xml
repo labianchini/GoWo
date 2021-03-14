@@ -5,21 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00a39b"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.LoginActivity">
 
     <ImageView
-        android:id="@+id/imgViewLogo"
-        android:layout_width="200dp"
+        android:id="@+id/imgViewLogo2"
+        android:layout_width="300dp"
         android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gowo_simbolo_branco" />
 
     <TextView
-        android:id="@+id/txtViewUsuario"
-        android:layout_width="0dp"
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -31,10 +35,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/imgViewLogo2" />
 
     <EditText
-        android:id="@+id/editTxtEmail"
+        android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,12 +55,13 @@
         android:textColorLink="#00a39b"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <TextView
-        android:id="@+id/txtViewSenha"
-        android:layout_width="0dp"
+        android:id="@+id/tvSenha"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -68,10 +73,28 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <Button
+        android:id="@+id/btnEntrar2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#FFFCFC"
+        android:text="Entrar"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#00A39B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
 
     <EditText
-        android:id="@+id/editTxtSenha"
+        android:id="@+id/etSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -82,36 +105,19 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword"
+        android:textColor="#00a39b"
+        android:textColorHighlight="#00a39b"
+        android:textColorHint="#00a39b"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnEntrar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewSenha" />
-
-    <Button
-        android:id="@+id/btnEntrar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#FFFCFC"
-        android:text="Entrar"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#00A39B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTxtSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTxtSenha" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSenha" />
 
     <TextView
-        android:id="@+id/txtViewNovaConta"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtViewNovaConta2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
         android:text="Não possui Conta?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -119,8 +125,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgViewLogo2"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 
     <Button
@@ -128,16 +133,17 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Clique aqui"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/txtViewNovaConta"
-        app:layout_constraintStart_toEndOf="@+id/txtViewNovaConta"
-        app:layout_constraintTop_toTopOf="@+id/txtViewNovaConta" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgViewLogo2"
+        app:layout_constraintStart_toEndOf="@+id/txtViewNovaConta2"
+        app:layout_constraintTop_toTopOf="@+id/txtViewNovaConta2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
