@@ -44,16 +44,17 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
         // não sei se a função de sair está certa
-        /*Button btnSair = findViewById(R.id.btnSair);
+        Button btnSair = findViewById(R.id.btnSair);
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Config.setLogin(PerfilActivity.this, "");
-                Config.setPassword(PerfilActivity.this, "");
+                Config.setEmail(PerfilActivity.this, "");
+                Config.setSenha(
+                        PerfilActivity.this, "");
                 Intent i = new Intent(PerfilActivity.this, LoginActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
     }
 
     @Override

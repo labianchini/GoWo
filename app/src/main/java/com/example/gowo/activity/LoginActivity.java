@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_login.php", "POST", "UTF-8");
                         httpRequest.addParam("login", email);
-                        httpRequest.addParam("senha", senha);
+                        httpRequest.addParam("password", senha);
 
                         try {
                             InputStream is = httpRequest.execute();
