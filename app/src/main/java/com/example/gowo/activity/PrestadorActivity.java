@@ -18,7 +18,7 @@ import com.example.gowo.R;
 import com.example.gowo.model.Servico;
 import com.example.gowo.model.ViewServicoViewModel;
 
-public class ServicoActivity extends AppCompatActivity {
+public class PrestadorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

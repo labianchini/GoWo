@@ -58,7 +58,7 @@ public class FeedActivity extends AppCompatActivity {
         btnVerMais1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FeedActivity.this, ServicoActivity.class);
+                Intent i = new Intent(FeedActivity.this, PrestadorActivity.class);
                 startActivity(i);
             }
         });

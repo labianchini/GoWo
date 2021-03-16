@@ -33,16 +33,17 @@
             android:name=".activity.CadastrarServicoActivity"
             android:parentActivityName=".activity.MeusServicosActivity" />
         <activity
-            android:name=".activity.ServicoActivity"
+            android:name=".activity.PrestadorActivity"
             android:parentActivityName=".activity.FeedActivity" />
         <activity android:name=".activity.PerfilActivity" />
         <activity android:name=".activity.FavoritosActivity" />
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MainActivity">
-                  android:name="@android:style/Theme.NoDisplay">
+            android:name="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

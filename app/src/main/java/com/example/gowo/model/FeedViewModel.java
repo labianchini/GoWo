@@ -52,8 +52,10 @@ public class FeedViewModel extends ViewModel {
                     Log.d("HTTP_REQUEST_RESULT", result);
 
                     JSONObject jsonObject = new JSONObject(result);
-                    int success = jsonObject.getInt("success.get(0)");
-                    if (success ==1){
+                    String success = jsonObject.getString("success[0]");
+                            //getInt("success.get(0)");
+                    //Log.i("success", String.valueOf(success));
+                    if (success == "1"){
                         JSONArray jsonArray = jsonObject.getJSONArray("services_users");
                         for(int i = 0; i< jsonArray.length(); i++){
                             JSONObject jServico = jsonArray.getJSONObject(i);

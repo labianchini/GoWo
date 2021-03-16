@@ -20,7 +20,7 @@ MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (Config.getEmail(MainActivity.this).isEmpty()){
-            Intent i = new Intent(MainActivity.this, LoginActivity.class);
+            Intent i = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(i);
             finish();
         }

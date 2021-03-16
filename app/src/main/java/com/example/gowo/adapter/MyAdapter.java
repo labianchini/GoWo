@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gowo.R;
 import com.example.gowo.model.Servico;
-import com.example.gowo.activity.ServicoActivity;
+import com.example.gowo.activity.PrestadorActivity;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter {
             public void onClick(View v) {
                 //quando clicar no servico
 
-                Intent i = new Intent(context, ServicoActivity.class);
+                Intent i = new Intent(context, PrestadorActivity.class);
                 i.putExtra("id", servico.getIdServ());
                 context.startActivity(i);
             }
