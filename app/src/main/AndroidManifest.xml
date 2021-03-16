@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.ServicoActivity"
+            android:parentActivityName=".activity.PrestadorActivity" />
+        <activity
             android:name=".activity.AjudaActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity

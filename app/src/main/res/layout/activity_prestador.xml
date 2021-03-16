@@ -39,7 +39,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#00A39B"
-        android:text="Nome do Servico"
+        android:text="Nome do Prestador"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -86,7 +86,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="#FFFFFF"
-        android:hint="Descrição"
+        android:hint="Lista de serviços oferecidos"
         android:textColorHint="#00a39b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,11 +102,19 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Nome do prestador"
+        android:text="Localização"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr" />
+
+    <Button
+        android:id="@+id/buttonTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

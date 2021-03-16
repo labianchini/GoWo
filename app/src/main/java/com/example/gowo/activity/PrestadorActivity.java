@@ -9,6 +9,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,6 +52,14 @@ public class PrestadorActivity extends AppCompatActivity {
                 TextView tvDrescServ = findViewById(R.id.tvDrescServ);
                 tvDrescServ.setText(servico.getDescriptionServ());
 
+                Button btnteste = findViewById(R.id.buttonTeste);
+                btnteste.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(PrestadorActivity.this, ServicoActivity.class);
+                        startActivity(i);
+                    }
+                });
 
             }
         });
