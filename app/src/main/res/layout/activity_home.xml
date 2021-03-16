@@ -9,20 +9,19 @@
     tools:context=".activity.HomeActivity">
 
     <ImageButton
-        android:id="@+id/imgBtnMecanica"
+        android:id="@+id/imgBtnBeleza"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnLimpeza"
         app:layout_constraintStart_toEndOf="@+id/imgBtnReforma"
-        app:layout_constraintTop_toBottomOf="@+id/txtcostura"
-        app:srcCompat="@drawable/eng_azul" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnReforma"
+        app:srcCompat="@drawable/heart" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarHome"
@@ -47,20 +46,22 @@
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarHome"
-        app:srcCompat="@drawable/icone_camera_verde" />
+        app:srcCompat="@drawable/camera" />
 
     <ImageButton
-        android:id="@+id/imgBtnGerais"
+        android:id="@+id/imgBtnAutomotivo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnComida"
         app:layout_constraintStart_toEndOf="@+id/imgBtnFotografia"
         app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
-        app:srcCompat="@drawable/icone_ferramenta_verde" />
+        app:srcCompat="@drawable/car" />
 
     <ImageButton
         android:id="@+id/imgBtnComida"
@@ -72,7 +73,7 @@
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgBtnFotografia"
-        app:srcCompat="@drawable/icone_food_verde" />
+        app:srcCompat="@drawable/food" />
 
     <ImageButton
         android:id="@+id/imgBtnInformatica"
@@ -80,12 +81,12 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtfotografia"
-        app:srcCompat="@drawable/icone_laptop_verde" />
+        app:srcCompat="@drawable/laptop" />
 
     <ImageButton
         android:id="@+id/imgBtnCostura"
@@ -93,28 +94,26 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnPet"
         app:layout_constraintStart_toEndOf="@+id/imgBtnInformatica"
-        app:layout_constraintTop_toBottomOf="@+id/txtservgerais"
-        app:srcCompat="@drawable/icone_maquina_verde" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnInformatica"
+        app:srcCompat="@drawable/tshirt" />
 
     <ImageButton
         android:id="@+id/imgBtnPet"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcomida"
-        app:srcCompat="@drawable/icone_pet_verde" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnInformatica"
+        app:srcCompat="@drawable/pet" />
 
     <ImageButton
         android:id="@+id/imgBtnReforma"
@@ -122,12 +121,12 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtinformatica"
-        app:srcCompat="@drawable/icone_pincel_verde" />
+        app:srcCompat="@drawable/paint" />
 
     <TextView
         android:id="@+id/txtfotografia"
@@ -142,15 +141,15 @@
         app:layout_constraintTop_toBottomOf="@+id/imgBtnFotografia" />
 
     <TextView
-        android:id="@+id/txtservgerais"
+        android:id="@+id/txtautomotivo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Serviços gerais"
+        android:text="Automotivo"
         android:textColor="#00a39b"
-        app:layout_constraintEnd_toEndOf="@+id/imgBtnGerais"
-        app:layout_constraintStart_toStartOf="@+id/imgBtnGerais"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnGerais" />
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnAutomotivo"
+        app:layout_constraintStart_toStartOf="@+id/imgBtnAutomotivo"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAutomotivo" />
 
     <TextView
         android:id="@+id/txtcomida"
@@ -201,22 +200,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Reformas"
+        android:text="Reformas e Consertos"
         android:textColor="#00a39b"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnReforma"
         app:layout_constraintStart_toStartOf="@+id/imgBtnReforma"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnReforma" />
 
     <TextView
-        android:id="@+id/txtMecanica"
+        android:id="@+id/txtBeleza"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Mecânica"
+        android:text="Beleza"
         android:textColor="#00a39b"
-        app:layout_constraintEnd_toEndOf="@+id/imgBtnMecanica"
-        app:layout_constraintStart_toStartOf="@+id/imgBtnMecanica"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnMecanica" />
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnBeleza"
+        app:layout_constraintStart_toStartOf="@+id/imgBtnBeleza"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnBeleza" />
 
     <TextView
         android:id="@+id/txtLimpeza"
@@ -233,14 +232,13 @@
         android:id="@+id/imgBtnLimpeza"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpet"
-        app:srcCompat="@drawable/vassoura_azul" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnReforma"
+        app:srcCompat="@drawable/broom" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/toolbarhome"
@@ -251,5 +249,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_actions" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtreforma"
+        app:srcCompat="@drawable/plant" />
+
+    <TextView
+        android:id="@+id/txtjardinagem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Jardinagem"
+        android:textColor="#00a39b"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

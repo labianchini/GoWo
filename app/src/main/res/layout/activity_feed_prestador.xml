@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00a39b"
-    tools:context=".activity.PrestadorActivity">
+    tools:context=".activity.FeedPrestadorActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
@@ -76,24 +76,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvNamePrest" />
 
     <TextView
-        android:id="@+id/tvDrescServ"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
-        android:hint="Lista de serviços oferecidos"
-        android:textColorHint="#00a39b"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
-
-    <TextView
         android:id="@+id/tvNamePrest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,5 +98,20 @@
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvServUsu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

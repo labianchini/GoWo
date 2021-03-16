@@ -1,23 +1,35 @@
 package com.example.gowo.model;
 
+import android.graphics.Bitmap;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.gowo.util.HttpRequest;
+import com.example.gowo.util.Util;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class ViewServicoViewModel extends ViewModel {
-    //aparecer as informacoes do servico
 
     String id;
 
     MutableLiveData<Servico> servico;
 
-    public ViewServicoViewModel(String id) {
-        this.id = id;
-    }
+    public ViewServicoViewModel(String id) { this.id = id; }
 
-    public LiveData<Servico> getServico(){  //pegar os detalhes do servico
+    public LiveData<Servico> getServico(){
         if (this.servico == null){
             servico = new MutableLiveData<Servico>();
             loadServico();
@@ -25,12 +37,46 @@ public class ViewServicoViewModel extends ViewModel {
         return servico;
     }
 
-    void loadServico(){
+    void loadServico() {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_service_details.php", "POST", "UTF-8");
+                httpRequest.addParam("idService", id);
+                try {
+                    InputStream is = httpRequest.execute();
+                    String result = Util.inputStream2String(is, "UTF-8");
+                    httpRequest.finish();
 
+                    Log.d("HTTP_REQUEST_RESULT", result);
+
+                    JSONObject jsonObject = new JSONObject(result);
+                    int success = jsonObject.getInt("success");
+                    if (success == 1){
+                        JSONArray jsonArray = jsonObject.getJSONArray("services");
+                        JSONObject jProduct = jsonArray.getJSONObject(0);
+
+                        String nomeServ = jProduct.getString("sName");
+                        String nomePrest = jProduct.getString("idUserDo");
+                        String valor = jProduct.getString("sVal");
+                        String descricao = jProduct.getString("sDesc");
+                        String imgBase64 = jProduct.getString("sPhoto");
+                        String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                        Bitmap img = Util.base642Bitmap(pureBase64Encoded);
+
+                        //Servico s = new Servico(nomeServ, nomePrest, valor, descricao, );
+
+                        //servico.postValue(s);
+                    }
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     static public class ViewServicoViewModelFactory implements ViewModelProvider.Factory{
-        //para o construtor aceitar parâmetros
 
         String id;
 

@@ -2,27 +2,26 @@ package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.gowo.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class FavoritosActivity extends AppCompatActivity {
+public class RecentesActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favoritos);
+        setContentView(R.layout.activity_recentes);
 
-        Toolbar toolbarmain = findViewById(R.id.toolbarFavoritos);
-        setSupportActionBar(toolbarmain);
+        BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
+        navigationView.setOnNavigationItemSelectedListener(this);
+        navigationView.setSelectedItemId(R.id.favoritos);
     }
 
     @Override
@@ -34,25 +33,24 @@ public class FavoritosActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {  // funcão quando apertar em cada item
-        super.onOptionsItemSelected(item);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.home:
-                Intent i = new Intent(FavoritosActivity.this, HomeActivity.class);
+                Intent i = new Intent(RecentesActivity.this,HomeActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.favoritos:
-                Intent i = new Intent(FavoritosActivity.this, FavoritosActivity.class);
+                Intent i = new Intent(RecentesActivity.this, RecentesActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
             case R.id.perfil:
-                Intent i = new Intent(FavoritosActivity.this, PerfilActivity.class);
+                Intent i = new Intent(RecentesActivity.this, PerfilActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

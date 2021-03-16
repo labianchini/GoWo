@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".activity.ServicoActivity">
+    tools:context=".activity.ViewServicoActivity">
 
     <TextView
         android:id="@+id/txtViewValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Valor do Serviço"
         android:textColor="#E8000000"
         android:textSize="18sp"
         android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/txtViewBairro"
         app:layout_constraintTop_toBottomOf="@+id/txtViewDescr" />
 
@@ -37,17 +39,16 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:background="#00a39b"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
+        app:layout_constraintBottom_toBottomOf="@+id/imgServ"
         app:layout_constraintStart_toEndOf="@+id/imgServ"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNomePrest"
+        app:layout_constraintTop_toTopOf="@+id/imgServ"
         app:srcCompat="@drawable/ic_baseline_chat_24" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
@@ -62,9 +63,9 @@
         android:layout_height="180dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeServ"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -77,22 +78,21 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnChat"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
 
     <TextView
         android:id="@+id/txtViewNomePrest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Cabeça de Ideias"
         android:textColor="#000000"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imgServ"
-        app:layout_constraintTop_toTopOf="@+id/imgServ" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnChat"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeServ" />
 
     <TextView
         android:id="@+id/txtViewBairro"

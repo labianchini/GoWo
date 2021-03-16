@@ -18,19 +18,19 @@ import android.widget.Button;
 
 import com.example.gowo.model.Servico;
 import com.example.gowo.adapter.MyAdapter;
-import com.example.gowo.model.FeedViewModel;
+import com.example.gowo.model.FeedCategoriaViewModel;
 import com.example.gowo.R;
 
 import java.util.List;
 
-public class FeedActivity extends AppCompatActivity {
+public class FeedCategoriaActivity extends AppCompatActivity {
 
     static int ADD_PRODUCT_ACTIVITY_RESULT = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.activity_feed_categoria);
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);
@@ -41,12 +41,12 @@ public class FeedActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvServicos.setLayoutManager(layoutManager);
 
-        FeedViewModel feedViewModel = new ViewModelProvider(this).get(FeedViewModel.class);
-        LiveData<List<Servico>> servicos = feedViewModel.getServicos();   // Livedata- cria uma lista com os serviços que pode ser observada, mas não alterada
+        FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this).get(FeedCategoriaViewModel.class);
+        LiveData<List<Servico>> servicos = feedCategoriaViewModel.getServicos();   // Livedata- cria uma lista com os serviços que pode ser observada, mas não alterada
         servicos.observe(this, new Observer<List<Servico>>() {     //Funcão que vai observar se a lista mudou, e se mudou ela vai ser atualizada
             @Override
             public void onChanged(List<Servico> servicos) {
-                MyAdapter myAdapter = new MyAdapter(FeedActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
+                MyAdapter myAdapter = new MyAdapter(FeedCategoriaActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
                 rvServicos.setAdapter(myAdapter);  //A interface é atualizada
             }
         });
@@ -58,7 +58,7 @@ public class FeedActivity extends AppCompatActivity {
         btnVerMais1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FeedActivity.this, PrestadorActivity.class);
+                Intent i = new Intent(FeedCategoriaActivity.this, FeedPrestadorActivity.class);
                 startActivity(i);
             }
         });
@@ -69,8 +69,8 @@ public class FeedActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ADD_PRODUCT_ACTIVITY_RESULT){
             if(resultCode == Activity.RESULT_OK){
-                FeedViewModel feedViewModel= new ViewModelProvider(this).get(FeedViewModel.class);
-                feedViewModel.refreshServicos();
+                FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this).get(FeedCategoriaViewModel.class);
+                feedCategoriaViewModel.refreshServicos();
             }
         }
     }

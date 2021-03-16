@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.ServicoActivity"
-            android:parentActivityName=".activity.PrestadorActivity" />
+            android:name=".activity.ViewServicoActivity"
+            android:parentActivityName=".activity.FeedPrestadorActivity" />
         <activity
             android:name=".activity.AjudaActivity"
             android:parentActivityName=".activity.PerfilActivity" />
@@ -24,7 +24,7 @@
             android:name=".activity.InfoPessoaisActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".activity.FeedActivity"
+            android:name=".activity.FeedCategoriaActivity"
             android:parentActivityName=".activity.HomeActivity" />
         <activity
             android:name=".activity.MeusServicosActivity"
@@ -36,10 +36,10 @@
             android:name=".activity.CadastrarServicoActivity"
             android:parentActivityName=".activity.MeusServicosActivity" />
         <activity
-            android:name=".activity.PrestadorActivity"
-            android:parentActivityName=".activity.FeedActivity" />
+            android:name=".activity.FeedPrestadorActivity"
+            android:parentActivityName=".activity.FeedCategoriaActivity" />
         <activity android:name=".activity.PerfilActivity" />
-        <activity android:name=".activity.FavoritosActivity" />
+        <activity android:name=".activity.RecentesActivity" />
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity

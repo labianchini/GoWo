@@ -5,7 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00a39b"
-    tools:context=".activity.PrestadorActivity">
+    tools:context=".activity.FeedPrestadorActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvServUsu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <TextView
         android:id="@+id/tvNamePrest2"
@@ -65,27 +80,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgBtnChat"
         app:layout_constraintTop_toTopOf="@+id/imgViewEmpr" />
-
-    <TextView
-        android:id="@+id/txtViewDescricao"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
-        android:paddingLeft="8dp"
-        android:paddingRight="5dp"
-        android:text="Descrição"
-        android:textColor="#00a39b"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr" />
 
     <ImageButton
         android:id="@+id/imgBtnChat"

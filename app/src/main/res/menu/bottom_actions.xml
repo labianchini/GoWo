@@ -11,7 +11,7 @@
             android:title="Home" />
         <item
             android:id="@+id/favoritos"
-            android:icon="@drawable/icone_favoritos"
+            android:icon="@android:drawable/ic_popup_reminder"
             android:title="Favoritos" />
         <item
             android:id="@+id/perfil"

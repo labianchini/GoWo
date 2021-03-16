@@ -18,12 +18,12 @@ import com.example.gowo.R;
 import com.example.gowo.model.Servico;
 import com.example.gowo.model.ViewServicoViewModel;
 
-public class PrestadorActivity extends AppCompatActivity {
+public class FeedPrestadorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prestador);
+        setContentView(R.layout.activity_feed_prestador);
 
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);
@@ -49,14 +49,14 @@ public class PrestadorActivity extends AppCompatActivity {
                 //TextView tvNamePrest = findViewById(R.id.tvNamePrest);
                 //tvNamePrest.setText(servico.getIdPrest());
 
-                TextView tvDrescServ = findViewById(R.id.tvDrescServ);
-                tvDrescServ.setText(servico.getDescriptionServ());
+                //TextView tvDrescServ = findViewById(R.id.tvDrescServ);
+                //tvDrescServ.setText(servico.getDescriptionServ());
 
                 Button btnteste = findViewById(R.id.buttonTeste);
                 btnteste.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(PrestadorActivity.this, ServicoActivity.class);
+                        Intent i = new Intent(FeedPrestadorActivity.this, ViewServicoActivity.class);
                         startActivity(i);
                     }
                 });

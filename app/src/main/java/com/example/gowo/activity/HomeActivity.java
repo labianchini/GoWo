@@ -2,30 +2,15 @@ package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.gowo.R;
-import com.example.gowo.util.Config;
-import com.example.gowo.util.HttpRequest;
-import com.example.gowo.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -34,7 +19,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        navigationView = (BottomNavigationView) findViewById(R.id.toolbarhome);
+        BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.home);
 
@@ -78,14 +63,12 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 }
             }
         });*/
-        //Toolbar toolbar = findViewById(R.id.toolbarhome);  // tornar a toolbar principal
-        //setSupportActionBar(toolbar);
 
         ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
         imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -93,15 +76,15 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnFotografia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
-        ImageButton imgBtnGerais = findViewById(R.id.imgBtnGerais);
+        ImageButton imgBtnGerais = findViewById(R.id.imgBtnAutomotivo);
         imgBtnGerais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -109,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnComida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -117,7 +100,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnInformatica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -125,7 +108,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnCostura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -133,7 +116,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -141,73 +124,32 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imgBtnReforma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
-        ImageButton imgBtnMecanica = findViewById(R.id.imgBtnMecanica);
+        ImageButton imgBtnMecanica = findViewById(R.id.imgBtnBeleza);
         imgBtnMecanica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
     }
 
-
-    private BottomNavigationView navigationView;
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-/*
             switch (item.getItemId()){
                 case R.id.home:
                     Intent i = new Intent(HomeActivity.this,HomeActivity.class);
                     startActivity(i);
                 default:
                     super.onOptionsItemSelected(item);
-            }*/
+            }
         switch (item.getItemId()){
             case R.id.favoritos:
-                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
-                startActivity(i);
-            default:
-                super.onOptionsItemSelected(item);
-        }
-        switch (item.getItemId()){
-            case R.id.perfil:
-                Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
-                startActivity(i);
-            default:
-                super.onOptionsItemSelected(item);
-        }
-
-        return true;
-
-    }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {  // para o menu aparecer na toolbar
-        super.onCreateOptionsMenu(menu);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bottom_actions, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
-        switch (item.getItemId()){
-            case R.id.home:
-                Intent i = new Intent(HomeActivity.this,HomeActivity.class);
-                startActivity(i);
-            default:
-                super.onOptionsItemSelected(item);
-        }
-        switch (item.getItemId()){
-            case R.id.favoritos:
-                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
+                Intent i = new Intent(HomeActivity.this, RecentesActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
@@ -220,5 +162,5 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 super.onOptionsItemSelected(item);
         }
         return true;
-    }*/
+    }
 }
