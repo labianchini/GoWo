@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -38,6 +39,8 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String categoria = i.getStringExtra("categoria");
+
+        Log.d("categoria", categoria);
 
         FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this, new FeedCategoriaViewModel.FeedCategoriaViewModelFactory(categoria)).get(FeedCategoriaViewModel.class);
 

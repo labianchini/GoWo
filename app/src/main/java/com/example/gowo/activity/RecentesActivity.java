@@ -21,15 +21,7 @@ public class RecentesActivity extends AppCompatActivity implements BottomNavigat
 
         BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
-        navigationView.setSelectedItemId(R.id.favoritos);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {  // para o menu aparecer na toolbar
-        super.onCreateOptionsMenu(menu);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_toolbar, menu);
-        return true;
+        navigationView.setSelectedItemId(R.id.recentes);
     }
 
     @Override
@@ -42,7 +34,7 @@ public class RecentesActivity extends AppCompatActivity implements BottomNavigat
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.favoritos:
+            case R.id.recentes:
                 Intent i = new Intent(RecentesActivity.this, RecentesActivity.class);
                 startActivity(i);
             default:

@@ -66,7 +66,7 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.favoritos:
+            case R.id.recentes:
                 Intent i = new Intent(PerfilActivity.this, RecentesActivity.class);
                 startActivity(i);
             default:

@@ -176,7 +176,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     super.onOptionsItemSelected(item);
             }
         switch (item.getItemId()){
-            case R.id.favoritos:
+            case R.id.recentes:
                 Intent i = new Intent(HomeActivity.this, RecentesActivity.class);
                 startActivity(i);
             default:
