@@ -69,6 +69,15 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                //i.putExtra("category", category);
+                startActivity(i);
+            }
+        });
+        ImageButton imgBtnJardinagem = findViewById(R.id.imgBtnJardinagem);
+        imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
                 startActivity(i);
             }
         });
@@ -80,8 +89,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(i);
             }
         });
-        ImageButton imgBtnGerais = findViewById(R.id.imgBtnAutomotivo);
-        imgBtnGerais.setOnClickListener(new View.OnClickListener() {
+        ImageButton imgBtnAutomotivo = findViewById(R.id.imgBtnAutomotivo);
+        imgBtnAutomotivo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
@@ -128,8 +137,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(i);
             }
         });
-        ImageButton imgBtnMecanica = findViewById(R.id.imgBtnBeleza);
-        imgBtnMecanica.setOnClickListener(new View.OnClickListener() {
+        ImageButton imgBtnBeleza = findViewById(R.id.imgBtnBeleza);
+        imgBtnBeleza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);

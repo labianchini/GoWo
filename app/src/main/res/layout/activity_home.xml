@@ -251,7 +251,7 @@
         app:menu="@menu/bottom_actions" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imgBtnJardinagem"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -270,8 +270,8 @@
         android:gravity="center"
         android:text="Jardinagem"
         android:textColor="#00a39b"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnJardinagem"
+        app:layout_constraintStart_toStartOf="@+id/imgBtnJardinagem"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnJardinagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

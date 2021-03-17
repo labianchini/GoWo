@@ -61,14 +61,14 @@ public class FeedCategoriaViewModel extends ViewModel {
                     if (success == 1){
                         JSONArray jsonArray = jsonObject.getJSONArray("services");
                         for(int i = 0; i< jsonArray.length(); i++){
-                            JSONObject jServico = jsonArray.getJSONObject(i);
+                            JSONObject jPrestador = jsonArray.getJSONObject(i);
 
-                            String idUsu = jServico.getString("idUser");
-                            String nomeUsu = jServico.getString("usrName");
-                            String sobrenomeUsu = jServico.getString("usrLastName");
-                            String imgBase64 = jServico.getString("usrProfilePhoto");
+                            String idUsu = jPrestador.getString("idUser");
+                            String nomeUsu = jPrestador.getString("usrName");
+                            String sobrenomeUsu = jPrestador.getString("usrLastName");
+                            String imgBase64 = jPrestador.getString("usrProfilePhoto");
                             String imgUsu = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                            String endereço = jServico.getString("usrActiveAdress");
+                            String endereço = jPrestador.getString("usrActiveAdress");
 
                             //Servico servico = new Servico(idUsu, nomeUsu, sobrenomeUsu, imgUsu, endereço);
                             //servicosList.add(servico);
