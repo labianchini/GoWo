@@ -8,9 +8,21 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.gowo.R;
+import com.example.gowo.util.Config;
+import com.example.gowo.util.HttpRequest;
+import com.example.gowo.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -23,8 +35,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.home);
 
-        /*final String login = Config.getLogin(HomeActivity.this);
-        final String password = Config.getPassword(HomeActivity.this);
+        /*final String login = Config.getEmail(HomeActivity.this);
+        final String password = Config.getSenha(HomeActivity.this);
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
@@ -45,7 +57,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //dados do usuário
+                                //dados do usuário para informaçoes pessoais
                             }
                         });
                     }
@@ -75,7 +87,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
         ImageButton imgBtnJardinagem = findViewById(R.id.imgBtnJardinagem);
-        imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
+        imgBtnJardinagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);

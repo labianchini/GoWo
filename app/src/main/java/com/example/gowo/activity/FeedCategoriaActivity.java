@@ -44,7 +44,6 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this, new FeedCategoriaViewModel.FeedCategoriaViewModelFactory(categoria)).get(FeedCategoriaViewModel.class);
 
-
         final RecyclerView rvUsuarios = findViewById(R.id.rvUsuarios);
         rvUsuarios.setHasFixedSize(true);
 
