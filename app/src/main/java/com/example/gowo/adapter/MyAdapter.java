@@ -40,17 +40,17 @@ public class MyAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final Usuario usuario = this.usuarios.get(position);
 
-        ImageView imgViewEmpr = holder.itemView.findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(usuario.getImgUsu());
+        ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
+        imgUsu.setImageBitmap(usuario.getImgUsu());
 
-        TextView nome = holder.itemView.findViewById(R.id.nome);
-        nome.setText(usuario.getNameUsu());
+        TextView nomeUsu = holder.itemView.findViewById(R.id.nome);
+        nomeUsu.setText(usuario.getNameUsu());
 
-        TextView sobrenome = holder.itemView.findViewById(R.id.sobrenome);
-        sobrenome.setText(usuario.getSobrenomeUsu());
+        TextView endCidade = holder.itemView.findViewById(R.id.endCidade);
+        endCidade.setText(usuario.getEndCidade());
 
-        TextView endereco = holder.itemView.findViewById(R.id.endereco);
-        endereco.setText(usuario.getEnderecoUsu());
+        TextView endBairro = holder.itemView.findViewById(R.id.endBairro);
+        endBairro.setText(usuario.getEndBairro());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

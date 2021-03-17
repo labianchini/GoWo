@@ -51,7 +51,7 @@ public class FeedCategoriaViewModel extends ViewModel {
                 List<Usuario> usuariosList = new ArrayList<>();
 
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_category_services.php", "GET", "UTF-8");
-                httpRequest.addParam("sClass", categoria);
+                httpRequest.addParam("category", categoria);
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -66,15 +66,14 @@ public class FeedCategoriaViewModel extends ViewModel {
                         for(int i = 0; i< jsonArray.length(); i++){
                             JSONObject jPrestador = jsonArray.getJSONObject(i);
 
-                            String idUsu = jPrestador.getString("idUser");
-                            String nomeUsu = jPrestador.getString("usrName");
-                            String sobrenomeUsu = jPrestador.getString("usrLastName");
-                            String imgBase64 = jPrestador.getString("usrProfilePhoto");
+                            String nomeUsu = jPrestador.getString("userDoName");
+                            String imgBase64 = jPrestador.getString("userDoProfilePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
-                            String endereço = jPrestador.getString("usrActiveAdress");
+                            String endBairro = jPrestador.getString("sNbh");
+                            String endCidade = jPrestador.getString("sCity");
 
-                            Usuario usuario = new Usuario(idUsu, nomeUsu, sobrenomeUsu, endereço, imgUsu);
+                            Usuario usuario = new Usuario(nomeUsu, imgUsu, endBairro, endCidade);
                             usuariosList.add(usuario);
                         }
                         usuarios.postValue(usuariosList);
@@ -97,7 +96,7 @@ public class FeedCategoriaViewModel extends ViewModel {
         @NonNull
         @Override
         public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-            return (T) new ViewServicoViewModel(categoria);
+            return (T) new FeedCategoriaViewModel(categoria);
         }
     }
 }

@@ -58,11 +58,12 @@
     <TextView
         android:id="@+id/txtViewNomeUser"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="Usuário"
         android:textColor="#00a39b"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtViewOla"
         app:layout_constraintTop_toTopOf="@+id/txtViewOla" />

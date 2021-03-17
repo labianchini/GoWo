@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.gowo.model.Servico;
 import com.example.gowo.adapter.MyAdapter;
@@ -42,6 +43,9 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         Log.d("categoria", categoria);
 
+        TextView txtcategoria = findViewById(R.id.txtcategoria);
+        txtcategoria.setText(categoria);
+
         FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this, new FeedCategoriaViewModel.FeedCategoriaViewModelFactory(categoria)).get(FeedCategoriaViewModel.class);
 
         final RecyclerView rvUsuarios = findViewById(R.id.rvUsuarios);
@@ -61,15 +65,6 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        Button btnVerMais1 = findViewById(R.id.btnVerMais1);
-        btnVerMais1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(FeedCategoriaActivity.this, FeedPrestadorActivity.class);
-                startActivity(i);
-            }
-        });
 
     }
     @Override

@@ -10,15 +10,15 @@ public class Usuario {
     String senhaUsu;
     String telefoneUsu;
     String dataNascUsu;
-    String enderecoUsu;
+    String endBairro;
+    String endCidade;
     Bitmap imgUsu;
 
-    public Usuario(String idUsu, String nameUsu, String sobrenomeUsu, String enderecoUsu, Bitmap imgUsu) {
-        this.idUsu = idUsu;
+    public Usuario(String nameUsu, Bitmap imgUsu, String endBairro,String endCidade) {
         this.nameUsu = nameUsu;
-        this.sobrenomeUsu = sobrenomeUsu;
-        this.enderecoUsu = enderecoUsu;
         this.imgUsu = imgUsu;
+        this.endBairro = endBairro;
+        this.endCidade = endCidade;
     }
 
     public String getIdUsu() {
@@ -77,12 +77,20 @@ public class Usuario {
         this.dataNascUsu = dataNascUsu;
     }
 
-    public String getEnderecoUsu() {
-        return enderecoUsu;
+    public String getEndBairro() {
+        return endBairro;
     }
 
-    public void setEnderecoUsu(String enderecoUsu) {
-        this.enderecoUsu = enderecoUsu;
+    public void setEndBairro(String endBairro) {
+        this.endBairro = endBairro;
+    }
+
+    public String getEndCidade() {
+        return endCidade;
+    }
+
+    public void setEndCidade(String endCidade) {
+        this.endCidade = endCidade;
     }
 
     public Bitmap getImgUsu() {

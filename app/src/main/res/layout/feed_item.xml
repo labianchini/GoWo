@@ -20,38 +20,35 @@
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toTopOf="@+id/imgViewEmpr" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgViewEmpr"
-        tools:srcCompat="@tools:sample/avatars"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#CBFF90"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/sobrenome"
+        android:id="@+id/endCidade"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Sobrenome"
+        android:text="Cidade"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/nome" />
 
     <TextView
-        android:id="@+id/endereco"
+        android:id="@+id/endBairro"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -59,9 +56,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Endereço"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
+        android:layout_marginBottom="8dp"
+        android:text="Bairro"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
-        app:layout_constraintTop_toBottomOf="@+id/sobrenome" />
+        app:layout_constraintTop_toBottomOf="@+id/endCidade" />
 </androidx.constraintlayout.widget.ConstraintLayout>

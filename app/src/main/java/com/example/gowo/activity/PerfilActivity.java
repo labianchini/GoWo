@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.gowo.R;
 import com.example.gowo.util.Config;
@@ -23,6 +24,9 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
         BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.perfil);
+
+        //TextView txtViewNomeUser = findViewById(R.id.txtViewNomeUser);
+        //txtViewNomeUser.setText();
 
         Button btnInfPessoal = findViewById(R.id.btnInfPessoal);
         btnInfPessoal.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +45,6 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
                 startActivity(i);
             }
         });
-        // não sei se a função de sair está certa
         Button btnSair = findViewById(R.id.btnSair);
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,13 +71,6 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
         switch (item.getItemId()){
             case R.id.recentes:
                 Intent i = new Intent(PerfilActivity.this, RecentesActivity.class);
-                startActivity(i);
-            default:
-                super.onOptionsItemSelected(item);
-        }
-        switch (item.getItemId()){
-            case R.id.perfil:
-                Intent i = new Intent(PerfilActivity.this, PerfilActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

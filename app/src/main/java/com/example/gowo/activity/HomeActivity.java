@@ -141,7 +141,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
-                String categoria = "costura";
+                String categoria = "corte e costura";
                 i.putExtra("categoria", categoria);
                 startActivity(i);
             }
@@ -151,7 +151,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
-                String categoria = "pet";
+                String categoria = "cuidados pet";
                 i.putExtra("categoria", categoria);
                 startActivity(i);
             }
@@ -161,7 +161,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
-                String categoria = "reforma";
+                String categoria = "reformas e consertos";
                 i.putExtra("categoria", categoria);
                 startActivity(i);
             }
@@ -180,13 +180,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()){
-                case R.id.home:
-                    Intent i = new Intent(HomeActivity.this,HomeActivity.class);
-                    startActivity(i);
-                default:
-                    super.onOptionsItemSelected(item);
-            }
         switch (item.getItemId()){
             case R.id.recentes:
                 Intent i = new Intent(HomeActivity.this, RecentesActivity.class);

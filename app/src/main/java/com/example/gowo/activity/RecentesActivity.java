@@ -34,13 +34,6 @@ public class RecentesActivity extends AppCompatActivity implements BottomNavigat
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.recentes:
-                Intent i = new Intent(RecentesActivity.this, RecentesActivity.class);
-                startActivity(i);
-            default:
-                super.onOptionsItemSelected(item);
-        }
-        switch (item.getItemId()){
             case R.id.perfil:
                 Intent i = new Intent(RecentesActivity.this, PerfilActivity.class);
                 startActivity(i);
