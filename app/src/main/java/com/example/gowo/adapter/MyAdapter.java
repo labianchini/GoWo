@@ -12,19 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gowo.R;
-import com.example.gowo.model.Servico;
 import com.example.gowo.activity.FeedPrestadorActivity;
+import com.example.gowo.model.Usuario;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter {
 
     Context context;
-    List<Servico> servicos;
+    List<Usuario> usuarios;
 
-    public MyAdapter(Context context, List<Servico> servicos) {
+    public MyAdapter(Context context, List<Usuario> usuarios) {
         this.context = context;
-        this.servicos = servicos;
+        this.usuarios = usuarios;
     }
 
     @NonNull
@@ -38,24 +38,25 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        final Servico servico = this.servicos.get(position);
+        final Usuario usuario = this.usuarios.get(position);
 
         ImageView imgViewEmpr = holder.itemView.findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(servico.getPhotoServ());
+        imgViewEmpr.setImageBitmap(usuario.getImgUsu());
 
-        TextView nomeEmpr = holder.itemView.findViewById(R.id.nomeEmpr);
-        nomeEmpr.setText(servico.getNameServ());
+        TextView nome = holder.itemView.findViewById(R.id.nome);
+        nome.setText(usuario.getNameUsu());
 
-        TextView tvdescription = holder.itemView.findViewById(R.id.tvDescription);
-        tvdescription.setText(servico.getDescriptionServ());
+        TextView sobrenome = holder.itemView.findViewById(R.id.sobrenome);
+        sobrenome.setText(usuario.getSobrenomeUsu());
+
+        TextView endereco = holder.itemView.findViewById(R.id.endereco);
+        endereco.setText(usuario.getEnderecoUsu());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //quando clicar no servico
-
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
-                i.putExtra("id", servico.getIdServ());
+                i.putExtra("id", usuario.getIdUsu());
                 context.startActivity(i);
             }
         });
@@ -63,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return servicos.size();
+        return usuarios.size();
     }
 }
 

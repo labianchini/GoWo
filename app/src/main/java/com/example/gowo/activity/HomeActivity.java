@@ -69,7 +69,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
-                //i.putExtra("category", category);
+                String categoria = "limpeza";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -78,6 +79,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "jardinagem";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -86,6 +89,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "fotografia";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -94,6 +99,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "automotivo";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -102,6 +109,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "comida";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -110,6 +119,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "informatica";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -118,6 +129,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "costura";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -126,6 +139,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "pet";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -134,6 +149,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "reforma";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });
@@ -142,6 +159,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, FeedCategoriaActivity.class);
+                String categoria = "beleza";
+                i.putExtra("categoria", categoria);
                 startActivity(i);
             }
         });

@@ -20,6 +20,7 @@ import com.example.gowo.model.Servico;
 import com.example.gowo.adapter.MyAdapter;
 import com.example.gowo.model.FeedCategoriaViewModel;
 import com.example.gowo.R;
+import com.example.gowo.model.Usuario;
 
 import java.util.List;
 
@@ -35,19 +36,24 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);
 
-        final RecyclerView rvServicos = findViewById(R.id.rvServicos);
-        rvServicos.setHasFixedSize(true);
+        Intent i = getIntent();
+        String categoria = i.getStringExtra("categoria");
+
+        FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this, new FeedCategoriaViewModel.FeedCategoriaViewModelFactory(categoria)).get(FeedCategoriaViewModel.class);
+
+
+        final RecyclerView rvUsuarios = findViewById(R.id.rvUsuarios);
+        rvUsuarios.setHasFixedSize(true);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        rvServicos.setLayoutManager(layoutManager);
+        rvUsuarios.setLayoutManager(layoutManager);
 
-        FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this).get(FeedCategoriaViewModel.class);
-        LiveData<List<Servico>> servicos = feedCategoriaViewModel.getServicos();   // Livedata- cria uma lista com os serviços que pode ser observada, mas não alterada
-        servicos.observe(this, new Observer<List<Servico>>() {     //Funcão que vai observar se a lista mudou, e se mudou ela vai ser atualizada
+        final LiveData<List<Usuario>> usuarios = feedCategoriaViewModel.getUsuarios();   // Livedata- cria uma lista com os serviços que pode ser observada, mas não alterada
+        usuarios.observe(this, new Observer<List<Usuario>>() {//Funcão que vai observar se a lista mudou, e se mudou ela vai ser atualizada
             @Override
-            public void onChanged(List<Servico> servicos) {
-                MyAdapter myAdapter = new MyAdapter(FeedCategoriaActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
-                rvServicos.setAdapter(myAdapter);  //A interface é atualizada
+            public void onChanged(List<Usuario> usuarios) {
+                MyAdapter myAdapter = new MyAdapter(FeedCategoriaActivity.this, usuarios); //A mainActivity é avisada que chegou uma nova lista
+                rvUsuarios.setAdapter(myAdapter);  //A interface é atualizada
             }
         });
 
@@ -70,7 +76,7 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         if (requestCode == ADD_PRODUCT_ACTIVITY_RESULT){
             if(resultCode == Activity.RESULT_OK){
                 FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this).get(FeedCategoriaViewModel.class);
-                feedCategoriaViewModel.refreshServicos();
+                feedCategoriaViewModel.refreshUsuarios();
             }
         }
     }

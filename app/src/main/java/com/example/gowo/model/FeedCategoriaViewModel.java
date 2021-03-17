@@ -1,10 +1,13 @@
 package com.example.gowo.model;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
@@ -24,28 +27,28 @@ public class FeedCategoriaViewModel extends ViewModel {
 
     String categoria;
 
-    MutableLiveData<List<Servico>> servicos;
+    MutableLiveData<List<Usuario>> usuarios;
 
     public FeedCategoriaViewModel(String categoria){ this.categoria = categoria; }
 
-    public LiveData<List<Servico>> getServicos(){
-        if (this.servicos == null){
-            servicos = new MutableLiveData<>();
-            loadServicos();
+    public LiveData<List<Usuario>> getUsuarios(){
+        if (this.usuarios == null){
+            usuarios = new MutableLiveData<>();
+            loadUsuarios();
         }
-        return servicos;
+        return usuarios;
     }
 
-    public void refreshServicos(){
-        loadServicos();
+    public void refreshUsuarios(){
+        loadUsuarios();
     }
 
-    void loadServicos(){
+    void loadUsuarios(){
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                List<Servico> servicosList = new ArrayList<>();
+                List<Usuario> usuariosList = new ArrayList<>();
 
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_category_services.php", "GET", "UTF-8");
                 httpRequest.addParam("sClass", categoria);
@@ -67,13 +70,14 @@ public class FeedCategoriaViewModel extends ViewModel {
                             String nomeUsu = jPrestador.getString("usrName");
                             String sobrenomeUsu = jPrestador.getString("usrLastName");
                             String imgBase64 = jPrestador.getString("usrProfilePhoto");
-                            String imgUsu = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                            String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                            Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
                             String endereço = jPrestador.getString("usrActiveAdress");
 
-                            //Servico servico = new Servico(idUsu, nomeUsu, sobrenomeUsu, imgUsu, endereço);
-                            //servicosList.add(servico);
+                            Usuario usuario = new Usuario(idUsu, nomeUsu, sobrenomeUsu, endereço, imgUsu);
+                            usuariosList.add(usuario);
                         }
-                        servicos.postValue(servicosList);
+                        usuarios.postValue(usuariosList);
                     }
 
                 } catch (IOException | JSONException e) {
@@ -81,5 +85,19 @@ public class FeedCategoriaViewModel extends ViewModel {
                 }
             }
         });
+    }
+    static public class FeedCategoriaViewModelFactory implements ViewModelProvider.Factory{
+
+        String categoria;
+
+        public FeedCategoriaViewModelFactory(String categoria) {
+            this.categoria = categoria;
+        }
+
+        @NonNull
+        @Override
+        public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+            return (T) new ViewServicoViewModel(categoria);
+        }
     }
 }
