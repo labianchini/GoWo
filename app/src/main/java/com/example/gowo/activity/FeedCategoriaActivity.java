@@ -40,11 +40,12 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String categoria = i.getStringExtra("categoria");
+        String categoria_maisc = categoria.substring(0,1).toUpperCase() + categoria.substring(1);
 
         Log.d("categoria", categoria);
 
         TextView txtcategoria = findViewById(R.id.txtcategoria);
-        txtcategoria.setText(categoria);
+        txtcategoria.setText(categoria_maisc);
 
         FeedCategoriaViewModel feedCategoriaViewModel = new ViewModelProvider(this, new FeedCategoriaViewModel.FeedCategoriaViewModelFactory(categoria)).get(FeedCategoriaViewModel.class);
 
@@ -54,7 +55,7 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvUsuarios.setLayoutManager(layoutManager);
 
-        final LiveData<List<Usuario>> usuarios = feedCategoriaViewModel.getUsuarios();   // Livedata- cria uma lista com os serviços que pode ser observada, mas não alterada
+        final LiveData<List<Usuario>> usuarios = feedCategoriaViewModel.getUsuarios();   // Livedata- cria uma lista com os usuarios que pode ser observada, mas não alterada
         usuarios.observe(this, new Observer<List<Usuario>>() {//Funcão que vai observar se a lista mudou, e se mudou ela vai ser atualizada
             @Override
             public void onChanged(List<Usuario> usuarios) {

@@ -29,7 +29,7 @@
         android:layout_marginRight="8dp"
         android:autoText="false"
         android:text="Categoria"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:textColor="#00a39b"
         android:textIsSelectable="false"
         android:textSize="24sp"
