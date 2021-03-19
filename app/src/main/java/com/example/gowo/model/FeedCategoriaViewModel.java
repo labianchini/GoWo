@@ -66,6 +66,7 @@ public class FeedCategoriaViewModel extends ViewModel {
                         for(int i = 0; i< jsonArray.length(); i++){
                             JSONObject jPrestador = jsonArray.getJSONObject(i);
 
+                            String idPrest = jPrestador.getString("idUsr");
                             String nomeUsu = jPrestador.getString("userDoName");
                             String imgBase64 = jPrestador.getString("userDoProfilePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
@@ -73,7 +74,7 @@ public class FeedCategoriaViewModel extends ViewModel {
                             String endBairro = jPrestador.getString("sNbh");
                             String endCidade = jPrestador.getString("sCity");
 
-                            Usuario usuario = new Usuario(nomeUsu, imgUsu, endBairro, endCidade);
+                            Usuario usuario = new Usuario(idPrest,nomeUsu, imgUsu, endBairro, endCidade, categoria);
                             usuariosList.add(usuario);
                         }
                         usuarios.postValue(usuariosList);

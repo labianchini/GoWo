@@ -84,16 +84,16 @@ public class HttpRequest {
 
         if(method == "GET") {
             requestUrl = requestUrl + "?";
-            Iterator it = params.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
-                requestUrl = requestUrl + URLEncoder.encode(pair.getKey().toString(),"UTF-8");
-                requestUrl = requestUrl + "=";
-                requestUrl = requestUrl + URLEncoder.encode(pair.getValue().toString(),"UTF-8");
-                requestUrl = requestUrl + "&";
-            }
-            requestUrl =  requestUrl.substring(0, requestUrl.length() - 1);
+        Iterator it = params.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            requestUrl = requestUrl + URLEncoder.encode(pair.getKey().toString(),"UTF-8");
+            requestUrl = requestUrl + "=";
+            requestUrl = requestUrl + URLEncoder.encode(pair.getValue().toString(),"UTF-8");
+            requestUrl = requestUrl + "&";
         }
+        requestUrl =  requestUrl.substring(0, requestUrl.length() - 1);
+    }
 
         URL url = new URL(this.requestUrl);
         httpConn = (HttpURLConnection) url.openConnection();

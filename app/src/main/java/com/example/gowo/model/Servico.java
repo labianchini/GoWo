@@ -11,10 +11,10 @@ public class Servico {
     String enderecoServ;
     Bitmap photoServ;
 
-    public Servico(String idServ, String nameServ, String descriptionServ) {
+    public Servico(String idServ, String nameServ, String valorServ) {
         this.idServ = idServ;
         this.nameServ = nameServ;
-        this.descriptionServ = descriptionServ;
+        this.valorServ = valorServ;
     }
 
     public Servico(String idServ, String idPrest, String nameServ, String descriptionServ, Bitmap photoServ) {

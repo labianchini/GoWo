@@ -13,12 +13,23 @@ public class Usuario {
     String endBairro;
     String endCidade;
     Bitmap imgUsu;
+    String categoria;
 
-    public Usuario(String nameUsu, Bitmap imgUsu, String endBairro,String endCidade) {
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Usuario(String idUsu, String nameUsu, Bitmap imgUsu, String endBairro, String endCidade, String categoria) {
+        this.idUsu = idUsu;
         this.nameUsu = nameUsu;
         this.imgUsu = imgUsu;
         this.endBairro = endBairro;
         this.endCidade = endCidade;
+        this.categoria = categoria;
     }
 
     public String getIdUsu() {

@@ -11,14 +11,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gowo.R;
+import com.example.gowo.adapter.MyAdapterFeed;
+import com.example.gowo.adapter.MyAdapterPrest;
+import com.example.gowo.model.FeedPrestadorViewModel;
 import com.example.gowo.model.Servico;
+import com.example.gowo.model.Usuario;
 import com.example.gowo.model.ViewServicoViewModel;
+
+import java.util.List;
 
 public class FeedPrestadorActivity extends AppCompatActivity {
 
@@ -36,7 +43,9 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         Intent i = getIntent();
         String id = i.getStringExtra("id");
 
-        ViewServicoViewModel viewServicoViewModel = new ViewModelProvider(this, new ViewServicoViewModel.ViewServicoViewModelFactory(id)).get(ViewServicoViewModel.class);
+        String categoria = i.getStringExtra("categoria");
+
+        FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 
         final RecyclerView rvServUsu = findViewById(R.id.rvServUsu);
         rvServUsu.setHasFixedSize(true);
@@ -44,31 +53,12 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvServUsu.setLayoutManager(layoutManager);
 
-        LiveData<Servico> servico = viewServicoViewModel.getServico();
-        servico.observe(this, new Observer<Servico>() {
+        final LiveData<List<Servico>> servicos = feedPrestadorViewModel.getServicos();   // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
+        servicos.observe(this, new Observer<List<Servico>>() {
             @Override
-            public void onChanged(Servico servico) {
-                ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
-                imgViewEmpr.setImageBitmap(servico.getPhotoServ());
-
-                TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
-                txtViewNomeEmpr.setText(servico.getNameServ());
-
-                //TextView tvNamePrest = findViewById(R.id.tvNamePrest);
-                //tvNamePrest.setText(servico.getIdPrest());
-
-                //TextView tvDrescServ = findViewById(R.id.tvDrescServ);
-                //tvDrescServ.setText(servico.getDescriptionServ());
-
-                Button btnteste = findViewById(R.id.buttonTeste);
-                btnteste.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(FeedPrestadorActivity.this, ViewServicoActivity.class);
-                        startActivity(i);
-                    }
-                });
-
+            public void onChanged(List<Servico> servicos) {
+                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
+                rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
             }
         });
     }

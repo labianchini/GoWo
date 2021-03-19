@@ -64,8 +64,8 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
             public void onClick(View v) {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
-                i.putExtra("categoria",categoria);
-                Log.d("categoria", categoria);
+                i.putExtra("categoria",usuario.getCategoria());
+
                 context.startActivity(i);
             }
         });
