@@ -41,6 +41,8 @@ public class FeedCategoriaActivity extends AppCompatActivity {
 
         Log.d("categoria", categoria);
 
+        MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, categoria_maisc);
+
         TextView txtcategoria = findViewById(R.id.txtcategoria);
         txtcategoria.setText(categoria_maisc);
 
