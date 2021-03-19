@@ -17,12 +17,12 @@ import com.example.gowo.model.Usuario;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter {
+public class MyAdapterFeed extends RecyclerView.Adapter {
 
     Context context;
     List<Usuario> usuarios;
 
-    public MyAdapter(Context context, List<Usuario> usuarios) {
+    public MyAdapterFeed(Context context, List<Usuario> usuarios) {
         this.context = context;
         this.usuarios = usuarios;
     }
@@ -57,6 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter {
             public void onClick(View v) {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
+                i.putExtra("categoria",);
                 context.startActivity(i);
             }
         });

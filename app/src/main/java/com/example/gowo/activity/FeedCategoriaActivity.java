@@ -14,12 +14,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.gowo.model.Servico;
-import com.example.gowo.adapter.MyAdapter;
+import com.example.gowo.adapter.MyAdapterFeed;
 import com.example.gowo.model.FeedCategoriaViewModel;
 import com.example.gowo.R;
 import com.example.gowo.model.Usuario;
@@ -56,11 +53,11 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         rvUsuarios.setLayoutManager(layoutManager);
 
         final LiveData<List<Usuario>> usuarios = feedCategoriaViewModel.getUsuarios();   // Livedata- cria uma lista com os usuarios que pode ser observada, mas não alterada
-        usuarios.observe(this, new Observer<List<Usuario>>() {//Funcão que vai observar se a lista mudou, e se mudou ela vai ser atualizada
+        usuarios.observe(this, new Observer<List<Usuario>>() {
             @Override
             public void onChanged(List<Usuario> usuarios) {
-                MyAdapter myAdapter = new MyAdapter(FeedCategoriaActivity.this, usuarios); //A mainActivity é avisada que chegou uma nova lista
-                rvUsuarios.setAdapter(myAdapter);  //A interface é atualizada
+                MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, usuarios); //A mainActivity é avisada que chegou uma nova lista
+                rvUsuarios.setAdapter(myAdapterFeed);  //A interface é atualizada
             }
         });
 
