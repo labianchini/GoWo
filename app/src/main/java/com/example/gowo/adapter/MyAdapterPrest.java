@@ -2,6 +2,7 @@ package com.example.gowo.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,22 +43,26 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final Servico servico = this.servicos.get(position);
 
-        /*mageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
+        /*ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
         imgUsu.setImageBitmap(servico.getPhotoServ());*/
 
         TextView nomeServ = holder.itemView.findViewById(R.id.tvNomeServ);
         nomeServ.setText(servico.getNameServ());
 
-        TextView valorServ = holder.itemView.findViewById(R.id.tvPreco);
-        valorServ.setText(servico.getValorServ());
+        if (servico.getValorServ()=="null"){
+            TextView valorServ = holder.itemView.findViewById(R.id.tvPreco);
+            valorServ.setText("Valor não definido");
+        }
+        else {
+            TextView valorServ = holder.itemView.findViewById(R.id.tvPreco);
+            valorServ.setText(servico.getValorServ());
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, ViewServicoActivity.class);
-                //i.putExtra("id", usuario.getIdUsu());
-                //i.putExtra("categoria",usuario.getCategoria());
-
+                i.putExtra("id", servico.getIdServ());
                 context.startActivity(i);
             }
         });

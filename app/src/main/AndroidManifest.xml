@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.ViewServicoActivity"
-            android:parentActivityName=".activity.FeedPrestadorActivity" />
-        <activity
             android:name=".activity.AjudaActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
@@ -38,6 +35,9 @@
         <activity
             android:name=".activity.FeedPrestadorActivity"
             android:parentActivityName=".activity.FeedCategoriaActivity" />
+        <activity
+            android:name=".activity.ViewServicoActivity"
+            android:parentActivityName=".activity.FeedPrestadorActivity" />
         <activity android:name=".activity.PerfilActivity" />
         <activity android:name=".activity.RecentesActivity" />
         <activity android:name=".activity.HomeActivity" />

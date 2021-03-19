@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.example.gowo.model.FeedPrestadorViewModel;
 import com.example.gowo.model.Servico;
 import com.example.gowo.model.Usuario;
 import com.example.gowo.model.ViewServicoViewModel;
+import com.example.gowo.util.Util;
 
 import java.util.List;
 
@@ -42,8 +44,21 @@ public class FeedPrestadorActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String id = i.getStringExtra("id");
-
         String categoria = i.getStringExtra("categoria");
+        String nomeUsu = i.getStringExtra("nomeUsu");
+        String localizacao = i.getStringExtra("localizacao");
+        /*String photo = i.getStringExtra("photo");
+        String pureBase64Encoded = photo.substring(photo.indexOf(",") + 1);
+        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);*/
+
+        TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
+        txtViewNomeEmpr.setText(nomeUsu);
+
+        TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
+        tvLocalizacao.setText(localizacao);
+
+        /*ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
+        imgViewEmpr.setImageBitmap(imgUsu);*/
 
         FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 

@@ -42,8 +42,9 @@ public class ViewServicoViewModel extends ViewModel {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_service_details.php", "POST", "UTF-8");
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_service_details.php", "GET", "UTF-8");
                 httpRequest.addParam("idService", id);
+
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -54,20 +55,23 @@ public class ViewServicoViewModel extends ViewModel {
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");
                     if (success == 1){
-                        JSONArray jsonArray = jsonObject.getJSONArray("services");
+                        JSONArray jsonArray = jsonObject.getJSONArray("service");
                         JSONObject jProduct = jsonArray.getJSONObject(0);
 
+                        String idServ = jProduct.getString("idService");
+                        String idPrest = jProduct.getString("idUserDo");
                         String nomeServ = jProduct.getString("sName");
-                        String nomePrest = jProduct.getString("idUserDo");
-                        String valor = jProduct.getString("sVal");
                         String descricao = jProduct.getString("sDesc");
+                        String valor = jProduct.getString("sVal");
+                        String idEndereco = jProduct.getString("sAdressId");
                         String imgBase64 = jProduct.getString("sPhoto");
                         String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                         Bitmap img = Util.base642Bitmap(pureBase64Encoded);
+                        String categoria = jProduct.getString("sClass");
 
-                        //Servico s = new Servico(nomeServ, nomePrest, valor, descricao, );
+                        Servico s = new Servico(idServ, idPrest, nomeServ, descricao, valor, idEndereco, img, categoria);
 
-                        //servico.postValue(s);
+                        servico.postValue(s);
                     }
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();

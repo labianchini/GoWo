@@ -50,7 +50,7 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
         ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
         imgUsu.setImageBitmap(usuario.getImgUsu());
 
-        TextView nomeUsu = holder.itemView.findViewById(R.id.nome);
+        final TextView nomeUsu = holder.itemView.findViewById(R.id.nome);
         nomeUsu.setText(usuario.getNameUsu());
 
         TextView endCidade = holder.itemView.findViewById(R.id.endCidade);
@@ -65,7 +65,9 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
                 i.putExtra("categoria",usuario.getCategoria());
-
+                i.putExtra("nomeUsu", usuario.getNameUsu());
+                i.putExtra("localizacao", usuario.getEndBairro() + " - " + usuario.getEndCidade());
+                //i.putExtra("photo", usuario.getPhotoStr());
                 context.startActivity(i);
             }
         });
@@ -76,4 +78,5 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
         return usuarios.size();
     }
 }
+
 

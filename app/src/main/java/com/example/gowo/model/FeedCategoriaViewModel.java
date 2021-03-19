@@ -74,7 +74,7 @@ public class FeedCategoriaViewModel extends ViewModel {
                             String endBairro = jPrestador.getString("sNbh");
                             String endCidade = jPrestador.getString("sCity");
 
-                            Usuario usuario = new Usuario(idPrest,nomeUsu, imgUsu, endBairro, endCidade, categoria);
+                            Usuario usuario = new Usuario(idPrest, nomeUsu, imgUsu, endBairro, endCidade, categoria, imgBase64);
                             usuariosList.add(usuario);
                         }
                         usuarios.postValue(usuariosList);

@@ -50,7 +50,6 @@ public class FeedPrestadorViewModel extends ViewModel {
             public void run() {
                 List<Servico> servicosList = new ArrayList<>();
 
-
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
                 httpRequest.addParam("worker", id);
                 httpRequest.addParam("category", categoria);
@@ -69,15 +68,14 @@ public class FeedPrestadorViewModel extends ViewModel {
                         for(int i = 0; i< jsonArray.length(); i++){
                             JSONObject jServico = jsonArray.getJSONObject(i);
 
-                            String idServ = jServico.getString("idService");
-                            String sName = jServico.getString("sName");
-                            String sVal = jServico.getString("sVal");
-
-                            /*String imgBase64 = jServico.getString("userDoProfilePhoto");
+                            String idServ = jServico.getString("serviceId");
+                            String sName = jServico.getString("serviceName");
+                            String imgBase64 = jServico.getString("servicePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                            Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);*/
+                            Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+                            String sVal = jServico.getString("serviceVal");
 
-                            Servico servico = new Servico(idServ, sName, sVal);
+                            Servico servico = new Servico(idServ, sName, sVal, imgUsu, imgBase64);
                             servicosList.add(servico);
                         }
                         servicos.postValue(servicosList);

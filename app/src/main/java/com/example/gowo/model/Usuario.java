@@ -14,22 +14,16 @@ public class Usuario {
     String endCidade;
     Bitmap imgUsu;
     String categoria;
+    String photoStr;
 
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public Usuario(String idUsu, String nameUsu, Bitmap imgUsu, String endBairro, String endCidade, String categoria) {
+    public Usuario(String idUsu, String nameUsu, Bitmap imgUsu, String endBairro, String endCidade, String categoria, String photoStr) {
         this.idUsu = idUsu;
         this.nameUsu = nameUsu;
         this.imgUsu = imgUsu;
         this.endBairro = endBairro;
         this.endCidade = endCidade;
         this.categoria = categoria;
+        this.photoStr = photoStr;
     }
 
     public String getIdUsu() {
@@ -110,5 +104,21 @@ public class Usuario {
 
     public void setImgUsu(Bitmap imgUsu) {
         this.imgUsu = imgUsu;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getPhotoStr() {
+        return photoStr;
+    }
+
+    public void setPhotoStr(String photoStr) {
+        this.photoStr = photoStr;
     }
 }

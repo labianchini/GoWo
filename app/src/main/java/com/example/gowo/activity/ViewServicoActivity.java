@@ -1,5 +1,6 @@
 package com.example.gowo.activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,12 +27,15 @@ public class ViewServicoActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarVoltar);
         setSupportActionBar(toolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         Intent i = getIntent();
-        String id = i.getStringExtra("idService");
+        String id = i.getStringExtra("id");
 
-        ViewServicoViewModel viewProductViewModel = new ViewModelProvider(this, new ViewServicoViewModel.ViewServicoViewModelFactory(id)).get(ViewServicoViewModel.class);
+        ViewServicoViewModel viewServicoViewModel = new ViewModelProvider(this, new ViewServicoViewModel.ViewServicoViewModelFactory(id)).get(ViewServicoViewModel.class);
 
-        LiveData<Servico> servico = viewProductViewModel.getServico();
+        LiveData<Servico> servico = viewServicoViewModel.getServico();
         servico.observe(this, new Observer<Servico>() {
             @Override
             public void onChanged(Servico servico) {
@@ -40,20 +45,26 @@ public class ViewServicoActivity extends AppCompatActivity {
                 TextView txtViewNomeServ = findViewById(R.id.txtViewNomeServ);
                 txtViewNomeServ.setText(servico.getNameServ());
 
-                TextView txtViewNomePrest = findViewById(R.id.txtViewNomePrest);
-                txtViewNomePrest.setText(servico.getIdPrest()); //como eu vou pegar o nome
+                /*TextView txtViewNomePrest = findViewById(R.id.txtViewNomePrest);
+                txtViewNomePrest.setText(servico.);*/
 
-                //TextView txtViewValor = findViewById(R.id.txtViewValor);
-                //txtViewValor.setText(servico.);
+                /*TextView txtViewBairro = findViewById(R.id.txtViewBairro);
+                txtViewBairro.setText(servico.);*/
+
+                /*TextView txtViewCidade = findViewById(R.id.txtViewCidade);
+                txtViewCidade.setText(servico.);*/
 
                 TextView txtViewDescr = findViewById(R.id.txtViewDescr);
                 txtViewDescr.setText(servico.getDescriptionServ());
 
-                //TextView txtViewBairro = findViewById(R.id.txtViewBairro);
-                //txtViewBairro.setText(servico.);
-
-                //TextView txtViewCidade = findViewById(R.id.txtViewCidade);
-                //txtViewCidade.setText(servico.);
+                if (servico.getValorServ()=="null"){
+                    TextView txtViewValor = findViewById(R.id.txtViewValor);
+                    txtViewValor.setText("Valor não definido");
+                }
+                else {
+                    TextView txtViewValor = findViewById(R.id.txtViewValor);
+                    txtViewValor.setText(servico.getValorServ());
+                }
             }
         });
     }

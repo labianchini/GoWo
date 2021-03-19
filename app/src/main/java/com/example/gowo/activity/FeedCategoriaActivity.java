@@ -39,8 +39,6 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         String categoria = i.getStringExtra("categoria");
         String categoria_maisc = categoria.substring(0,1).toUpperCase() + categoria.substring(1);
 
-        Log.d("categoria", categoria);
-
         MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, categoria_maisc);
 
         TextView txtcategoria = findViewById(R.id.txtcategoria);
