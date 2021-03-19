@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,6 +37,12 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         String id = i.getStringExtra("id");
 
         ViewServicoViewModel viewServicoViewModel = new ViewModelProvider(this, new ViewServicoViewModel.ViewServicoViewModelFactory(id)).get(ViewServicoViewModel.class);
+
+        final RecyclerView rvServUsu = findViewById(R.id.rvServUsu);
+        rvServUsu.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        rvServUsu.setLayoutManager(layoutManager);
 
         LiveData<Servico> servico = viewServicoViewModel.getServico();
         servico.observe(this, new Observer<Servico>() {

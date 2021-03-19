@@ -84,8 +84,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button BtnCliqueAqui = findViewById(R.id.btnCliqueAqui);
-        BtnCliqueAqui.setOnClickListener(new View.OnClickListener() {
+        Button btnCadastrarUsu = findViewById(R.id.btnCadastrarUsu);
+        btnCadastrarUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
