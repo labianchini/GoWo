@@ -34,10 +34,11 @@
             android:parentActivityName=".activity.MeusServicosActivity" />
         <activity
             android:name=".activity.FeedPrestadorActivity"
-            android:parentActivityName=".activity.FeedCategoriaActivity" />
+            android:parentActivityName=".activity.InfoPessoaisActivity" />
         <activity
             android:name=".activity.ViewServicoActivity"
             android:parentActivityName=".activity.FeedPrestadorActivity" />
+
         <activity android:name=".activity.PerfilActivity" />
         <activity android:name=".activity.RecentesActivity" />
         <activity android:name=".activity.HomeActivity" />

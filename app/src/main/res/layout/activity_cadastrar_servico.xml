@@ -22,9 +22,6 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -35,8 +32,7 @@
         android:paddingBottom="1dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imvPhotoServ"
-        app:layout_constraintTop_toTopOf="@+id/imvPhotoServ" />
+        app:layout_constraintTop_toTopOf="@+id/imgBtnAddPhoto" />
 
     <EditText
         android:id="@+id/categoriaServ"
@@ -60,17 +56,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Bairro:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddServ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cidadeServ" />
 
     <EditText
         android:id="@+id/valorServ"
@@ -94,26 +90,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Cidade:"
         android:inputType="textPersonName"
         android:padding="2dp"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/bairroServ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvlocalizacao" />
 
     <Button
         android:id="@+id/btnAddServ"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
         android:background="#00a39b"
         android:text="Adicionar"
         android:textColor="#FFFFFF"
@@ -127,13 +123,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:text="Localização"
         android:textColor="#00a39b"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cidadeServ"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddPhoto" />
 
     <TextView
         android:id="@+id/tvNovoServico"
@@ -153,44 +149,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#00A39B"
+        android:background="#FFFFFF"
+        android:tint="#A8000000"
         app:layout_constraintEnd_toStartOf="@+id/categoriaServ"
-        app:layout_constraintStart_toStartOf="@+id/imvPhotoServ"
-        app:layout_constraintTop_toBottomOf="@+id/imvPhotoServ"
-        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
-
-    <ImageView
-        android:id="@+id/imvPhotoServ"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNovoServico"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
     <EditText
         android:id="@+id/edtDescription"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Descrição do serviço:"
         android:inputType="textMultiLine"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvlocalizacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddPhoto"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
