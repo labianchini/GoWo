@@ -43,8 +43,14 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final Servico servico = this.servicos.get(position);
 
-        ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
-        imgUsu.setImageBitmap(servico.getPhotoServ());
+        if (servico.getPhotoServ()==null) {
+            String oi= "oi";
+            Log.d("oi", oi);
+        }
+        else {
+            ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
+            imgUsu.setImageBitmap(servico.getPhotoServ());
+        }
 
         TextView nomeServ = holder.itemView.findViewById(R.id.tvNomeServ);
         nomeServ.setText(servico.getNameServ());
