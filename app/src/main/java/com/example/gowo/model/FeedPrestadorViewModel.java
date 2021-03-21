@@ -72,10 +72,11 @@ public class FeedPrestadorViewModel extends ViewModel {
                             String sName = jServico.getString("serviceName");
                             String imgBase64 = jServico.getString("servicePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                            Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+                            Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
+                            Log.d("usu", imgBase64);
                             String sVal = jServico.getString("serviceVal");
 
-                            Servico servico = new Servico(idServ, sName, sVal, imgUsu, imgBase64);
+                            Servico servico = new Servico(idServ, sName, sVal, imgServ, imgBase64);
                             servicosList.add(servico);
                         }
                         servicos.postValue(servicosList);
