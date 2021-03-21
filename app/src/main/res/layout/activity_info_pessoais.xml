@@ -268,21 +268,10 @@
         android:id="@+id/imgViewPhoto"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvEditFoto"
-        app:layout_constraintStart_toStartOf="@+id/tvEditFoto"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditFoto"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tvEditFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Foto"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEditarInfoPes" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEditarInfoPes"
+        tools:layout_editor_absoluteX="156dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvSobrenome"

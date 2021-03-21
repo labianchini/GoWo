@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gowo.R;
-import com.example.gowo.util.Config;
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 
@@ -80,7 +79,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de email não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
-                EditText pswdUsu1 =  findViewById(R.id.pswdUsu1);
+                EditText pswdUsu1 =  findViewById(R.id.pswdUsu);
                 final String senha1 = pswdUsu1.getText().toString();
                 if(senha1.isEmpty()) {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de senha não preenchido", Toast.LENGTH_LONG).show();

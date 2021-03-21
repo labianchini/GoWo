@@ -47,9 +47,10 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         String categoria = i.getStringExtra("categoria");
         String nomeUsu = i.getStringExtra("nomeUsu");
         String localizacao = i.getStringExtra("localizacao");
-        /*String photo = i.getStringExtra("photo");
+        String photo = i.getStringExtra("photo");
+        Log.d("foto_feedprestador", photo);
         String pureBase64Encoded = photo.substring(photo.indexOf(",") + 1);
-        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);*/
+        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
 
         TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
         txtViewNomeEmpr.setText(nomeUsu);
@@ -57,8 +58,8 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
         tvLocalizacao.setText(localizacao);
 
-        /*ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(imgUsu);*/
+        ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
+        imgViewEmpr.setImageBitmap(imgUsu);
 
         FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 
