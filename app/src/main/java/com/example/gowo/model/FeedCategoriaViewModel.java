@@ -57,8 +57,6 @@ public class FeedCategoriaViewModel extends ViewModel {
                     String result = Util.inputStream2String(is, "UTF-8");
                     httpRequest.finish();
 
-                    Log.d("HTTP_REQUEST_RESULT", result);
-
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");
                     if (success == 1){
@@ -71,7 +69,6 @@ public class FeedCategoriaViewModel extends ViewModel {
                             String imgBase64 = jPrestador.getString("userDoProfilePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
-                            Log.d("usu", imgBase64);
                             String endBairro = jPrestador.getString("sNbh");
                             String endCidade = jPrestador.getString("sCity");
 

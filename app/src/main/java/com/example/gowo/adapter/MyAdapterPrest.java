@@ -45,10 +45,9 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
 
         if (servico.getPhotoServ()==null) {
             String oi= "oi";
-            Log.d("oi", oi);
         }
         else {
-            ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
+            ImageView imgUsu = holder.itemView.findViewById(R.id.imgServico);
             imgUsu.setImageBitmap(servico.getPhotoServ());
         }
 

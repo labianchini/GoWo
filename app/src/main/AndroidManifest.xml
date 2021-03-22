@@ -34,7 +34,7 @@
             android:parentActivityName=".activity.MeusServicosActivity" />
         <activity
             android:name=".activity.FeedPrestadorActivity"
-            android:parentActivityName=".activity.InfoPessoaisActivity" />
+            android:parentActivityName=".activity.FeedCategoriaActivity" />
         <activity
             android:name=".activity.ViewServicoActivity"
             android:parentActivityName=".activity.FeedPrestadorActivity" />

@@ -48,7 +48,6 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         String nomeUsu = i.getStringExtra("nomeUsu");
         String localizacao = i.getStringExtra("localizacao");
         String photo = i.getStringExtra("photo");
-        Log.d("foto_feedprestador", photo);
         String pureBase64Encoded = photo.substring(photo.indexOf(",") + 1);
         Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
 

@@ -53,13 +53,10 @@ public class FeedPrestadorViewModel extends ViewModel {
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
                 httpRequest.addParam("worker", id);
                 httpRequest.addParam("category", categoria);
-
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
                     httpRequest.finish();
-
-                    Log.d("HTTP_REQUEST_RESULT", result);
 
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");
@@ -73,7 +70,6 @@ public class FeedPrestadorViewModel extends ViewModel {
                             String imgBase64 = jServico.getString("servicePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
-                            Log.d("usu", imgBase64);
                             String sVal = jServico.getString("serviceVal");
 
                             Servico servico = new Servico(idServ, sName, sVal, imgServ, imgBase64);

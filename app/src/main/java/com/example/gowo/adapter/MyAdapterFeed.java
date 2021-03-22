@@ -67,7 +67,6 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
                 i.putExtra("categoria",usuario.getCategoria());
                 i.putExtra("nomeUsu", usuario.getNameUsu());
                 i.putExtra("localizacao", usuario.getEndBairro() + " - " + usuario.getEndCidade());
-                Log.d("foto_myadapterfeed", usuario.getPhotoStr());
                 i.putExtra("photo", usuario.getPhotoStr());
                 context.startActivity(i);
             }
