@@ -55,14 +55,6 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         Intent i = getIntent();
         String id = i.getStringExtra("id");
         String categoria = i.getStringExtra("categoria");
-        /*String nomeUsu = i.getStringExtra("nomeUsu");
-        String localizacao = i.getStringExtra("localizacao");
-        String photo = i.getStringExtra("photo");
-        String pureBase64Encoded = photo.substring(photo.indexOf(",") + 1);
-        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);*/
-
-
-
 
         FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 
@@ -72,27 +64,22 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvServUsu.setLayoutManager(layoutManager);
 
-        final LiveData<List<Servico>> servicos = feedPrestadorViewModel.getServicos();   // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
+        final LiveData<List<Servico>> servicos = feedPrestadorViewModel.getPrestServ(); // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
         servicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
                 MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
                 rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
+
+                TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
+                txtViewNomeEmpr.setText(servicos);
+
+                TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
+                tvLocalizacao.setText(usuario.getValue().get(0).getEndBairro() + " - " + usuario.getValue().get(0).getEndCidade());
+
+                ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
+                imgViewEmpr.setImageBitmap(usuario.getValue().get(0).getImgUsu());
             }
         });
-
-        LiveData<List<Usuario>> usuario = feedPrestadorViewModel.getPrestador();
-
-        TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
-        txtViewNomeEmpr.setText(usuario.getValue().get(0).getNameUsu());
-
-        TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
-        tvLocalizacao.setText(usuario.getValue().get(0).getEndBairro() + " - " + usuario.getValue().get(0).getEndCidade());
-
-        ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(usuario.getValue().get(0).getImgUsu());
-
     }
-
-
 }

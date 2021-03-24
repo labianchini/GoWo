@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
@@ -14,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -57,23 +59,13 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
-        imgBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
-            }
-        });
-
         final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
         final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
-        Log.d("current_activity", selectPhotoLocation);
+        Log.d("vaiii", cadastrarUsuarioViewModel.getSelectPhotoLocation());
         if (!selectPhotoLocation.isEmpty()){
-            ImageButton imvPhoto = findViewById(R.id.imgBtnAddFoto);
-            Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imvPhoto.getWidth(), imvPhoto.getHeight());
-            imvPhoto.setImageBitmap(bitmap);
+            ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
+            Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imgBtn.getWidth(), imgBtn.getHeight());
+            imgBtn.setImageBitmap(bitmap);
         }
 
         Button btnAddUsu = findViewById(R.id.btnAddUsu);
@@ -167,34 +159,48 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 });
             }
         });
+        ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PHOTO_PICKER_REQUEST){
-            CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
-            String currentPhotoPath = cadastrarUsuarioViewModel.getSelectPhotoLocation();
             File f = null;
-            if(resultCode == Activity.RESULT_OK){
-                selectPhotoLocation = data.getData();
-                ImageButton imvPhotoPreview = findViewById(R.id.imgBtnAddFoto);
-                imvPhotoPreview.setImageURI(selectPhotoLocation);
+            try {
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());  // transformar a data em uma string
                 String imageFileName = "JPEG" + timeStamp;  // nome do arquivo
                 File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                try {
-                    f = File.createTempFile(imageFileName, ".jpg", storageDir);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                cadastrarUsuarioViewModel.setCurrentPhotoPath(f.getAbsolutePath());
+                f = File.createTempFile(imageFileName, ".jpg", storageDir);
+            } catch (IOException e) {
+                Toast.makeText(CadastrarUsuarioActivity.this, "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
+                return;
             }
-            else{
-                f = new File(currentPhotoPath);
-                
-                f.delete();
-                cadastrarUsuarioViewModel.setCurrentPhotoPath("");
+
+            CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
+            String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
+
+            if (f != null) {
+                Uri fUri = FileProvider.getUriForFile(CadastrarUsuarioActivity.this, "com.example.gowo.fileprovider", f);
+                if (resultCode == Activity.RESULT_OK) {
+                    ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
+                    Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imgBtn.getWidth(), imgBtn.getHeight());
+                    imgBtn.setImageBitmap(bitmap);
+                }
+                else{
+                    f = new File(selectPhotoLocation);
+
+                    f.delete();
+                    cadastrarUsuarioViewModel.setSelectPhotoLocation("");
+                }
             }
         }
     }
