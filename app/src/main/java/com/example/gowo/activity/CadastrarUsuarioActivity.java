@@ -4,11 +4,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,16 +23,22 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gowo.R;
+import com.example.gowo.model.CadastrarUsuarioViewModel;
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import static com.example.gowo.util.Util.bitmapBase64;
 
 public class CadastrarUsuarioActivity extends AppCompatActivity {
 
@@ -45,8 +57,8 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        ImageButton imgBtnAddFoto = findViewById(R.id.imgBtnAddFoto);
-        imgBtnAddFoto.setOnClickListener(new View.OnClickListener() {
+        ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
+        imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
@@ -55,11 +67,24 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             }
         });
 
+        final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
+        final String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
+        if (!currentPhotoPath.isEmpty()){
+            ImageButton imvPhoto = findViewById(R.id.imgBtnAddFoto);
+            Bitmap bitmap = Util.getBitmap(currentPhotoPath, imvPhoto.getWidth(), imvPhoto.getHeight());
+            imvPhoto.setImageBitmap(bitmap);
+        }
+
         Button btnAddUsu = findViewById(R.id.btnAddUsu);
         btnAddUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //ImageView imgPhotoUsu = findViewById(R.id.imgPhotoUsu);
+                final String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
+                if (currentPhotoPath.isEmpty()){
+                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de foto não preenchido", Toast.LENGTH_LONG).show();
+                    v.setEnabled(true);
+                    return;
+                }
 
                 EditText nomeUsu =  findViewById(R.id.nomeUsu);
                 final String nome = nomeUsu.getText().toString();
@@ -79,20 +104,10 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de email não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
-                EditText pswdUsu1 =  findViewById(R.id.pswdUsu);
-                final String senha1 = pswdUsu1.getText().toString();
-                if(senha1.isEmpty()) {
+                EditText pswdUsu =  findViewById(R.id.pswdUsu);
+                final String senha = pswdUsu.getText().toString();
+                if(senha.isEmpty()) {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de senha não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText pswdUsu2 =  findViewById(R.id.pswdUsu2);
-                final String senha2 = pswdUsu2.getText().toString();
-                if(senha2.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de confirme sua senha não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if(!senha1.equals(senha2)) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Senha não confere", Toast.LENGTH_LONG).show();
                     return;
                 }
                 EditText dataUsu =  findViewById(R.id.dataUsu);
@@ -107,62 +122,18 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de telefone não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
-                EditText cepUsu =  findViewById(R.id.cepUsu);
-                final String cep = cepUsu.getText().toString();
-                if(cep.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de cep não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText estadoUsu =  findViewById(R.id.estadoUsu);
-                final String estado = estadoUsu.getText().toString();
-                if(estado.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de estado não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText cidadeUsu =  findViewById(R.id.cidadeUsu);
-                final String cidade = cidadeUsu.getText().toString();
-                if(cidade.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de cidade não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText bairroUsu =  findViewById(R.id.bairroUsu);
-                final String bairro = bairroUsu.getText().toString();
-                if(bairro.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de bairro não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText ruaUsu =  findViewById(R.id.ruaUsu);
-                final String rua = ruaUsu.getText().toString();
-                if(rua.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de rua não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                EditText numUsu =  findViewById(R.id.numUsu);
-                final String numero = numUsu.getText().toString();
-                if(numero.isEmpty()) {
-                    Toast.makeText(CadastrarUsuarioActivity.this, "Campo de numero não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
                 ExecutorService executorService = Executors.newSingleThreadExecutor();
                 executorService.execute(new Runnable() {
                     @Override
                     public void run() {
-                        HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/register.php", "POST", "UTF-8");
-                        httpRequest.addParam("nome", nome);
-                        httpRequest.addParam("last_name", sobrenome);
-                        httpRequest.addParam("email", email);
-                        //httpRequest.addParam("senha1", senha1);
-                        //httpRequest.addParam("senha2", senha2);
-                        httpRequest.addParam("dateN", dataNasc);
+                        HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_user_register.php", "POST", "UTF-8");
+                        httpRequest.addParam("nameNewUser", nome);
+                        httpRequest.addParam("lastNameNewUser", sobrenome);
+                        httpRequest.addParam("newEmail", email);
+                        httpRequest.addParam("pwd", senha);
+                        httpRequest.addParam("dateBorn", dataNasc);
                         httpRequest.addParam("cell", telefone);
-                        //httpRequest.addParam("profile_photo", foto);
-                        //httpRequest.addParam("cep", cep);
-                        //httpRequest.addParam("estado", estado);
-                        //httpRequest.addParam("cidade", cidade);
-                        //httpRequest.addParam("bairro", bairro);
-                        //httpRequest.addParam("rua", rua);
-                        //httpRequest.addParam("numero", numero);
-
+                        httpRequest.addFile("img", new File(currentPhotoPath));
                         try {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
@@ -201,10 +172,28 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PHOTO_PICKER_REQUEST){
+            CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
+            String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
+            File f = null;
             if(resultCode == Activity.RESULT_OK){
                 selectPhotoLocation = data.getData();
-                ImageView imvPhotoPreview = findViewById(R.id.imgPhotoUsu);
+                ImageButton imvPhotoPreview = findViewById(R.id.imgBtnAddFoto);
                 imvPhotoPreview.setImageURI(selectPhotoLocation);
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());  // transformar a data em uma string
+                String imageFileName = "JPEG" + timeStamp;  // nome do arquivo
+                File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+                try {
+                    f = File.createTempFile(imageFileName, ".jpg", storageDir);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                cadastrarUsuarioViewModel.setCurrentPhotoPath(f.getAbsolutePath());
+            }
+            else{
+                f = new File(currentPhotoPath);
+                
+                f.delete();
+                cadastrarUsuarioViewModel.setCurrentPhotoPath("");
             }
         }
     }
