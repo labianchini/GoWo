@@ -65,9 +65,9 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
                 i.putExtra("categoria",usuario.getCategoria());
-                i.putExtra("nomeUsu", usuario.getNameUsu());
+                /*i.putExtra("nomeUsu", usuario.getNameUsu());
                 i.putExtra("localizacao", usuario.getEndBairro() + " - " + usuario.getEndCidade());
-                i.putExtra("photo", usuario.getPhotoStr());
+                i.putExtra("photo", usuario.getPhotoStr());*/
                 context.startActivity(i);
             }
         });

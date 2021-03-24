@@ -33,11 +33,12 @@ public class FeedCategoriaViewModel extends ViewModel {
 
     public LiveData<List<Usuario>> getUsuarios(){
         if (this.usuarios == null){
-            usuarios = new MutableLiveData<>();
-            loadUsuarios();
+                usuarios = new MutableLiveData<>();
+                loadUsuarios();
         }
         return usuarios;
     }
+
 
     public void refreshUsuarios(){
         loadUsuarios();
@@ -51,31 +52,31 @@ public class FeedCategoriaViewModel extends ViewModel {
                 List<Usuario> usuariosList = new ArrayList<>();
 
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_category_services.php", "GET", "UTF-8");
-                httpRequest.addParam("category", categoria);
-                try {
-                    InputStream is = httpRequest.execute();
-                    String result = Util.inputStream2String(is, "UTF-8");
-                    httpRequest.finish();
+                        httpRequest.addParam("category", categoria);
+                        try {
+                            InputStream is = httpRequest.execute();
+                            String result = Util.inputStream2String(is, "UTF-8");
+                            httpRequest.finish();
 
-                    JSONObject jsonObject = new JSONObject(result);
-                    int success = jsonObject.getInt("success");
-                    if (success == 1){
-                        JSONArray jsonArray = jsonObject.getJSONArray("services");
-                        for(int i = 0; i< jsonArray.length(); i++){
-                            JSONObject jPrestador = jsonArray.getJSONObject(i);
+                            JSONObject jsonObject = new JSONObject(result);
+                            int success = jsonObject.getInt("success");
+                            if (success == 1){
+                                JSONArray jsonArray = jsonObject.getJSONArray("services");
+                                for(int i = 0; i< jsonArray.length(); i++){
+                                    JSONObject jPrestador = jsonArray.getJSONObject(i);
 
-                            String idPrest = jPrestador.getString("idUsr");
-                            String nomeUsu = jPrestador.getString("userDoName");
-                            String imgBase64 = jPrestador.getString("userDoProfilePhoto");
-                            String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                            Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
-                            String endBairro = jPrestador.getString("sNbh");
-                            String endCidade = jPrestador.getString("sCity");
+                                    String idPrest = jPrestador.getString("idUsr");
+                                    String nomeUsu = jPrestador.getString("userDoName");
+                                    String imgBase64 = jPrestador.getString("userDoProfilePhoto");
+                                    String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                                    Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+                                    String endBairro = jPrestador.getString("sNbh");
+                                    String endCidade = jPrestador.getString("sCity");
 
-                            Usuario usuario = new Usuario(idPrest, nomeUsu, imgUsu, endBairro, endCidade, categoria, imgBase64);
-                            usuariosList.add(usuario);
-                        }
-                        usuarios.postValue(usuariosList);
+                                    Usuario usuario = new Usuario(idPrest, nomeUsu, imgUsu, endBairro, endCidade, categoria, imgBase64);
+                                    usuariosList.add(usuario);
+                                }
+                                usuarios.postValue(usuariosList);
                     }
 
                 } catch (IOException | JSONException e) {

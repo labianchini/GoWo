@@ -25,9 +25,19 @@ import com.example.gowo.model.FeedPrestadorViewModel;
 import com.example.gowo.model.Servico;
 import com.example.gowo.model.Usuario;
 import com.example.gowo.model.ViewServicoViewModel;
+import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class FeedPrestadorActivity extends AppCompatActivity {
 
@@ -45,20 +55,14 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         Intent i = getIntent();
         String id = i.getStringExtra("id");
         String categoria = i.getStringExtra("categoria");
-        String nomeUsu = i.getStringExtra("nomeUsu");
+        /*String nomeUsu = i.getStringExtra("nomeUsu");
         String localizacao = i.getStringExtra("localizacao");
         String photo = i.getStringExtra("photo");
         String pureBase64Encoded = photo.substring(photo.indexOf(",") + 1);
-        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);*/
 
-        TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
-        txtViewNomeEmpr.setText(nomeUsu);
 
-        TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
-        tvLocalizacao.setText(localizacao);
 
-        ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
-        imgViewEmpr.setImageBitmap(imgUsu);
 
         FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 
@@ -76,5 +80,19 @@ public class FeedPrestadorActivity extends AppCompatActivity {
                 rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
             }
         });
+
+        LiveData<List<Usuario>> usuario = feedPrestadorViewModel.getPrestador();
+
+        TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
+        txtViewNomeEmpr.setText(usuario.getValue().get(0).getNameUsu());
+
+        TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
+        tvLocalizacao.setText(usuario.getValue().get(0).getEndBairro() + " - " + usuario.getValue().get(0).getEndCidade());
+
+        ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
+        imgViewEmpr.setImageBitmap(usuario.getValue().get(0).getImgUsu());
+
     }
+
+
 }

@@ -68,10 +68,11 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         });
 
         final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
-        final String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
-        if (!currentPhotoPath.isEmpty()){
+        final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
+        Log.d("current_activity", selectPhotoLocation);
+        if (!selectPhotoLocation.isEmpty()){
             ImageButton imvPhoto = findViewById(R.id.imgBtnAddFoto);
-            Bitmap bitmap = Util.getBitmap(currentPhotoPath, imvPhoto.getWidth(), imvPhoto.getHeight());
+            Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imvPhoto.getWidth(), imvPhoto.getHeight());
             imvPhoto.setImageBitmap(bitmap);
         }
 
@@ -79,8 +80,8 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         btnAddUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
-                if (currentPhotoPath.isEmpty()){
+                final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
+                if (selectPhotoLocation.isEmpty()){
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de foto não preenchido", Toast.LENGTH_LONG).show();
                     v.setEnabled(true);
                     return;
@@ -133,7 +134,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         httpRequest.addParam("pwd", senha);
                         httpRequest.addParam("dateBorn", dataNasc);
                         httpRequest.addParam("cell", telefone);
-                        httpRequest.addFile("img", new File(currentPhotoPath));
+                        httpRequest.addFile("img", new File(selectPhotoLocation));
                         try {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
@@ -173,7 +174,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PHOTO_PICKER_REQUEST){
             CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
-            String currentPhotoPath = cadastrarUsuarioViewModel.getCurrentPhotoPath();
+            String currentPhotoPath = cadastrarUsuarioViewModel.getSelectPhotoLocation();
             File f = null;
             if(resultCode == Activity.RESULT_OK){
                 selectPhotoLocation = data.getData();
