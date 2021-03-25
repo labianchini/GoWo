@@ -7,23 +7,12 @@ public class Usuario {
     String nameUsu;
     String sobrenomeUsu;
     String emailUsu;
-    String senhaUsu;
     String telefoneUsu;
     String dataNascUsu;
-    String endBairro;
-    String endCidade;
+    String endereco;
     Bitmap imgUsu;
-    String categoria;
-    String photoStr;
 
-    public Usuario(String idUsu, String nameUsu, Bitmap imgUsu, String endBairro, String endCidade, String categoria, String photoStr) {
-        this.idUsu = idUsu;
-        this.nameUsu = nameUsu;
-        this.imgUsu = imgUsu;
-        this.endBairro = endBairro;
-        this.endCidade = endCidade;
-        this.categoria = categoria;
-        this.photoStr = photoStr;
+    public Usuario() {
     }
 
     public String getIdUsu() {
@@ -58,14 +47,6 @@ public class Usuario {
         this.emailUsu = emailUsu;
     }
 
-    public String getSenhaUsu() {
-        return senhaUsu;
-    }
-
-    public void setSenhaUsu(String senhaUsu) {
-        this.senhaUsu = senhaUsu;
-    }
-
     public String getTelefoneUsu() {
         return telefoneUsu;
     }
@@ -82,20 +63,12 @@ public class Usuario {
         this.dataNascUsu = dataNascUsu;
     }
 
-    public String getEndBairro() {
-        return endBairro;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndBairro(String endBairro) {
-        this.endBairro = endBairro;
-    }
-
-    public String getEndCidade() {
-        return endCidade;
-    }
-
-    public void setEndCidade(String endCidade) {
-        this.endCidade = endCidade;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public Bitmap getImgUsu() {
@@ -104,21 +77,5 @@ public class Usuario {
 
     public void setImgUsu(Bitmap imgUsu) {
         this.imgUsu = imgUsu;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public String getPhotoStr() {
-        return photoStr;
-    }
-
-    public void setPhotoStr(String photoStr) {
-        this.photoStr = photoStr;
     }
 }

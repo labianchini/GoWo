@@ -27,103 +27,108 @@ public class FeedPrestadorViewModel extends ViewModel {
 
     String id;
     String categoria;
-
-    MutableLiveData<List> prestServ;
-    MutableLiveData<List<Servico>> servicos;
     MutableLiveData<Usuario> usuario;
+    MutableLiveData<List<Servico>> servicos;
 
     public FeedPrestadorViewModel(String id, String categoria) {
         this.id = id;
         this.categoria = categoria;
     }
 
-    public (LiveData<List<Servico>>, LiveData<Usuario>) getPrestServ() throws IOException {
-        if (this.servicos == null){
+    public LiveData<Usuario> getUsuario(){
+        if (this.usuario == null){
             usuario = new MutableLiveData<>();
-            servicos = new MutableLiveData<>();
-            loadServicos();
+            loadInfoPrestador();
         }
-        return usuario, servicos;
+        return usuario;
     }
 
-    void loadServicos() throws IOException {
+    public LiveData<List<Servico>> getServicos(){
+        if (this.servicos == null){
+            servicos= new MutableLiveData<>();
+            loadServicos();
+        }
+        return servicos;
+    }
+
+    void loadInfoPrestador(){
         final ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @Override
-                public void run() {
-                    List<Usuario> usuario = new ArrayList<>();
-                    HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_category_services.php", "GET", "UTF-8");
-                    httpRequest.addParam("category", categoria);
-                    try {
-                        InputStream is = httpRequest.execute();
-                        String result = Util.inputStream2String(is, "UTF-8");
-                        httpRequest.finish();
+            public void run() {
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/user_info.php", "GET", "UTF-8");
+                httpRequest.addParam("id", id);
+                try {
+                    InputStream is = httpRequest.execute();
+                    String result = Util.inputStream2String(is, "UTF-8");
+                    httpRequest.finish();
 
-                        JSONObject jsonObject = new JSONObject(result);
-                        int success = jsonObject.getInt("success");
-                        if (success == 1) {
-                            JSONArray jsonArray = jsonObject.getJSONArray("services");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jPrestador = jsonArray.getJSONObject(i);
+                    JSONObject jsonObject = new JSONObject(result);
+                    int success = jsonObject.getInt("success");
+                    if (success == 1) {
+                        JSONArray jsonArray = jsonObject.getJSONArray("userdetail");
+                        JSONObject jPrestador = jsonArray.getJSONObject(0);
 
-                                String idPrest = jPrestador.getString("idUsr");
-                                if (id.equals(idPrest)) {
-                                    String nomeUsu = jPrestador.getString("userDoName");
-                                    String imgBase64 = jPrestador.getString("userDoProfilePhoto");
-                                    String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                                    Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
-                                    String endBairro = jPrestador.getString("sNbh");
-                                    String endCidade = jPrestador.getString("sCity");
+                        String imgBase64 = jPrestador.getString("userDoProfilePhoto");
+                        String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                        Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+                        String nomeUsu = jPrestador.getString("userDoName");
+                        String endereco = jPrestador.getString("endereco");
+                        String telefone = jPrestador.getString("phonePrest");
 
-                                    Usuario u = new Usuario(idPrest, nomeUsu, imgUsu, endBairro, endCidade, categoria, imgBase64);
-                                    usuario.postValue(u);
-
-                                }
-                            }
-                        }
-
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
+                        Usuario u = new Usuario();
+                        u.setEndereco(endereco);
+                        u.setImgUsu(imgUsu);
+                        u.setNameUsu(nomeUsu);
+                        u.setTelefoneUsu(telefone);
+                        usuario.postValue(u);
                     }
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
                 }
-            });
-            executorService.execute(new Runnable() {
-                @Override
-                public void run(){
-                    List<Servico> servicosList = new ArrayList<>();
+            }
+        });
+    }
 
-                    HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
-                    httpRequest.addParam("worker", id);
-                    httpRequest.addParam("category", categoria);
-                    try {
-                        InputStream is = httpRequest.execute();
-                        String result = Util.inputStream2String(is, "UTF-8");
-                        httpRequest.finish();
+    void loadServicos(){
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(new Runnable() {
+            @Override
+            public void run () {
+                List<Servico> servicosList = new ArrayList<>();
 
-                        JSONObject jsonObject = new JSONObject(result);
-                        int success = jsonObject.getInt("success");
-                        if (success == 1) {
-                            JSONArray jsonArray = jsonObject.getJSONArray("servicesWorker");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jServico = jsonArray.getJSONObject(i);
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
+                httpRequest.addParam("worker", id);
+                httpRequest.addParam("category", categoria);
+                try {
+                    InputStream is = httpRequest.execute();
+                    String result = Util.inputStream2String(is, "UTF-8");
+                    httpRequest.finish();
 
-                                String idServ = jServico.getString("serviceId");
-                                String sName = jServico.getString("serviceName");
-                                String imgBase64 = jServico.getString("servicePhoto");
-                                String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                                Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
-                                String sVal = jServico.getString("serviceVal");
+                    JSONObject jsonObject = new JSONObject(result);
+                    int success = jsonObject.getInt("success");
+                    if (success == 1) {
+                        JSONArray jsonArray = jsonObject.getJSONArray("servicesWorker");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jServico = jsonArray.getJSONObject(i);
 
-                                Servico servico = new Servico(idServ, sName, sVal, imgServ, imgBase64);
-                                servicosList.add(servico);
-                            }
-                            servicos.postValue(servicosList);
+                            String idServ = jServico.getString("serviceId");
+                            String sName = jServico.getString("serviceName");
+                            String imgBase64 = jServico.getString("servicePhoto");
+                            String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                            Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
+                            String sVal = jServico.getString("serviceVal");
+
+                            Servico servico = new Servico(idServ, sName, sVal, imgServ, imgBase64);
+                            servicosList.add(servico);
                         }
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
+                        servicos.postValue(servicosList);
                     }
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
                 }
-            });
+            }
+        });
     }
 
     static public class FeedPrestadorViewModelFactory implements ViewModelProvider.Factory{

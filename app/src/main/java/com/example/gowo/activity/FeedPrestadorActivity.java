@@ -64,21 +64,27 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvServUsu.setLayoutManager(layoutManager);
 
-        final LiveData<List<Servico>> servicos = feedPrestadorViewModel.getPrestServ(); // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
+        final LiveData<Usuario> usuario = feedPrestadorViewModel.getUsuario(); // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
+        usuario.observe(this, new Observer<Usuario>() {
+            @Override
+            public void onChanged(Usuario u) {
+                TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
+                txtViewNomeEmpr.setText(u.getNameUsu());
+
+                TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
+                tvLocalizacao.setText(u.getEndereco());
+
+                ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
+                imgViewEmpr.setImageBitmap(u.getImgUsu());
+            }
+        });
+
+        final LiveData<List<Servico>> servicos = feedPrestadorViewModel.getServicos();
         servicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
                 MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
                 rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
-
-                TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
-                txtViewNomeEmpr.setText(servicos);
-
-                TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
-                tvLocalizacao.setText(usuario.getValue().get(0).getEndBairro() + " - " + usuario.getValue().get(0).getEndCidade());
-
-                ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
-                imgViewEmpr.setImageBitmap(usuario.getValue().get(0).getImgUsu());
             }
         });
     }
