@@ -63,12 +63,15 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
             valorServ.setText(servico.getValorServ());
         }
 
+        TextView tvLocal = holder.itemView.findViewById(R.id.tvLocal);
+        tvLocal.setText(servico.getEndereco());
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, ViewServicoActivity.class);
                 i.putExtra("id", servico.getIdServ());
-                /*i.putExtra("photo", servico.getPhotoServ());*/
                 context.startActivity(i);
             }
         });

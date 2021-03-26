@@ -53,23 +53,12 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
         final TextView nomeUsu = holder.itemView.findViewById(R.id.nome);
         nomeUsu.setText(usuario.getNameUsu());
 
-        /*TextView endCidade = holder.itemView.findViewById(R.id.endCidade);
-        endCidade.setText(usuario.getEndCidade());
-
-        TextView endBairro = holder.itemView.findViewById(R.id.endBairro);
-        endBairro.setText(usuario.getEndBairro());*/
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
                 i.putExtra("categoria", usuario.getCategoria());
-
-                /*i.putExtra("nomeUsu", usuario.getNameUsu());
-                i.putExtra("localizacao", usuario.getEndBairro() + " - " + usuario.getEndCidade());
-                i.putExtra("photo", usuario.getPhotoStr());*/
-
                 context.startActivity(i);
             }
         });

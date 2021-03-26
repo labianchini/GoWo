@@ -45,14 +45,11 @@ public class ViewServicoActivity extends AppCompatActivity {
                 TextView txtViewNomeServ = findViewById(R.id.txtViewNomeServ);
                 txtViewNomeServ.setText(servico.getNameServ());
 
-                /*TextView txtViewNomePrest = findViewById(R.id.txtViewNomePrest);
-                txtViewNomePrest.setText(servico.);*/
+                /*TextView txtViewEndereco = findViewById(R.id.txtViewEndereco);
+                txtViewEndereco.setText(servico.getEndereco());*/
 
-                /*TextView txtViewBairro = findViewById(R.id.txtViewBairro);
-                txtViewBairro.setText(servico.);*/
-
-                /*TextView txtViewCidade = findViewById(R.id.txtViewCidade);
-                txtViewCidade.setText(servico.);*/
+                TextView textViewCateg = findViewById(R.id.textViewCateg);
+                textViewCateg.setText(servico.getCategoria());
 
                 TextView txtViewDescr = findViewById(R.id.txtViewDescr);
                 txtViewDescr.setText(servico.getDescriptionServ());

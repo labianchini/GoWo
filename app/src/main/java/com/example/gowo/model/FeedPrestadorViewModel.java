@@ -1,7 +1,6 @@
 package com.example.gowo.model;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -66,10 +65,6 @@ public class FeedPrestadorViewModel extends ViewModel {
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");
                     if (success == 1) {
-                        //JSONArray jsonArray = jsonObject.getJSONArray("userdetail");
-                        //JSONObject jPrestador = jsonArray.getJSONObject(0);
-
-                        String idUsu = jsonObject.getString("idUser");
                         String nomeUsu = jsonObject.getString("usrName");
                         String telefone = jsonObject.getString("usrCellPhone");
                         String imgBase64 = jsonObject.getString("usrProfilePhoto");
@@ -94,11 +89,10 @@ public class FeedPrestadorViewModel extends ViewModel {
         executorService.execute(new Runnable() {
             @Override
             public void run () {
-                List<Servico> servicosList = new ArrayList<>();
+                List<Servico> meusServicosList = new ArrayList<>();
 
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
-                httpRequest.addParam("worker", id);
-                httpRequest.addParam("category", categoria);
+                httpRequest.addParam("id_user", id);
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -117,11 +111,15 @@ public class FeedPrestadorViewModel extends ViewModel {
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
                             String sVal = jServico.getString("serviceVal");
+                            String bairro = jServico.getString("sNbh");
+                            String cidade = jServico.getString("sCity");
+                            String estado = jServico.getString("sState");
+                            String endereco = bairro + ", " + cidade + " - " + estado;
 
-                            Servico servico = new Servico(idServ, sName, sVal, imgServ, imgBase64);
-                            servicosList.add(servico);
+                            Servico servico = new Servico(idServ, sName, sVal, imgServ, endereco);
+                            meusServicosList.add(servico);
                         }
-                        servicos.postValue(servicosList);
+                        servicos.postValue(meusServicosList);
                     }
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();

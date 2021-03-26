@@ -7,43 +7,53 @@
     android:background="#FFFFFF"
     tools:context=".activity.ViewServicoActivity">
 
-    <TextView
-        android:id="@+id/txtViewValor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Valor do Serviço"
-        android:textColor="#E8000000"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/txtViewBairro"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewDescr" />
-
-    <TextView
-        android:id="@+id/txtViewDescr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Descrição do Serviço"
-        android:textColor="#E8000000"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/txtViewBairro"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewBairro" />
-
     <ImageButton
-        android:id="@+id/imgBtnChat"
+        android:id="@+id/imgBtnChat2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00a39b"
-        app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
+        android:background="#FFFFFF"
+        android:scaleType="fitStart"
+        android:tint="#00A39B"
+        app:layout_constraintBottom_toBottomOf="@+id/imgServ"
         app:layout_constraintStart_toEndOf="@+id/imgServ"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNomePrest"
-        app:srcCompat="@drawable/ic_baseline_chat_24" />
+        app:layout_constraintTop_toTopOf="@+id/imgServ"
+        app:srcCompat="@drawable/bxs_message_dots__2_" />
+
+    <TextView
+        android:id="@+id/txtViewValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="Valor do Serviço"
+        android:textColor="#575757"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewEndereco" />
+
+    <TextView
+        android:id="@+id/txtViewDescr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="Descrição do Serviço"
+        android:textColor="#575757"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCateg" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
@@ -56,15 +66,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgServ"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeServ"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -72,57 +85,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
         android:text="Nome do Serviço"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
+        android:textColor="#575757"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnChat2"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imgServ"
+        app:layout_constraintTop_toBottomOf="@+id/imgServ" />
 
     <TextView
-        android:id="@+id/txtViewNomePrest"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtViewEndereco"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Nome do Prestador"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:text="Endereço"
+        android:textColor="#575757"
+        android:textSize="18sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgServ"
-        app:layout_constraintTop_toTopOf="@+id/imgServ" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewDescr" />
 
     <TextView
-        android:id="@+id/txtViewBairro"
+        android:id="@+id/textViewCateg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Bairro"
-        android:textColor="#E8000000"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/imgServ"
-        app:layout_constraintTop_toBottomOf="@+id/imgServ" />
-
-    <TextView
-        android:id="@+id/txtViewCidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="16dp"
-        android:text="Cidade"
-        android:textColor="#E8000000"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/txtViewBairro"
-        app:layout_constraintTop_toBottomOf="@+id/imgServ" />
+        android:fontFamily="@font/poppins"
+        android:text="Categoria"
+        android:textColor="#575757"
+        app:layout_constraintEnd_toEndOf="@+id/txtViewNomeServ"
+        app:layout_constraintStart_toStartOf="@+id/txtViewNomeServ"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewNomeServ" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

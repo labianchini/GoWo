@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00a39b"
+    android:background="#FFFFFF"
     tools:context=".activity.FeedPrestadorActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -23,8 +23,6 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorAccent"
-        android:tint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
@@ -34,17 +32,16 @@
         android:id="@+id/txtViewNomeEmpr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:fontFamily="@font/poppins"
         android:text="Nome do Prestador"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textColor="#575757"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgViewEmpr"
+        app:layout_constraintStart_toStartOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/imgViewEmpr" />
 
     <ImageButton
@@ -55,11 +52,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#00a39b"
+        android:background="#FFFFFF"
+        android:scaleType="fitStart"
+        android:tint="#00A39B"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
-        app:srcCompat="@drawable/ic_baseline_chat_24" />
+        app:srcCompat="@drawable/bxs_message_dots__2_" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvServUsu"

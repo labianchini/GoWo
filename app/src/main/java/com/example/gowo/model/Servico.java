@@ -8,18 +8,17 @@ public class Servico {
     String nameServ;
     String descriptionServ;
     String valorServ;
-    String enderecoServ;
     Bitmap photoServ;
-    String photoServStr;
+    String endereco;
     String idEndereco;
     String categoria;
 
-    public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ, String photoServStr) {
+    public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ, String endereco) {
         this.idServ = idServ;
         this.nameServ = nameServ;
         this.valorServ = valorServ;
         this.photoServ = photoServ;
-        this.photoServStr = photoServStr;
+        this.endereco = endereco;
     }
 
     public Servico(String idServ, String idPrest, String nomeServ, String descricao, String valor, String idEndereco, Bitmap img, String categoria) {
@@ -31,6 +30,17 @@ public class Servico {
         this.idEndereco = idEndereco;
         this.photoServ = img;
         this.categoria = categoria;
+    }
+
+    public Servico(String idUsu, String idServ, String sName, String sDesc, String sVal, Bitmap imgServ, String categoria, String endereco){
+        this.idPrest = idUsu;
+        this.idServ = idServ;
+        this.nameServ = sName;
+        this.descriptionServ = sDesc;
+        this.valorServ = sVal;
+        this.photoServ = imgServ;
+        this.categoria = categoria;
+        this.endereco = endereco;
     }
 
     public String getIdServ() {
@@ -73,14 +83,6 @@ public class Servico {
         this.valorServ = valorServ;
     }
 
-    public String getEnderecoServ() {
-        return enderecoServ;
-    }
-
-    public void setEnderecoServ(String enderecoServ) {
-        this.enderecoServ = enderecoServ;
-    }
-
     public Bitmap getPhotoServ() {
         return photoServ;
     }
@@ -89,9 +91,9 @@ public class Servico {
         this.photoServ = photoServ;
     }
 
-    public String getPhotoServStr() { return photoServStr; }
+    public String getEndereco() { return endereco; }
 
-    public void setPhotoServStr(String photoServStr) { this.photoServStr = photoServStr; }
+    public void setEndereco(String endereco) { this.endereco = endereco; }
 
     public String getIdEndereco() { return idEndereco; }
 

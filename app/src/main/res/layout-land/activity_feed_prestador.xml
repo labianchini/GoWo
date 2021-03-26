@@ -91,7 +91,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toTopOf="@+id/imgViewEmpr"
-        app:srcCompat="@drawable/ic_baseline_chat_24" />
+        app:srcCompat="@drawable/ic_baseline_chat_24__1_" />
 
     <RatingBar
         android:id="@+id/ratingBar"
