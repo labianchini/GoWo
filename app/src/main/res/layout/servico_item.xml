@@ -31,7 +31,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/imgServico" />
 
     <TextView
         android:id="@+id/tvPreco"
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Valor não definido"
@@ -54,22 +55,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Valor"
+        android:text="Localizacao"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imgServico"
         app:layout_constraintTop_toBottomOf="@+id/tvNomeServ" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="Nome do Serviço:"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imgServico"
-        app:layout_constraintTop_toTopOf="@+id/imgServico" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

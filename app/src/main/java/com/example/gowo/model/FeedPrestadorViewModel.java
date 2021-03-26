@@ -56,8 +56,8 @@ public class FeedPrestadorViewModel extends ViewModel {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/user_info.php", "GET", "UTF-8");
-                httpRequest.addParam("id", id);
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_user_info.php", "GET", "UTF-8");
+                httpRequest.addParam("id_user", id);
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -66,18 +66,17 @@ public class FeedPrestadorViewModel extends ViewModel {
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");
                     if (success == 1) {
-                        JSONArray jsonArray = jsonObject.getJSONArray("userdetail");
-                        JSONObject jPrestador = jsonArray.getJSONObject(0);
+                        //JSONArray jsonArray = jsonObject.getJSONArray("userdetail");
+                        //JSONObject jPrestador = jsonArray.getJSONObject(0);
 
-                        String imgBase64 = jPrestador.getString("userDoProfilePhoto");
+                        String idUsu = jsonObject.getString("idUser");
+                        String nomeUsu = jsonObject.getString("usrName");
+                        String telefone = jsonObject.getString("usrCellPhone");
+                        String imgBase64 = jsonObject.getString("usrProfilePhoto");
                         String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                         Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
-                        String nomeUsu = jPrestador.getString("userDoName");
-                        String endereco = jPrestador.getString("endereco");
-                        String telefone = jPrestador.getString("phonePrest");
 
                         Usuario u = new Usuario();
-                        u.setEndereco(endereco);
                         u.setImgUsu(imgUsu);
                         u.setNameUsu(nomeUsu);
                         u.setTelefoneUsu(telefone);

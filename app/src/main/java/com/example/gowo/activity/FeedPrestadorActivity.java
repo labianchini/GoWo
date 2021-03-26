@@ -71,8 +71,8 @@ public class FeedPrestadorActivity extends AppCompatActivity {
                 TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
                 txtViewNomeEmpr.setText(u.getNameUsu());
 
-                TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
-                tvLocalizacao.setText(u.getEndereco());
+                //TextView tvLocalizacao = findViewById(R.id.tvLocalizacao);
+                //tvLocalizacao.setText(u.getEndereco());
 
                 ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
                 imgViewEmpr.setImageBitmap(u.getImgUsu());

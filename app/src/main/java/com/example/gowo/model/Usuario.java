@@ -12,6 +12,8 @@ public class Usuario {
     String endereco;
     Bitmap imgUsu;
 
+    String categoria;
+
     public Usuario() {
     }
 
@@ -77,5 +79,15 @@ public class Usuario {
 
     public void setImgUsu(Bitmap imgUsu) {
         this.imgUsu = imgUsu;
+    }
+
+
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

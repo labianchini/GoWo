@@ -73,8 +73,13 @@ public class FeedCategoriaViewModel extends ViewModel {
                                     String endBairro = jPrestador.getString("sNbh");
                                     String endCidade = jPrestador.getString("sCity");
 
-                                    Usuario usuario = new Usuario(idPrest, nomeUsu, imgUsu, endBairro, endCidade, categoria, imgBase64);
-                                    usuariosList.add(usuario);
+                                    Usuario u = new Usuario();
+                                    //u.setEndereco(endereco);
+                                    u.setIdUsu(idPrest);
+                                    u.setImgUsu(imgUsu);
+                                    u.setNameUsu(nomeUsu);
+                                    u.setCategoria(categoria);
+                                    usuariosList.add(u);
                                 }
                                 usuarios.postValue(usuariosList);
                     }
@@ -96,7 +101,7 @@ public class FeedCategoriaViewModel extends ViewModel {
         @NonNull
         @Override
         public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-            return (T) new FeedCategoriaViewModel(categoria);
+            return (T) new FeedCategoriaViewModel(categoria); //ok
         }
     }
 }

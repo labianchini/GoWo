@@ -56,25 +56,24 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        /*final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
+        final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
         final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
         if (!selectPhotoLocation.isEmpty()){
             ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
             Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imgBtn.getWidth(), imgBtn.getHeight());
             imgBtn.setImageBitmap(bitmap);
-        }*/
+        }
 
         Button btnAddUsu = findViewById(R.id.btnAddUsu);
         btnAddUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
+                final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
                 if (selectPhotoLocation.isEmpty()){
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de foto não preenchido", Toast.LENGTH_LONG).show();
                     v.setEnabled(true);
                     return;
-                }*/
+                }
 
                 EditText nomeUsu =  findViewById(R.id.nomeUsu);
                 final String nome = nomeUsu.getText().toString();
