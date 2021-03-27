@@ -1,3 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name">GoWo</string>
+
+    <string-array name="categorias">
+        <item>Automotivo</item>
+        <item>Beleza</item>
+        <item>Comida</item>
+        <item>Corte e Costura</item>
+        <item>Cuidados Pet</item>
+        <item>Design</item>
+        <item>Fotografia</item>
+        <item>Informática</item>
+        <item>Jardinagem</item>
+        <item>Limpeza</item>
+        <item>Reformas e Consertos</item>
+
+    </string-array>
+
 </resources>

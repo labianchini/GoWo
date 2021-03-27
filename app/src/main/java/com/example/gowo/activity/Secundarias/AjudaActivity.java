@@ -1,4 +1,4 @@
-package com.example.gowo.activity;
+package com.example.gowo.activity.Secundarias;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

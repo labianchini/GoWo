@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".activity.HomeActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,18 +18,20 @@
         app:menu="@menu/bottom_actions" />
 
     <TextView
-        android:id="@+id/txtjardinagem2"
+        android:id="@+id/txtjardinagem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Jardinagem"
         android:textColor="#00a39b"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnJardinagem"
+        app:layout_constraintStart_toStartOf="@+id/imgBtnJardinagem"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnJardinagem" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imgBtnJardinagem"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -141,7 +144,7 @@
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnJardinagem"
         app:layout_constraintTop_toTopOf="@+id/imgBtnReforma"
         app:srcCompat="@drawable/pet" />
 
@@ -165,9 +168,11 @@
         android:id="@+id/txtfotografia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Fotografia"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnFotografia"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imgBtnFotografia"
@@ -177,9 +182,11 @@
         android:id="@+id/txtautomotivo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Automotivo"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnAutomotivo"
         app:layout_constraintStart_toStartOf="@+id/imgBtnAutomotivo"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnAutomotivo" />
@@ -188,9 +195,11 @@
         android:id="@+id/txtcomida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Comida"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnComida"
         app:layout_constraintStart_toStartOf="@+id/imgBtnComida"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnComida" />
@@ -199,9 +208,11 @@
         android:id="@+id/txtinformatica"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Informática"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnInformatica"
         app:layout_constraintStart_toStartOf="@+id/imgBtnInformatica"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnInformatica" />
@@ -210,9 +221,11 @@
         android:id="@+id/txtcostura"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Corte e Costura"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnCostura"
         app:layout_constraintStart_toStartOf="@+id/imgBtnCostura"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnCostura" />
@@ -221,9 +234,11 @@
         android:id="@+id/txtpet"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Cuidados Pet"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnPet"
         app:layout_constraintStart_toStartOf="@+id/imgBtnPet"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnPet" />
@@ -232,9 +247,11 @@
         android:id="@+id/txtreforma"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Reformas e Consertos"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnReforma"
         app:layout_constraintStart_toStartOf="@+id/imgBtnReforma"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnReforma" />
@@ -242,7 +259,7 @@
     <ImageButton
         android:id="@+id/imgBtnBeleza"
         android:layout_width="100dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
@@ -257,14 +274,14 @@
     <ImageButton
         android:id="@+id/imgBtnLimpeza"
         android:layout_width="100dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnJardinagem"
         app:layout_constraintStart_toEndOf="@+id/imgBtnBeleza"
         app:layout_constraintTop_toTopOf="@+id/imgBtnReforma"
         app:srcCompat="@drawable/broom" />
@@ -273,9 +290,11 @@
         android:id="@+id/txtBeleza"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Beleza"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnBeleza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnBeleza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnBeleza" />
@@ -284,9 +303,11 @@
         android:id="@+id/txtLimpeza"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="Limpeza"
         android:textColor="#00a39b"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnLimpeza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnLimpeza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnLimpeza" />

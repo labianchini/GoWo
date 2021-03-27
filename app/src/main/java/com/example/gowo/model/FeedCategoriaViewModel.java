@@ -98,7 +98,7 @@ public class FeedCategoriaViewModel extends ViewModel {
         @NonNull
         @Override
         public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-            return (T) new FeedCategoriaViewModel(categoria); //ok
+            return (T) new FeedCategoriaViewModel(categoria);
         }
     }
 }

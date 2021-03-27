@@ -46,7 +46,7 @@ public class MeusServicosActivity extends AppCompatActivity {
         Intent i = getIntent();
         String id = i.getStringExtra("id");
 
-        MeusServicosViewModel meusServicosViewModel = new ViewModelProvider(this, new MeusServicosViewModel.MeusServicosViewModelFactory(id)).get(MeusServicosViewModel.class);
+        /*MeusServicosViewModel meusServicosViewModel = new ViewModelProvider(this, new MeusServicosViewModel.MeusServicosViewModelFactory(id)).get(MeusServicosViewModel.class);
 
         final RecyclerView rvMeusServicos = findViewById(R.id.rvMeusServicos);
         rvMeusServicos.setHasFixedSize(true);
@@ -61,6 +61,6 @@ public class MeusServicosActivity extends AppCompatActivity {
                 MyAdapterPrest myAdapterPrest = new MyAdapterPrest(MeusServicosActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
                 rvMeusServicos.setAdapter(myAdapterPrest);  //A interface é atualizada
             }
-        });
+        });*/
     }
 }

@@ -13,12 +13,12 @@ public class Servico {
     String idEndereco;
     String categoria;
 
-    public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ, String endereco) {
+    public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ) {
         this.idServ = idServ;
         this.nameServ = nameServ;
         this.valorServ = valorServ;
         this.photoServ = photoServ;
-        this.endereco = endereco;
+        //this.endereco = endereco;
     }
 
     public Servico(String idServ, String idPrest, String nomeServ, String descricao, String valor, String idEndereco, Bitmap img, String categoria) {

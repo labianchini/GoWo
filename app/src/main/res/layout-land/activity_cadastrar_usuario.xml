@@ -21,10 +21,11 @@
         android:id="@+id/imgBtnAddFoto"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
@@ -36,7 +37,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="#E4E4E4"
@@ -52,8 +52,8 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddFoto" />
+        app:layout_constraintStart_toEndOf="@+id/imgBtnAddFoto"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnAddFoto" />
 
     <EditText
         android:id="@+id/sobrenomeUsu"
@@ -159,7 +159,7 @@
         android:textSize="18sp"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@+id/pswdUsu"
-        app:layout_constraintStart_toStartOf="@+id/pswdUsu"
+        app:layout_constraintStart_toStartOf="@+id/dataUsu"
         app:layout_constraintTop_toBottomOf="@+id/dataUsu" />
 
     <EditText

@@ -8,21 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.gowo.R;
-import com.example.gowo.util.Config;
-import com.example.gowo.util.HttpRequest;
-import com.example.gowo.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -182,7 +170,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.recentes:
-                Intent i = new Intent(HomeActivity.this, RecentesActivity.class);
+                Intent i = new Intent(HomeActivity.this, MeusEnderecosActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

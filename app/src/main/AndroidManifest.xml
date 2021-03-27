@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.AjudaActivity"
+            android:name=".activity.Secundarias.AjudaActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".activity.ConfiguracoesActivity"
+            android:name=".activity.Secundarias.ConfiguracoesActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
-            android:name=".activity.InfoPessoaisActivity"
+            android:name=".activity.Secundarias.InfoPessoaisActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
             android:name=".activity.FeedCategoriaActivity"
@@ -40,7 +40,7 @@
             android:parentActivityName=".activity.FeedPrestadorActivity" />
 
         <activity android:name=".activity.PerfilActivity" />
-        <activity android:name=".activity.RecentesActivity" />
+        <activity android:name=".activity.MeusEnderecosActivity" />
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity

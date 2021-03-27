@@ -49,7 +49,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         CadastrarServicoViewModel cadastrarServicoViewModel = new ViewModelProvider(this).get(CadastrarServicoViewModel.class);
         String currenyPhotoPath = cadastrarServicoViewModel.getCurrentPhotoPath();
         if (!currenyPhotoPath.isEmpty()){
-            ImageView imvPhotoPrev = findViewById(R.id.imvPhotoServ);
+            ImageView imvPhotoPrev = findViewById(R.id.imgBtnAddFoto);
             Bitmap bitmap = Util.getBitmap(currenyPhotoPath, imvPhotoPrev.getWidth(), imvPhotoPrev.getHeight());
             imvPhotoPrev.setImageBitmap(bitmap);
         }
@@ -61,7 +61,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
         if(requestCode == PHOTO_PICKER_REQUEST){
             if(resultCode == Activity.RESULT_OK){
                 selectPhotoLocation = data.getData();
-                ImageView imvPhotoPrev = findViewById(R.id.imvPhotoServ);
+                ImageView imvPhotoPrev = findViewById(R.id.imgBtnAddFoto);
                 imvPhotoPrev.setImageURI(selectPhotoLocation);
             }
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ConfiguracoesActivity">
+    tools:context=".activity.Secundarias.ConfiguracoesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"

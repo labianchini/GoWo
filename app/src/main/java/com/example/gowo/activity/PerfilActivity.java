@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.gowo.R;
+import com.example.gowo.activity.Secundarias.InfoPessoaisActivity;
 import com.example.gowo.util.Config;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -70,7 +70,7 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
         }
         switch (item.getItemId()){
             case R.id.recentes:
-                Intent i = new Intent(PerfilActivity.this, RecentesActivity.class);
+                Intent i = new Intent(PerfilActivity.this, MeusEnderecosActivity.class);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

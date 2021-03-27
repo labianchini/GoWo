@@ -92,7 +92,8 @@ public class FeedPrestadorViewModel extends ViewModel {
                 List<Servico> meusServicosList = new ArrayList<>();
 
                 HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
-                httpRequest.addParam("id_user", id);
+                httpRequest.addParam("worker", id);
+                httpRequest.addParam("category", categoria);
                 try {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
@@ -105,18 +106,19 @@ public class FeedPrestadorViewModel extends ViewModel {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jServico = jsonArray.getJSONObject(i);
 
+                            String id = jServico.getString("idUserDo");
                             String idServ = jServico.getString("serviceId");
                             String sName = jServico.getString("serviceName");
                             String imgBase64 = jServico.getString("servicePhoto");
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
                             String sVal = jServico.getString("serviceVal");
-                            String bairro = jServico.getString("sNbh");
+                            /*String bairro = jServico.getString("sNbh");
                             String cidade = jServico.getString("sCity");
                             String estado = jServico.getString("sState");
-                            String endereco = bairro + ", " + cidade + " - " + estado;
+                            String endereco = bairro + ", " + cidade + " - " + estado;*/
 
-                            Servico servico = new Servico(idServ, sName, sVal, imgServ, endereco);
+                            Servico servico = new Servico(idServ, sName, sVal, imgServ);
                             meusServicosList.add(servico);
                         }
                         servicos.postValue(meusServicosList);

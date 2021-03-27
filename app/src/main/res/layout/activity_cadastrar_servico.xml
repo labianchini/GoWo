@@ -22,32 +22,22 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint=" Nome do serviço:"
         android:inputType="textPersonName"
         android:overScrollMode="ifContentScrolls"
         android:paddingTop="1dp"
         android:paddingBottom="1dp"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnAddPhoto"
         app:layout_constraintTop_toTopOf="@+id/imgBtnAddPhoto" />
-
-    <EditText
-        android:id="@+id/categoriaServ"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint=" Categoria:"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/nomeServ"
-        app:layout_constraintStart_toStartOf="@+id/nomeServ"
-        app:layout_constraintTop_toBottomOf="@+id/nomeServ" />
 
     <EditText
         android:id="@+id/bairroServ"
@@ -60,9 +50,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint="Bairro:"
         android:inputType="textPersonName"
         android:padding="2dp"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,15 +65,17 @@
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Valor:"
+        android:fontFamily="@font/poppins"
+        android:hint=" Valor:"
         android:inputType="textPersonName"
         android:padding="2dp"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/nomeServ"
         app:layout_constraintStart_toStartOf="@+id/nomeServ"
-        app:layout_constraintTop_toBottomOf="@+id/categoriaServ" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
     <EditText
         android:id="@+id/cidadeServ"
@@ -94,9 +88,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint="Cidade:"
         android:inputType="textPersonName"
         android:padding="2dp"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +107,9 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:background="#00a39b"
+        android:fontFamily="@font/poppins_bold"
         android:text="Adicionar"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,12 +122,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
         android:text="Localização"
         android:textColor="#00a39b"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddPhoto" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
 
     <TextView
         android:id="@+id/tvNovoServico"
@@ -142,16 +141,18 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        android:fontFamily="@font/poppins" />
 
     <ImageButton
         android:id="@+id/imgBtnAddPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:tint="#A8000000"
-        app:layout_constraintEnd_toStartOf="@+id/categoriaServ"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNovoServico"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
@@ -167,13 +168,24 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:gravity="start|top"
         android:hint="Descrição do serviço:"
         android:inputType="textMultiLine"
+        android:textColor="#575757"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bairroServ" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnAddPhoto" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/nomeServ"
+        app:layout_constraintStart_toStartOf="@+id/nomeServ"
+        app:layout_constraintTop_toBottomOf="@+id/nomeServ" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
