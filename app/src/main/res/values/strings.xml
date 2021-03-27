@@ -3,19 +3,18 @@
 <resources>
     <string name="app_name">GoWo</string>
 
-    <string-array name="categorias">
-        <item>Automotivo</item>
-        <item>Beleza</item>
-        <item>Comida</item>
-        <item>Corte e Costura</item>
-        <item>Cuidados Pet</item>
-        <item>Design</item>
-        <item>Fotografia</item>
-        <item>Informática</item>
-        <item>Jardinagem</item>
-        <item>Limpeza</item>
-        <item>Reformas e Consertos</item>
-
+    <string name="estados">Estado</string>
+    <string-array name="siglas">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
     </string-array>
 
 </resources>

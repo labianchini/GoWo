@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.gowo.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MeusEnderecosActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -20,6 +22,15 @@ public class MeusEnderecosActivity extends AppCompatActivity implements BottomNa
         BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.recentes);
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.btnAddEnd);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MeusEnderecosActivity.this, CadastrarEnderecoActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

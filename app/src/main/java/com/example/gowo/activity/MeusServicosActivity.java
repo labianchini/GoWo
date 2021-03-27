@@ -3,23 +3,13 @@ package com.example.gowo.activity;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.gowo.R;
-import com.example.gowo.adapter.MyAdapterPrest;
-import com.example.gowo.model.MeusServicosViewModel;
-import com.example.gowo.model.Servico;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.List;
 
 public class MeusServicosActivity extends AppCompatActivity {
 
@@ -34,7 +24,7 @@ public class MeusServicosActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionBtn);
+        FloatingActionButton floatingActionButton = findViewById(R.id.BtnAddServ);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

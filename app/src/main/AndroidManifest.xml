@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.CadastrarEnderecoActivity"
+            android:parentActivityName=".activity.MeusEnderecosActivity">
+        </activity>
         <activity
             android:name=".activity.Secundarias.AjudaActivity"
             android:parentActivityName=".activity.PerfilActivity" />
@@ -38,7 +41,6 @@
         <activity
             android:name=".activity.ViewServicoActivity"
             android:parentActivityName=".activity.FeedPrestadorActivity" />
-
         <activity android:name=".activity.PerfilActivity" />
         <activity android:name=".activity.MeusEnderecosActivity" />
         <activity android:name=".activity.HomeActivity" />
