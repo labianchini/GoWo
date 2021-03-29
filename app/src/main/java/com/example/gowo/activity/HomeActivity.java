@@ -169,7 +169,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.recentes:
+            case R.id.endereco:
                 Intent i = new Intent(HomeActivity.this, MeusEnderecosActivity.class);
                 startActivity(i);
             default:

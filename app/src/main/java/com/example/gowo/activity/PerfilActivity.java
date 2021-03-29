@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.gowo.R;
-import com.example.gowo.activity.Secundarias.InfoPessoaisActivity;
 import com.example.gowo.util.Config;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -69,7 +68,7 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
                 super.onOptionsItemSelected(item);
         }
         switch (item.getItemId()){
-            case R.id.recentes:
+            case R.id.endereco:
                 Intent i = new Intent(PerfilActivity.this, MeusEnderecosActivity.class);
                 startActivity(i);
             default:

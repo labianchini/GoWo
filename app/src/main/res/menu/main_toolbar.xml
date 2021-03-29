@@ -6,7 +6,7 @@
         android:icon="@drawable/icone_home"
         app:showAsAction="always" />
     <item
-        android:id="@+id/recentes"
+        android:id="@+id/endereco"
         android:icon="@drawable/icone_favoritos"
         app:showAsAction="always" />
     <item

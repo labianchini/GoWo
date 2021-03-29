@@ -15,13 +15,7 @@
             android:parentActivityName=".activity.MeusEnderecosActivity">
         </activity>
         <activity
-            android:name=".activity.Secundarias.AjudaActivity"
-            android:parentActivityName=".activity.PerfilActivity" />
-        <activity
-            android:name=".activity.Secundarias.ConfiguracoesActivity"
-            android:parentActivityName=".activity.PerfilActivity" />
-        <activity
-            android:name=".activity.Secundarias.InfoPessoaisActivity"
+            android:name=".activity.InfoPessoaisActivity"
             android:parentActivityName=".activity.PerfilActivity" />
         <activity
             android:name=".activity.FeedCategoriaActivity"

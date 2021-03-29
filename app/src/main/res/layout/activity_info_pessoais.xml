@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Secundarias.InfoPessoaisActivity">
+    tools:context=".activity.InfoPessoaisActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarVoltar"
@@ -52,15 +52,12 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditNome"
         app:layout_constraintEnd_toStartOf="@+id/tvSobrenome"
-        app:layout_constraintStart_toEndOf="@+id/tvEditNum"
         app:layout_constraintTop_toTopOf="@+id/tvEditNome" />
 
     <TextView
@@ -83,174 +80,8 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/tvEditEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toTopOf="@+id/tvEditEmail"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvEditSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Senha"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/tvEditEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toTopOf="@+id/tvEditSenha"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvEditEstado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Estado"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditSenha"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
-    <TextView
-        android:id="@+id/tvEditCidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Cidade"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditEstado"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditEstado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintTop_toTopOf="@+id/tvEditEstado" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditCidade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toTopOf="@+id/tvEditCidade" />
-
-    <TextView
-        android:id="@+id/tvEditBairro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Cep"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditCidade"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditBairro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName6"
-        app:layout_constraintTop_toTopOf="@+id/tvEditBairro" />
-
-    <TextView
-        android:id="@+id/tvEditCep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Bairro"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditBairro"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditCep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName7"
-        app:layout_constraintTop_toTopOf="@+id/tvEditCep" />
-
-    <TextView
-        android:id="@+id/tvEditRua"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Rua"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditCep"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditRua"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName8"
-        app:layout_constraintTop_toTopOf="@+id/tvEditRua" />
-
-    <TextView
-        android:id="@+id/tvEditNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Número"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEditRua"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEditNum"
-        app:layout_constraintEnd_toStartOf="@+id/btnEdit"
-        app:layout_constraintStart_toEndOf="@+id/tvEditNum"
-        app:layout_constraintTop_toTopOf="@+id/tvEditNum" />
 
     <Button
         android:id="@+id/btnEdit"
@@ -261,8 +92,7 @@
         android:layout_marginBottom="8dp"
         android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imgViewPhoto"
@@ -279,11 +109,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:text="Sobrenome"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName12"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toTopOf="@+id/tvEditNome" />
 

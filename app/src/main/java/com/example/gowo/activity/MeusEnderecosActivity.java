@@ -21,7 +21,7 @@ public class MeusEnderecosActivity extends AppCompatActivity implements BottomNa
 
         BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
-        navigationView.setSelectedItemId(R.id.recentes);
+        navigationView.setSelectedItemId(R.id.endereco);
 
         FloatingActionButton floatingActionButton = findViewById(R.id.btnAddEnd);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

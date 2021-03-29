@@ -40,7 +40,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:fontFamily="@font/poppins"
-        android:text="Deseja adicionar um serviço?"
+        android:text="Deseja adicionar um endereço?"
         android:textColor="#575757"
         android:textSize="20sp"
         android:textStyle="bold"
