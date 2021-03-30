@@ -8,7 +8,7 @@
     tools:context=".activity.CadastrarUsuarioActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarVoltar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -20,14 +20,14 @@
 
     <ImageButton
         android:id="@+id/imgBtnAddFoto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/photoPreviewWidth"
+        android:layout_height="@dimen/photoPreviewHeight"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24" />
 
     <EditText

@@ -11,30 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CadastrarEnderecoActivity"
-            android:parentActivityName=".activity.MeusEnderecosActivity">
-        </activity>
-        <activity
-            android:name=".activity.InfoPessoaisActivity"
-            android:parentActivityName=".activity.PerfilActivity" />
-        <activity
-            android:name=".activity.FeedCategoriaActivity"
-            android:parentActivityName=".activity.HomeActivity" />
-        <activity
-            android:name=".activity.MeusServicosActivity"
-            android:parentActivityName=".activity.PerfilActivity" />
-        <activity
-            android:name=".activity.CadastrarUsuarioActivity"
-            android:parentActivityName=".activity.LoginActivity" />
-        <activity
-            android:name=".activity.CadastrarServicoActivity"
-            android:parentActivityName=".activity.MeusServicosActivity" />
-        <activity
-            android:name=".activity.FeedPrestadorActivity"
-            android:parentActivityName=".activity.FeedCategoriaActivity" />
-        <activity
-            android:name=".activity.ViewServicoActivity"
-            android:parentActivityName=".activity.FeedPrestadorActivity" />
+        <activity android:name=".activity.CadastrarEnderecoActivity"/>
+        <activity android:name=".activity.InfoPessoaisActivity"/>
+        <activity android:name=".activity.FeedCategoriaActivity"/>
+        <activity android:name=".activity.MeusServicosActivity"/>
+        <activity android:name=".activity.CadastrarUsuarioActivity"/>
+        <activity android:name=".activity.CadastrarServicoActivity"/>
+        <activity android:name=".activity.FeedPrestadorActivity"/>
+        <activity android:name=".activity.ViewServicoActivity"/>
         <activity android:name=".activity.PerfilActivity" />
         <activity android:name=".activity.MeusEnderecosActivity" />
         <activity android:name=".activity.HomeActivity" />

@@ -3,15 +3,11 @@ package com.example.gowo.model;
 import androidx.lifecycle.ViewModel;
 
 public class CadastrarServicoViewModel extends ViewModel {
-    //pegar a photo no cadastrar servico
+    String selectPhotoLocation = null;
 
-    String currentPhotoPath = "";
+    public String getSelectPhotoLocation() { return selectPhotoLocation; }
 
-    public String getCurrentPhotoPath() {
-        return currentPhotoPath;
-    }
-
-    public void setCurrentPhotoPath(String currentPhotoPath) {
-        this.currentPhotoPath = currentPhotoPath;
+    public void setSelectPhotoLocation(String selectPhotoLocation) {
+        this.selectPhotoLocation = selectPhotoLocation;
     }
 }

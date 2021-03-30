@@ -1,5 +1,6 @@
 package com.example.gowo.adapter;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gowo.R;
+import com.example.gowo.activity.FeedCategoriaActivity;
 import com.example.gowo.activity.FeedPrestadorActivity;
 import com.example.gowo.model.Usuario;
 
@@ -20,17 +22,13 @@ import java.util.List;
 
 public class MyAdapterFeed extends RecyclerView.Adapter {
 
-    Context context;
+    FeedCategoriaActivity context;
     List<Usuario> usuarios;
     String categoria;
 
-    public MyAdapterFeed(Context context, List<Usuario> usuarios) {
+    public MyAdapterFeed(FeedCategoriaActivity context, List<Usuario> usuarios, String categoria) {
         this.context = context;
         this.usuarios = usuarios;
-    }
-
-    public MyAdapterFeed(Context context, String categoria) {
-        this.context = context;
         this.categoria = categoria;
     }
 
@@ -58,7 +56,8 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
             public void onClick(View v) {
                 Intent i = new Intent(context, FeedPrestadorActivity.class);
                 i.putExtra("id", usuario.getIdUsu());
-                i.putExtra("categoria", usuario.getCategoria());
+                i.putExtra("categoria", categoria);
+                i.putExtra("telefone", usuario.getTelefoneUsu());
                 context.startActivity(i);
             }
         });

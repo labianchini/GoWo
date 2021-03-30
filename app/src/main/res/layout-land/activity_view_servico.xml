@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imgServ" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarVoltar"
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -74,7 +74,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView

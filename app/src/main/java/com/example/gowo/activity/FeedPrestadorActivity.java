@@ -10,34 +10,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gowo.R;
-import com.example.gowo.adapter.MyAdapterFeed;
 import com.example.gowo.adapter.MyAdapterPrest;
 import com.example.gowo.model.FeedPrestadorViewModel;
 import com.example.gowo.model.Servico;
 import com.example.gowo.model.Usuario;
-import com.example.gowo.model.ViewServicoViewModel;
-import com.example.gowo.util.HttpRequest;
-import com.example.gowo.util.Util;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class FeedPrestadorActivity extends AppCompatActivity {
 
@@ -46,15 +32,24 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_prestador);
 
-        Toolbar toolbar = findViewById(R.id.toolbarVoltar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent i = getIntent();
         String id = i.getStringExtra("id");
         String categoria = i.getStringExtra("categoria");
+        final String telefone = i.getStringExtra("telefone");
+
+        ImageButton imgBtnChat = findViewById(R.id.imgBtnChat);
+        imgBtnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://api.whatsapp.com/send?phone="+telefone;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
         FeedPrestadorViewModel feedPrestadorViewModel = new ViewModelProvider(this, new FeedPrestadorViewModel.FeedPrestadorViewModelFactory(id, categoria)).get(FeedPrestadorViewModel.class);
 

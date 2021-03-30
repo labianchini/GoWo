@@ -8,7 +8,7 @@
     tools:context=".activity.FeedPrestadorActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarVoltar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -25,7 +25,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -57,7 +57,7 @@
         android:tint="#00A39B"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/bxs_message_dots__2_" />
 
     <androidx.recyclerview.widget.RecyclerView

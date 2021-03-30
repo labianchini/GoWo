@@ -18,11 +18,8 @@ public class MeusServicosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meus_servicos);
 
-        Toolbar toolbar = findViewById(R.id.toolbarVoltar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         FloatingActionButton floatingActionButton = findViewById(R.id.BtnAddServ);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

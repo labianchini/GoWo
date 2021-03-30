@@ -8,7 +8,7 @@
     tools:context=".activity.MeusServicosActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarVoltar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -22,7 +22,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/gowo_simbolo_branco" />
 
     <TextView

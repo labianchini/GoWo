@@ -4,24 +4,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.FileProvider;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gowo.R;
@@ -33,14 +27,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static com.example.gowo.util.Util.bitmapBase64;
 
 public class CadastrarUsuarioActivity extends AppCompatActivity {
 
@@ -51,25 +44,35 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_usuario);
 
-        Toolbar toolbar = findViewById(R.id.toolbarVoltar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
         final CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
-        final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
-        if (!selectPhotoLocation.isEmpty()){
+        String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
+        if (selectPhotoLocation != null){
             ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
-            Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imgBtn.getWidth(), imgBtn.getHeight());
-            imgBtn.setImageBitmap(bitmap);
+            int w = (int) getResources().getDimension(R.dimen.photoPreviewWidth);
+            int h = (int) getResources().getDimension(R.dimen.photoPreviewHeight);
+            Bitmap bmp = Util.getBitmap(selectPhotoLocation, w, h);
+            imgBtn.setImageBitmap(bmp);
         }
+
+        ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
+            }
+        });
 
         Button btnAddUsu = findViewById(R.id.btnAddUsu);
         btnAddUsu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
-                if (selectPhotoLocation.isEmpty()){
+                if (selectPhotoLocation == null){
                     Toast.makeText(CadastrarUsuarioActivity.this, "Campo de foto não preenchido", Toast.LENGTH_LONG).show();
                     v.setEnabled(true);
                     return;
@@ -122,7 +125,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         httpRequest.addParam("pwd", senha);
                         httpRequest.addParam("dateBorn", dataNasc);
                         httpRequest.addParam("cell", telefone);
-                        //httpRequest.addFile("img", new File(selectPhotoLocation));
+                        httpRequest.addFile("img", new File(selectPhotoLocation));
                         try {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
@@ -155,47 +158,36 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 });
             }
         });
-        ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
-        imgBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, PHOTO_PICKER_REQUEST);
-            }
-        });
+    }
+
+    private File createImageFile() throws IOException {  // função para criar a imagem
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());  // transformar a data em uma string
+        String imageFileName = "JPEG" + timeStamp;  // nome do arquivo
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File f = File.createTempFile(imageFileName, ".jpg", storageDir);
+        return f;
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PHOTO_PICKER_REQUEST){
-            File f = null;
-            try {
-                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());  // transformar a data em uma string
-                String imageFileName = "JPEG" + timeStamp;  // nome do arquivo
-                File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                f = File.createTempFile(imageFileName, ".jpg", storageDir);
-            } catch (IOException e) {
-                Toast.makeText(CadastrarUsuarioActivity.this, "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
-                return;
-            }
-
-            CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
-            String selectPhotoLocation = cadastrarUsuarioViewModel.getSelectPhotoLocation();
-
-            if (f != null) {
-                Uri fUri = FileProvider.getUriForFile(CadastrarUsuarioActivity.this, "com.example.gowo.fileprovider", f);
-                if (resultCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
+                Uri selectPhotoLocation = data.getData();
+                Bitmap bmp = null;
+                try {
+                    bmp = Util.getBitmap(this, selectPhotoLocation, 4);
+                    File f = createImageFile();
+                    Util.saveBitmap(f.getAbsolutePath(), bmp);
                     ImageButton imgBtn = findViewById(R.id.imgBtnAddFoto);
-                    Bitmap bitmap = Util.getBitmap(selectPhotoLocation, imgBtn.getWidth(), imgBtn.getHeight());
-                    imgBtn.setImageBitmap(bitmap);
-                }
-                else{
-                    f = new File(selectPhotoLocation);
+                    imgBtn.setImageBitmap(bmp);
 
-                    f.delete();
-                    cadastrarUsuarioViewModel.setSelectPhotoLocation("");
+                    CadastrarUsuarioViewModel cadastrarUsuarioViewModel = new ViewModelProvider(this).get(CadastrarUsuarioViewModel.class);
+                    cadastrarUsuarioViewModel.setSelectPhotoLocation(f.getAbsolutePath());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }

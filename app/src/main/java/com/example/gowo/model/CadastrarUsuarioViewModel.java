@@ -8,9 +8,7 @@ import androidx.lifecycle.ViewModel;
 public class CadastrarUsuarioViewModel extends ViewModel {
     String selectPhotoLocation = null;
 
-    public String getSelectPhotoLocation() {
-        return String.valueOf(selectPhotoLocation);
-    }
+    public String getSelectPhotoLocation() { return selectPhotoLocation; }
 
     public void setSelectPhotoLocation(String selectPhotoLocation) {
         this.selectPhotoLocation = selectPhotoLocation;

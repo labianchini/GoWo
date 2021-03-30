@@ -25,7 +25,7 @@
         android:gravity="center"
         android:text="Jardinagem"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnJardinagem"
         app:layout_constraintStart_toStartOf="@+id/imgBtnJardinagem"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnJardinagem" />
@@ -172,7 +172,7 @@
         android:gravity="center"
         android:text="Fotografia"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnFotografia"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imgBtnFotografia"
@@ -186,7 +186,7 @@
         android:gravity="center"
         android:text="Automotivo"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnAutomotivo"
         app:layout_constraintStart_toStartOf="@+id/imgBtnAutomotivo"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnAutomotivo" />
@@ -199,7 +199,7 @@
         android:gravity="center"
         android:text="Comida"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnComida"
         app:layout_constraintStart_toStartOf="@+id/imgBtnComida"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnComida" />
@@ -212,7 +212,7 @@
         android:gravity="center"
         android:text="Informática"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnInformatica"
         app:layout_constraintStart_toStartOf="@+id/imgBtnInformatica"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnInformatica" />
@@ -225,7 +225,7 @@
         android:gravity="center"
         android:text="Corte e Costura"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnCostura"
         app:layout_constraintStart_toStartOf="@+id/imgBtnCostura"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnCostura" />
@@ -238,7 +238,7 @@
         android:gravity="center"
         android:text="Cuidados Pet"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnPet"
         app:layout_constraintStart_toStartOf="@+id/imgBtnPet"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnPet" />
@@ -251,7 +251,7 @@
         android:gravity="center"
         android:text="Reformas e Consertos"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnReforma"
         app:layout_constraintStart_toStartOf="@+id/imgBtnReforma"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnReforma" />
@@ -294,7 +294,7 @@
         android:gravity="center"
         android:text="Beleza"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnBeleza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnBeleza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnBeleza" />
@@ -307,7 +307,7 @@
         android:gravity="center"
         android:text="Limpeza"
         android:textColor="#00a39b"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnLimpeza"
         app:layout_constraintStart_toStartOf="@+id/imgBtnLimpeza"
         app:layout_constraintTop_toBottomOf="@+id/imgBtnLimpeza" />

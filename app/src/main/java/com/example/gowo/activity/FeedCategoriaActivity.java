@@ -32,14 +32,12 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_categoria);
 
-        Toolbar toolbar = findViewById(R.id.toolbarVoltar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Intent i = getIntent();
-        String categoria = i.getStringExtra("categoria");
-        String categoria_maisc = categoria.substring(0,1).toUpperCase() + categoria.substring(1);
-
-        MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, categoria_maisc);
+        final String categoria = i.getStringExtra("categoria");
+        final String categoria_maisc = categoria.substring(0,1).toUpperCase() + categoria.substring(1);
 
         TextView txtcategoria = findViewById(R.id.txtcategoria);
         txtcategoria.setText(categoria_maisc);
@@ -56,15 +54,12 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         usuarios.observe(this, new Observer<List<Usuario>>() {
             @Override
             public void onChanged(List<Usuario> usuarios) {
-                MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, usuarios); //A mainActivity é avisada que chegou uma nova lista
+                MyAdapterFeed myAdapterFeed = new MyAdapterFeed(FeedCategoriaActivity.this, usuarios, categoria); //A mainActivity é avisada que chegou uma nova lista
                 rvUsuarios.setAdapter(myAdapterFeed);  //A interface é atualizada
             }
         });
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
