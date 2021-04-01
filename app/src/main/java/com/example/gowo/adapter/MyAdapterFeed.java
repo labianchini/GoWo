@@ -45,11 +45,12 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final Usuario usuario = this.usuarios.get(position);
 
+
         ImageView imgUsu = holder.itemView.findViewById(R.id.imgViewEmpr);
         imgUsu.setImageBitmap(usuario.getImgUsu());
 
         final TextView nomeUsu = holder.itemView.findViewById(R.id.nome);
-        nomeUsu.setText(usuario.getNameUsu());
+        nomeUsu.setText(usuario.getNameUsu() + " " +usuario.getSobrenomeUsu());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class MyAdapterFeed extends RecyclerView.Adapter {
                 i.putExtra("id", usuario.getIdUsu());
                 i.putExtra("categoria", categoria);
                 i.putExtra("telefone", usuario.getTelefoneUsu());
+                i.putExtra("email", usuario.getEmailUsu());
                 context.startActivity(i);
             }
         });

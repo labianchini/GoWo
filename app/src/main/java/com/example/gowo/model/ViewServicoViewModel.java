@@ -67,8 +67,15 @@ public class ViewServicoViewModel extends ViewModel {
                         Bitmap img = Util.base642Bitmap(pureBase64Encoded);
                         String categoria = jProduct.getString("sClass");
 
-                        Servico s = new Servico(idServ, idPrest, nomeServ, descricao, valor, idEndereco, img, categoria);
-
+                        Servico s = new Servico();
+                        s.setIdPrest(idPrest);
+                        s.setIdServ(idServ);
+                        s.setNameServ(nomeServ);
+                        s.setDescriptionServ(descricao);
+                        s.setValorServ(valor);
+                        s.setIdEndereco(idEndereco);
+                        s.setPhotoServ(img);
+                        s.setCategoria(categoria);
                         servico.postValue(s);
                     }
                 } catch (IOException | JSONException e) {

@@ -137,8 +137,8 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(CadastrarUsuarioActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
-                                        finish();
+                                    Toast.makeText(CadastrarUsuarioActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
+                                    finish();
                                     }
                                 });
                             }

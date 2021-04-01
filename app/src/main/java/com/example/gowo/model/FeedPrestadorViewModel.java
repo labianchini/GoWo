@@ -66,7 +66,8 @@ public class FeedPrestadorViewModel extends ViewModel {
                     int success = jsonObject.getInt("success");
                     if (success == 1) {
                         String nomeUsu = jsonObject.getString("usrName");
-                        String telefone = jsonObject.getString("usrCellPhone");
+                        String sobrenomeUsu = jsonObject.getString("usrLastName");
+                        String telUsu = "+55" + jsonObject.getString("usrCellPhone");
                         String imgBase64 = jsonObject.getString("usrProfilePhoto");
                         String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                         Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
@@ -74,7 +75,8 @@ public class FeedPrestadorViewModel extends ViewModel {
                         Usuario u = new Usuario();
                         u.setImgUsu(imgUsu);
                         u.setNameUsu(nomeUsu);
-                        u.setTelefoneUsu(telefone);
+                        u.setSobrenomeUsu(sobrenomeUsu);
+                        u.setTelefoneUsu(telUsu);
                         usuario.postValue(u);
                     }
                 } catch (IOException | JSONException e) {
@@ -113,13 +115,21 @@ public class FeedPrestadorViewModel extends ViewModel {
                             String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                             Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
                             String sVal = jServico.getString("serviceVal");
-                            /*String bairro = jServico.getString("sNbh");
+                            String bairro = jServico.getString("sNbh");
                             String cidade = jServico.getString("sCity");
                             String estado = jServico.getString("sState");
-                            String endereco = bairro + ", " + cidade + " - " + estado;*/
+                            String endereco = bairro + ", " + cidade + " - " + estado;
 
-                            Servico servico = new Servico(idServ, sName, sVal, imgServ);
-                            meusServicosList.add(servico);
+
+                            Servico s = new Servico();
+                            s.setIdPrest(id);
+                            s.setIdServ(idServ);
+                            s.setNameServ(sName);
+                            s.setPhotoServ(imgServ);
+                            s.setValorServ(sVal);
+                            s.setEndereco(endereco);
+                            meusServicosList.add(s);
+
                         }
                         servicos.postValue(meusServicosList);
                     }

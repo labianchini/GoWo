@@ -13,7 +13,10 @@ public class Servico {
     String idEndereco;
     String categoria;
 
-    public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ) {
+    public Servico() {
+    }
+
+    /*public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ) {
         this.idServ = idServ;
         this.nameServ = nameServ;
         this.valorServ = valorServ;
@@ -41,7 +44,7 @@ public class Servico {
         this.photoServ = imgServ;
         this.categoria = categoria;
         this.endereco = endereco;
-    }
+    }*/
 
     public String getIdServ() {
         return idServ;

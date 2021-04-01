@@ -74,8 +74,16 @@ public class MeusServicosViewModel extends ViewModel {
                             String estado = jMeusServico.getString("sState");
                             String endereco = bairro + ", " + cidade + " - " + estado;
 
-                            Servico servico = new Servico(idUsu, idServ, sName, sDesc, sVal, imgServ, categoria, endereco);
-                            meusServicosList.add(servico);
+                            Servico s = new Servico();
+                            s.setIdPrest(idUsu);
+                            s.setIdServ(idServ);
+                            s.setNameServ(sName);
+                            s.setDescriptionServ(sDesc);
+                            s.setValorServ(sVal);
+                            s.setPhotoServ(imgServ);
+                            s.setCategoria(categoria);
+                            s.setEndereco(endereco);
+                            meusServicosList.add(s);
                         }
                         meuServicos.postValue(meusServicosList);
                     }

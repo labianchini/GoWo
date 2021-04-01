@@ -7,6 +7,15 @@
     android:background="#FFFFFF"
     tools:context=".activity.FeedPrestadorActivity">
 
+    <ImageButton
+        android:id="@+id/imgBtnEmail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnWhats"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnWhats"
+        app:srcCompat="@drawable/ic_baseline_email_24" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -45,7 +54,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgViewEmpr" />
 
     <ImageButton
-        android:id="@+id/imgBtnChat"
+        android:id="@+id/imgBtnWhats"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"

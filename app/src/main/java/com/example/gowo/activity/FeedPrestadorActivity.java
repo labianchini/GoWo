@@ -1,6 +1,5 @@
 package com.example.gowo.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
@@ -39,14 +38,27 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         String id = i.getStringExtra("id");
         String categoria = i.getStringExtra("categoria");
         final String telefone = i.getStringExtra("telefone");
+        final String email = i.getStringExtra("email");
 
-        ImageButton imgBtnChat = findViewById(R.id.imgBtnChat);
-        imgBtnChat.setOnClickListener(new View.OnClickListener() {
+        ImageButton imgBtnWhats = findViewById(R.id.imgBtnWhats);
+        imgBtnWhats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String url = "https://api.whatsapp.com/send?phone="+telefone;
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
+                startActivity(i);
+
+            }
+        });
+
+        ImageButton imgBtnEmail = findViewById(R.id.imgBtnEmail);
+        imgBtnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                i.setData(Uri.parse("mailto:"));
+                i.putExtra(Intent.EXTRA_EMAIL, new String[] {email});
                 startActivity(i);
             }
         });
@@ -64,7 +76,7 @@ public class FeedPrestadorActivity extends AppCompatActivity {
             @Override
             public void onChanged(Usuario u) {
                 TextView txtViewNomeEmpr = findViewById(R.id.txtViewNomeEmpr);
-                txtViewNomeEmpr.setText(u.getNameUsu());
+                txtViewNomeEmpr.setText(u.getNameUsu()+ " " + u.getSobrenomeUsu());
 
                 ImageView imgViewEmpr = findViewById(R.id.imgViewEmpr);
                 imgViewEmpr.setImageBitmap(u.getImgUsu());

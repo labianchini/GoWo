@@ -67,15 +67,21 @@ public class FeedCategoriaViewModel extends ViewModel {
 
                                     String idPrest = jPrestador.getString("idUsr");
                                     String nomeUsu = jPrestador.getString("userDoName");
+                                    String sobrUsu = jPrestador.getString("userDoLastName");
                                     String imgBase64 = jPrestador.getString("userDoProfilePhoto");
                                     String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                                     Bitmap imgUsu = Util.base642Bitmap(pureBase64Encoded);
+                                    String telUsu = "+55" +  jPrestador.getString("userDoPhone");
+                                    String emailUsu = jPrestador.getString("userDoMail");
 
                                     Usuario u = new Usuario();
                                     u.setIdUsu(idPrest);
                                     u.setImgUsu(imgUsu);
+                                    u.setSobrenomeUsu(sobrUsu);
                                     u.setNameUsu(nomeUsu);
+                                    u.setTelefoneUsu(telUsu);
                                     u.setCategoria(categoria);
+                                    u.setEmailUsu(emailUsu);
                                     usuariosList.add(u);
                                 }
                                 usuarios.postValue(usuariosList);
