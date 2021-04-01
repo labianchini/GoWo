@@ -87,7 +87,7 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         servicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
-                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
+                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, telefone, email, servicos); //A mainActivity é avisada que chegou uma nova lista
                 rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
             }
         });

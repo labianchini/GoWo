@@ -24,9 +24,13 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
 
     Context context;
     List<Servico> servicos;
+    String telefone;
+    String email;
 
-    public MyAdapterPrest(Context context, List<Servico> servicos) {
+    public MyAdapterPrest(Context context, String telefone, String email, List<Servico> servicos) {
         this.context = context;
+        this.telefone = telefone;
+        this.email = email;
         this.servicos = servicos;
     }
 
@@ -72,6 +76,8 @@ public class MyAdapterPrest extends RecyclerView.Adapter{
             public void onClick(View v) {
                 Intent i = new Intent(context, ViewServicoActivity.class);
                 i.putExtra("id", servico.getIdServ());
+                i.putExtra("telefone", telefone);
+                i.putExtra("email", email);
                 context.startActivity(i);
             }
         });

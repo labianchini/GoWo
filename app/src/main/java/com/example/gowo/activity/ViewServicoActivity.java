@@ -8,7 +8,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +31,31 @@ public class ViewServicoActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String id = i.getStringExtra("id");
+        final String telefone = i.getStringExtra("telefone");
+        final String email = i.getStringExtra("email");
+
+        ImageButton imgBtnWhats = findViewById(R.id.imgBtnWhats);
+        imgBtnWhats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://api.whatsapp.com/send?phone="+telefone;
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+            }
+        });
+
+        ImageButton imgBtnEmail = findViewById(R.id.imgBtnEmail);
+        imgBtnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                i.setData(Uri.parse("mailto:"));
+                i.putExtra(Intent.EXTRA_EMAIL, new String[] {email});
+                startActivity(i);
+            }
+        });
 
         ViewServicoViewModel viewServicoViewModel = new ViewModelProvider(this, new ViewServicoViewModel.ViewServicoViewModelFactory(id)).get(ViewServicoViewModel.class);
 
@@ -60,5 +88,7 @@ public class ViewServicoActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 }
