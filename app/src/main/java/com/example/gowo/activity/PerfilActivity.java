@@ -27,6 +27,9 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
         //TextView txtViewNomeUser = findViewById(R.id.txtViewNomeUser);
         //txtViewNomeUser.setText();
 
+        Intent i = getIntent();
+        final String idUserLog = i.getStringExtra("iduserLog");
+
         Button btnInfPessoal = findViewById(R.id.btnInfPessoal);
         btnInfPessoal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +44,7 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(PerfilActivity.this, MeusServicosActivity.class);
+                i.putExtra("iduserLog", idUserLog);
                 startActivity(i);
             }
         });

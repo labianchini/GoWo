@@ -38,7 +38,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/BtnAddServ"
-        app:layout_constraintTop_toBottomOf="@+id/rvMeusEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/rvMeusServ" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/BtnAddServ"
@@ -54,7 +54,7 @@
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMeusEnd"
+        android:id="@+id/rvMeusServ"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

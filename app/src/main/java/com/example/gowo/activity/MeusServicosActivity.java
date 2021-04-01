@@ -3,13 +3,24 @@ package com.example.gowo.activity;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.gowo.R;
+import com.example.gowo.adapter.MyAdapterPrest;
+import com.example.gowo.adapter.MyAdapterServUser;
+import com.example.gowo.model.MeusServicosViewModel;
+import com.example.gowo.model.Servico;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class MeusServicosActivity extends AppCompatActivity {
 
@@ -21,6 +32,9 @@ public class MeusServicosActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent i = getIntent();
+        final String id= i.getStringExtra("iduserLog");
+
         FloatingActionButton floatingActionButton = findViewById(R.id.BtnAddServ);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,12 +44,9 @@ public class MeusServicosActivity extends AppCompatActivity {
             }
         });
 
-        Intent i = getIntent();
-        String id = i.getStringExtra("id");
+        MeusServicosViewModel meusServicosViewModel = new ViewModelProvider(this, new MeusServicosViewModel.MeusServicosViewModelFactory(id)).get(MeusServicosViewModel.class);
 
-        /*MeusServicosViewModel meusServicosViewModel = new ViewModelProvider(this, new MeusServicosViewModel.MeusServicosViewModelFactory(id)).get(MeusServicosViewModel.class);
-
-        final RecyclerView rvMeusServicos = findViewById(R.id.rvMeusServicos);
+        final RecyclerView rvMeusServicos = findViewById(R.id.rvMeusServ);
         rvMeusServicos.setHasFixedSize(true);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -45,9 +56,9 @@ public class MeusServicosActivity extends AppCompatActivity {
         meusServicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
-                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(MeusServicosActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
-                rvMeusServicos.setAdapter(myAdapterPrest);  //A interface é atualizada
+                MyAdapterServUser myAdapterServUser = new MyAdapterServUser(MeusServicosActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
+                rvMeusServicos.setAdapter(myAdapterServUser);  //A interface é atualizada
             }
-        });*/
+        });
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".activity.MeusEnderecosActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMeusEnd"
+        android:id="@+id/rvMeusServ"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/toolbarhome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvMeusEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/rvMeusServ" />
 
     <TextView
         android:id="@+id/tvMeusEnd"

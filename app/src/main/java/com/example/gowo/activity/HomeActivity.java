@@ -4,15 +4,31 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.gowo.R;
+import com.example.gowo.model.Usuario;
+import com.example.gowo.util.Config;
+import com.example.gowo.util.HttpRequest;
+import com.example.gowo.util.Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    Usuario usuarioLogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +39,14 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.home);
 
-        /*final String login = Config.getEmail(HomeActivity.this);
-        final String password = Config.getSenha(HomeActivity.this);
+        final String login = Config.getEmail(HomeActivity.this);
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/", "POST", "UTF-8");
-                httpRequest.addParam("login", login);
-                httpRequest.addParam("password", password);
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_return_user_data_from_email.php", "POST", "UTF-8");
+                httpRequest.addParam("email", login);
 
                 try {
                     InputStream is = httpRequest.execute();
@@ -42,10 +56,21 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     JSONObject jsonObject = new JSONObject(result);
                     final int success = jsonObject.getInt("success");
                     if(success == 1) {
+                        final String idUsu = jsonObject.getString("idUsu");
+                        final String nomeUsu = jsonObject.getString("usrName");
+                        final String sobrenomeUsu = jsonObject.getString("usrLastName");
+                        final String emailUsu = jsonObject.getString("usrEmail");
+                        final String dataNUsu = jsonObject.getString("usrDateN");
+                        final String telefoneUsu = jsonObject.getString("usrCellPhone");
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //dados do usuário para informaçoes pessoais
+                                usuarioLogado.setIdUsu(idUsu);
+                                usuarioLogado.setNameUsu(nomeUsu);
+                                usuarioLogado.setSobrenomeUsu(sobrenomeUsu);
+                                usuarioLogado.setEmailUsu(emailUsu);
+                                usuarioLogado.setDataNascUsu(dataNUsu);
+                                usuarioLogado.setTelefoneUsu(telefoneUsu);
                             }
                         });
                     }
@@ -62,7 +87,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     e.printStackTrace();
                 }
             }
-        });*/
+        });
 
         ImageButton imgBtnLimpeza = findViewById(R.id.imgBtnLimpeza);
         imgBtnLimpeza.setOnClickListener(new View.OnClickListener() {
@@ -178,6 +203,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()){
             case R.id.perfil:
                 Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
+                i.putExtra("iduserLog", usuarioLogado.getIdUsu());
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

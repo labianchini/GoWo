@@ -16,36 +16,6 @@ public class Servico {
     public Servico() {
     }
 
-    /*public Servico(String idServ, String nameServ, String valorServ, Bitmap photoServ) {
-        this.idServ = idServ;
-        this.nameServ = nameServ;
-        this.valorServ = valorServ;
-        this.photoServ = photoServ;
-        //this.endereco = endereco;
-    }
-
-    public Servico(String idServ, String idPrest, String nomeServ, String descricao, String valor, String idEndereco, Bitmap img, String categoria) {
-        this.idServ = idServ;
-        this.idPrest = idPrest;
-        this.nameServ = nomeServ;
-        this.descriptionServ = descricao;
-        this.valorServ = valor;
-        this.idEndereco = idEndereco;
-        this.photoServ = img;
-        this.categoria = categoria;
-    }
-
-    public Servico(String idUsu, String idServ, String sName, String sDesc, String sVal, Bitmap imgServ, String categoria, String endereco){
-        this.idPrest = idUsu;
-        this.idServ = idServ;
-        this.nameServ = sName;
-        this.descriptionServ = sDesc;
-        this.valorServ = sVal;
-        this.photoServ = imgServ;
-        this.categoria = categoria;
-        this.endereco = endereco;
-    }*/
-
     public String getIdServ() {
         return idServ;
     }

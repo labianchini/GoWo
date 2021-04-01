@@ -94,7 +94,7 @@ public class MeusServicosViewModel extends ViewModel {
         });
     }
 
-    /*static public class MeusServicosViewModelFactory implements ViewModelProvider.Factory{
+    static public class MeusServicosViewModelFactory implements ViewModelProvider.Factory{
 
         String id;
 
@@ -105,7 +105,7 @@ public class MeusServicosViewModel extends ViewModel {
         @NonNull
         @Override
         public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-            return (T) new MeusServicosViewModelFactory(id);
+            return (T) new MeusServicosViewModel(id);
         }
-    }*/
+    }
 }
