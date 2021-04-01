@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.gowo.R;
 import com.example.gowo.util.Config;
@@ -24,11 +26,12 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
         navigationView.setOnNavigationItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.perfil);
 
-        //TextView txtViewNomeUser = findViewById(R.id.txtViewNomeUser);
-        //txtViewNomeUser.setText();
-
         Intent i = getIntent();
         final String idUserLog = i.getStringExtra("iduserLog");
+        String nomeUser = i.getStringExtra("nomeUser");
+
+        TextView txtViewNomeUser = findViewById(R.id.txtViewNomeUser);
+        txtViewNomeUser.setText(nomeUser);
 
         Button btnInfPessoal = findViewById(R.id.btnInfPessoal);
         btnInfPessoal.setOnClickListener(new View.OnClickListener() {

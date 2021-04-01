@@ -2,6 +2,7 @@ package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -30,6 +31,10 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     Usuario usuarioLogado;
 
+    public void HomeActivity(Usuario usuarioLogado){
+        this.usuarioLogado = usuarioLogado;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +50,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_return_user_data_from_email.php", "POST", "UTF-8");
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_return_user_data_from_email.php", "GET", "UTF-8");
                 httpRequest.addParam("email", login);
 
                 try {
@@ -56,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     JSONObject jsonObject = new JSONObject(result);
                     final int success = jsonObject.getInt("success");
                     if(success == 1) {
-                        final String idUsu = jsonObject.getString("idUsu");
+                        final String idUsu = jsonObject.getString("idUser");
                         final String nomeUsu = jsonObject.getString("usrName");
                         final String sobrenomeUsu = jsonObject.getString("usrLastName");
                         final String emailUsu = jsonObject.getString("usrEmail");
@@ -65,6 +70,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                usuarioLogado = new Usuario();
                                 usuarioLogado.setIdUsu(idUsu);
                                 usuarioLogado.setNameUsu(nomeUsu);
                                 usuarioLogado.setSobrenomeUsu(sobrenomeUsu);
@@ -204,6 +210,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.perfil:
                 Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
                 i.putExtra("iduserLog", usuarioLogado.getIdUsu());
+                i.putExtra("nomeUser", usuarioLogado.getNameUsu() + " " + usuarioLogado.getSobrenomeUsu());
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

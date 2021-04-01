@@ -46,7 +46,7 @@ public class MeusServicosViewModel extends ViewModel {
             public void run () {
                 List<Servico> meusServicosList = new ArrayList<>();
 
-                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_worker_details.php", "GET", "UTF-8");
+                HttpRequest httpRequest = new HttpRequest("https://gowoifes.herokuapp.com/database/app/app_list_user_services.php", "GET", "UTF-8");
                 httpRequest.addParam("id_user", id);
                 try {
                     InputStream is = httpRequest.execute();
@@ -65,14 +65,14 @@ public class MeusServicosViewModel extends ViewModel {
                             String sName = jMeusServico.getString("sName");
                             String sDesc = jMeusServico.getString("sDesc");
                             String sVal = jMeusServico.getString("sVal");
-                            String imgBase64 = jMeusServico.getString("sPhoto");
-                            String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-                            Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
-                            String categoria = jMeusServico.getString("sClass");
                             String bairro = jMeusServico.getString("sNbh");
                             String cidade = jMeusServico.getString("sCity");
                             String estado = jMeusServico.getString("sState");
                             String endereco = bairro + ", " + cidade + " - " + estado;
+                            String imgBase64 = jMeusServico.getString("sPhoto");
+                            String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                            Bitmap imgServ = Util.base642Bitmap(pureBase64Encoded);
+                            String categoria = jMeusServico.getString("sClass");
 
                             Servico s = new Servico();
                             s.setIdPrest(idUsu);

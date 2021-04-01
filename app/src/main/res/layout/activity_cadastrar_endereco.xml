@@ -155,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/compEnd" />
 
     <Button
-        android:id="@+id/btnAddServ2"
+        android:id="@+id/btnAddEnd"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
         android:background="#E4E4E4"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="  Celular"
+        android:hint="  Cep"
         android:inputType="phone"
         android:padding="2dp"
         android:textColor="#575757"

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,11 +36,37 @@ public class MyAdapterServUser extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        final Servico servico = this.servicos.get(position);
 
+        if (servico.getPhotoServ()!=null) {
+            ImageView imgServ = holder.itemView.findViewById(R.id.imgServ);
+            imgServ.setImageBitmap(servico.getPhotoServ());
+        }
+
+        TextView tvNomeServ = holder.itemView.findViewById(R.id.tvNomeServ);
+        tvNomeServ.setText(servico.getNameServ());
+
+        TextView tvCategoria = holder.itemView.findViewById(R.id.tvCategoria);
+        tvCategoria.setText(servico.getCategoria());
+
+        if (servico.getValorServ()=="null"){
+            TextView valorServ = holder.itemView.findViewById(R.id.tvPreco);
+            valorServ.setText("Valor não definido");
+        }
+        else {
+            TextView valorServ = holder.itemView.findViewById(R.id.tvPreco);
+            valorServ.setText(servico.getValorServ());
+        }
+
+        TextView tvLocal = holder.itemView.findViewById(R.id.tvLocal);
+        tvLocal.setText(servico.getEndereco());
+
+        TextView tvDesc = holder.itemView.findViewById(R.id.tvDesc);
+        tvDesc.setText(servico.getDescriptionServ());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return servicos.size();
     }
 }
