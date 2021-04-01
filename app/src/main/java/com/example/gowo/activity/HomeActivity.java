@@ -202,6 +202,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         switch (item.getItemId()){
             case R.id.endereco:
                 Intent i = new Intent(HomeActivity.this, MeusEnderecosActivity.class);
+                i.putExtra("iduserLog", usuarioLogado.getIdUsu());
+                i.putExtra("nomeUser", usuarioLogado.getNameUsu() + " " + usuarioLogado.getSobrenomeUsu());
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

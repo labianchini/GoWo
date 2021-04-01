@@ -14,10 +14,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MeusEnderecosActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    String idUserLog;
+    String nomeUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meus_enderecos);
+
+        Intent i = getIntent();
+        this.idUserLog = i.getStringExtra("iduserLog");
+        this.nomeUser = i.getStringExtra("nomeUser");
 
         BottomNavigationView navigationView = findViewById(R.id.toolbarhome);
         navigationView.setOnNavigationItemSelectedListener(this);
@@ -28,6 +35,7 @@ public class MeusEnderecosActivity extends AppCompatActivity implements BottomNa
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MeusEnderecosActivity.this, CadastrarEnderecoActivity.class);
+                i.putExtra("iduserLog", idUserLog);
                 startActivity(i);
             }
         });
@@ -45,6 +53,8 @@ public class MeusEnderecosActivity extends AppCompatActivity implements BottomNa
         switch (item.getItemId()){
             case R.id.perfil:
                 Intent i = new Intent(MeusEnderecosActivity.this, PerfilActivity.class);
+                i.putExtra("iduserLog", idUserLog);
+                i.putExtra("nomeUser", nomeUser);
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
