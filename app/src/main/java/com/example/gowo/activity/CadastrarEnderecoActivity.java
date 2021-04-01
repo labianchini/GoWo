@@ -134,6 +134,7 @@ public class CadastrarEnderecoActivity extends AppCompatActivity {
                             httpRequest.finish();
 
 
+
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");
                             if (success == 1){
