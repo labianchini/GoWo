@@ -1,6 +1,5 @@
 package com.example.gowo.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
@@ -12,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.gowo.R;
-import com.example.gowo.adapter.MyAdapterPrest;
 import com.example.gowo.adapter.MyAdapterServUser;
 import com.example.gowo.model.MeusServicosViewModel;
 import com.example.gowo.model.Servico;
@@ -35,8 +34,8 @@ public class MeusServicosActivity extends AppCompatActivity {
         Intent i = getIntent();
         final String id= i.getStringExtra("iduserLog");
 
-        FloatingActionButton floatingActionButton = findViewById(R.id.BtnAddServ);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        Button BtnAddServ = findViewById(R.id.BtnAddServ);
+        BtnAddServ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MeusServicosActivity.this, CadastrarServicoActivity.class);
@@ -46,7 +45,7 @@ public class MeusServicosActivity extends AppCompatActivity {
 
         MeusServicosViewModel meusServicosViewModel = new ViewModelProvider(this, new MeusServicosViewModel.MeusServicosViewModelFactory(id)).get(MeusServicosViewModel.class);
 
-        final RecyclerView rvMeusServicos = findViewById(R.id.rvMeusServ);
+        final RecyclerView rvMeusServicos = findViewById(R.id.rvMeusEnd);
         rvMeusServicos.setHasFixedSize(true);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);

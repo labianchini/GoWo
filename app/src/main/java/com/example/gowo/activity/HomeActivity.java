@@ -204,6 +204,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 Intent i = new Intent(HomeActivity.this, MeusEnderecosActivity.class);
                 i.putExtra("iduserLog", usuarioLogado.getIdUsu());
                 i.putExtra("nomeUser", usuarioLogado.getNameUsu() + " " + usuarioLogado.getSobrenomeUsu());
+                i.putExtra("emailUser", usuarioLogado.getEmailUsu());
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);
@@ -213,6 +214,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 Intent i = new Intent(HomeActivity.this, PerfilActivity.class);
                 i.putExtra("iduserLog", usuarioLogado.getIdUsu());
                 i.putExtra("nomeUser", usuarioLogado.getNameUsu() + " " + usuarioLogado.getSobrenomeUsu());
+                i.putExtra("emailUser", usuarioLogado.getEmailUsu());
                 startActivity(i);
             default:
                 super.onOptionsItemSelected(item);

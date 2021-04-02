@@ -66,6 +66,10 @@ public class ViewServicoViewModel extends ViewModel {
                         String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
                         Bitmap img = Util.base642Bitmap(pureBase64Encoded);
                         String categoria = jProduct.getString("sClass");
+                        String bairro = jProduct.getString("sNbh");
+                        String cidade = jProduct.getString("sCity");
+                        String estado = jProduct.getString("sState");
+                        String endereco = bairro + ", " + cidade + " - " + estado;
 
                         Servico s = new Servico();
                         s.setIdPrest(idPrest);
@@ -76,6 +80,7 @@ public class ViewServicoViewModel extends ViewModel {
                         s.setIdEndereco(idEndereco);
                         s.setPhotoServ(img);
                         s.setCategoria(categoria);
+                        s.setEndereco(endereco);
                         servico.postValue(s);
                     }
                 } catch (IOException | JSONException e) {

@@ -1,6 +1,7 @@
 package com.example.gowo.model;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -52,6 +53,8 @@ public class MeusServicosViewModel extends ViewModel {
                     InputStream is = httpRequest.execute();
                     String result = Util.inputStream2String(is, "UTF-8");
                     httpRequest.finish();
+
+                    Log.d("result", result);
 
                     JSONObject jsonObject = new JSONObject(result);
                     int success = jsonObject.getInt("success");

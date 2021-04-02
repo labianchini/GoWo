@@ -69,8 +69,8 @@ public class ViewServicoActivity extends AppCompatActivity {
                 TextView txtViewNomeServ = findViewById(R.id.txtViewNomeServ);
                 txtViewNomeServ.setText(servico.getNameServ());
 
-                /*TextView txtViewEndereco = findViewById(R.id.txtViewEndereco);
-                txtViewEndereco.setText(servico.getEndereco());*/
+                TextView txtViewEndereco = findViewById(R.id.txtViewEndereco);
+                txtViewEndereco.setText(servico.getEndereco());
 
                 TextView textViewCateg = findViewById(R.id.textViewCateg);
                 textViewCateg.setText(servico.getCategoria());

@@ -5,6 +5,7 @@ public class Endereco {
     String idEnd;
     String apelido;
     String cep;
+    String complemento;
     String rua;
     String numero;
     String bairro;
@@ -21,6 +22,14 @@ public class Endereco {
 
     public void setIdEnd(String idEnd) {
         this.idEnd = idEnd;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
     public String getApelido() {

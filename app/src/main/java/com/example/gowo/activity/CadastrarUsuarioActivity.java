@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -130,6 +131,8 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                             InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
                             httpRequest.finish();
+
+                            Log.d("result", result);
 
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");

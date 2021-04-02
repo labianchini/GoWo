@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activity.MeusServicosActivity">
 
+    <Button
+        android:id="@+id/BtnAddServ"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00a39b"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="+ Adicionar novo"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvMeusEnd" />
+
     <TextView
         android:id="@+id/tvMeusServ"
         android:layout_width="wrap_content"
@@ -26,38 +44,13 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <TextView
-        android:id="@+id/tvNovoServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/poppins"
-        android:text="Deseja adicionar um serviço?"
-        android:textColor="#00a39b"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvMeusServ" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/BtnAddServ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        app:backgroundTint="#00a39b"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNovoServ"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvNovoServ"
-        app:layout_constraintTop_toTopOf="@+id/tvNovoServ"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMeusServ"
+        android:id="@+id/rvMeusEnd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

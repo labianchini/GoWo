@@ -132,8 +132,7 @@ public class CadastrarEnderecoActivity extends AppCompatActivity {
                             final InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
                             httpRequest.finish();
-
-
+                            Log.d("result", result);
 
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");
