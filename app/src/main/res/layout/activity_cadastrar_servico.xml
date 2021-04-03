@@ -23,9 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:hint=" Nome do serviço:"
@@ -38,27 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgBtnAddPhoto"
         app:layout_constraintTop_toTopOf="@+id/imgBtnAddPhoto" />
-
-    <EditText
-        android:id="@+id/bairroServ"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Bairro:"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textColor="#575757"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cidadeServ" />
 
     <EditText
         android:id="@+id/valorServ"
@@ -77,35 +54,13 @@
         app:layout_constraintStart_toStartOf="@+id/nomeServ"
         app:layout_constraintTop_toBottomOf="@+id/spnrCategoria" />
 
-    <EditText
-        android:id="@+id/cidadeServ"
-        style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="Cidade:"
-        android:inputType="textPersonName"
-        android:padding="2dp"
-        android:textColor="#575757"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlocalizacao" />
-
     <Button
         android:id="@+id/btnAddServ"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#00a39b"
         android:fontFamily="@font/poppins_bold"
         android:text="Adicionar"
@@ -119,37 +74,37 @@
         android:id="@+id/tvlocalizacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/poppins"
         android:text="Localização"
         android:textColor="#00a39b"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descrServ" />
+        app:layout_constraintBottom_toTopOf="@+id/spnrCategoria2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvNovoServico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins"
         android:text="Novo Serviço"
         android:textColor="#00a39b"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:fontFamily="@font/poppins" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageButton
         android:id="@+id/imgBtnAddPhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
         android:tint="#A8000000"
@@ -161,12 +116,11 @@
         android:id="@+id/descrServ"
         style="@style/Base.Widget.MaterialComponents.TextInputEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:gravity="start|top"
@@ -174,6 +128,7 @@
         android:inputType="textMultiLine"
         android:textColor="#575757"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvlocalizacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -187,5 +142,16 @@
         app:layout_constraintEnd_toEndOf="@+id/nomeServ"
         app:layout_constraintStart_toStartOf="@+id/nomeServ"
         app:layout_constraintTop_toBottomOf="@+id/nomeServ" />
+
+    <Spinner
+        android:id="@+id/spnrCategoria2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddServ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

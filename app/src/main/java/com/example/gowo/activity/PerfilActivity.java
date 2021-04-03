@@ -2,6 +2,8 @@ package com.example.gowo.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -54,12 +56,14 @@ public class PerfilActivity extends AppCompatActivity implements BottomNavigatio
 
         PerfilViewModel perfilViewModel = new ViewModelProvider(this, new PerfilViewModel.PerfilViewModelFactory(idUserLog)).get(PerfilViewModel.class);
 
-        String imgBase64 = perfilViewModel.getImagem();
-        String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
-        Bitmap img = Util.base642Bitmap(pureBase64Encoded);
-
-        ImageView imgViewIconeUser = findViewById(R.id.imgViewIconeUser);
-        imgViewIconeUser.setImageBitmap(img);
+        final MutableLiveData<Bitmap> img = perfilViewModel.getImagem();
+        img.observe(this, new Observer<Bitmap>() {
+            @Override
+            public void onChanged(Bitmap bitmap) {
+                ImageView imgViewIconeUser = findViewById(R.id.imgViewIconeUser);
+                imgViewIconeUser.setImageBitmap(img.getValue());
+            }
+        });
 
         TextView txtViewNomeUser = findViewById(R.id.txtViewNomeUser);
         txtViewNomeUser.setText(nomeUser);

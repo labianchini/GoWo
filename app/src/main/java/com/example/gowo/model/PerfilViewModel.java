@@ -23,18 +23,18 @@ import java.io.InputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class PerfilViewModel {
+public class PerfilViewModel extends ViewModel{
 
     String id;
-    String imagem;
+    MutableLiveData<Bitmap> imagem;
 
     public PerfilViewModel(String id) {
         this.id = id;
     }
 
-    public String getImagem(){
+    public MutableLiveData<Bitmap> getImagem(){
         if (this.imagem == null){
-            imagem = new String();
+            imagem = new MutableLiveData<Bitmap>();
             loadImagem();
         }
         return imagem;
@@ -57,7 +57,9 @@ public class PerfilViewModel {
                     final int success = jsonObject.getInt("success");
                     if(success == 1) {
                         String imgBase64 = jsonObject.getString("img");
-                        imagem = imgBase64;
+                        String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                        Bitmap img = Util.base642Bitmap(pureBase64Encoded);
+                        imagem.postValue(img);
                     }
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
