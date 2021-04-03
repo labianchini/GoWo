@@ -32,9 +32,6 @@ public class FeedCategoriaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_categoria);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         Intent i = getIntent();
         final String categoria = i.getStringExtra("categoria");
         final String categoria_maisc = categoria.substring(0,1).toUpperCase() + categoria.substring(1);

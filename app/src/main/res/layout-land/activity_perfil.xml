@@ -56,14 +56,14 @@
 
     <TextView
         android:id="@+id/txtViewNomeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:text="Usuário"
         android:textColor="#00a39b"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/txtViewOla"
+        app:layout_constraintEnd_toEndOf="@+id/imgViewIconeUser"
         app:layout_constraintStart_toEndOf="@+id/txtViewOla"
         app:layout_constraintTop_toTopOf="@+id/txtViewOla" />
 

@@ -60,7 +60,7 @@ public class CadastrarEnderecoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String estado = est;
-                if (estado=="Estado"){
+                if (estado.equals("Estado")){
                     Toast.makeText(CadastrarEnderecoActivity.this, "Campo de estado não selecionado", Toast.LENGTH_LONG).show();
                 }
 
@@ -101,10 +101,6 @@ public class CadastrarEnderecoActivity extends AppCompatActivity {
 
                 EditText compEnd =  findViewById(R.id.compEnd);
                 final String complemento = compEnd.getText().toString();
-                if(complemento.isEmpty()) {
-                    Toast.makeText(CadastrarEnderecoActivity.this, "Campo de complemento não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
 
                 EditText apelEnd =  findViewById(R.id.apelEnd);
                 final String apelido = apelEnd.getText().toString();
