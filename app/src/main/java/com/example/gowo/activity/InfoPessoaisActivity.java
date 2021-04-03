@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,11 +58,14 @@ public class InfoPessoaisActivity extends AppCompatActivity {
                         final String emailUsu = jsonObject.getString("usrEmail");
                         final String dataNUsu = jsonObject.getString("usrDateN");
                         final String telefoneUsu = jsonObject.getString("usrCellPhone");
+                        final String imgBase64 = jsonObject.getString("usrProfilePhoto");
+                        String pureBase64Encoded = imgBase64.substring(imgBase64.indexOf(",") + 1);
+                        final Bitmap imagem = Util.base642Bitmap(pureBase64Encoded);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                /*ImageView imgFoto = findViewById(R.id.imgFoto);
-                                imgFoto.setImageBitmap();*/
+                                ImageView imgFoto = findViewById(R.id.imgFoto);
+                                imgFoto.setImageBitmap(imagem);
 
                                 TextView txtNome = findViewById(R.id.txtNome);
                                 txtNome.setText(nomeUsu);
