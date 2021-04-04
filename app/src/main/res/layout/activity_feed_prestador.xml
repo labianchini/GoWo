@@ -51,12 +51,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:background="#FFFFFF"
-        android:scaleType="fitStart"
+        android:background="#00a39b"
+        android:scaleType="centerInside"
+        android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/whatsapp" />
+        app:srcCompat="@drawable/whatsapp_brands__1_" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvServUsu"
