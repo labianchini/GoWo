@@ -12,6 +12,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="#ffffff"
+        android:tint="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/imgBtnWhats"
         app:layout_constraintTop_toTopOf="@+id/imgBtnWhats"
         app:srcCompat="@drawable/ic_baseline_email_24" />
@@ -58,14 +59,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:background="#FFFFFF"
         android:scaleType="fitStart"
         android:tint="#00A39B"
         app:layout_constraintBottom_toBottomOf="@+id/imgViewEmpr"
         app:layout_constraintStart_toEndOf="@+id/imgViewEmpr"
         app:layout_constraintTop_toBottomOf="@+id/txtViewNomeEmpr"
-        app:srcCompat="@drawable/bxs_message_dots__2_" />
+        app:srcCompat="@drawable/whatsapp_brands__1_" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvServUsu"
