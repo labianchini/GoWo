@@ -1,6 +1,5 @@
 package com.example.gowo.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
@@ -88,7 +87,5 @@ public class ViewServicoActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 }

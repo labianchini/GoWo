@@ -1,7 +1,6 @@
 package com.example.gowo.model;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -24,7 +23,6 @@ import java.util.concurrent.Executors;
 public class ViewServicoViewModel extends ViewModel {
 
     String id;
-
     MutableLiveData<Servico> servico;
 
     public ViewServicoViewModel(String id) { this.id = id; }

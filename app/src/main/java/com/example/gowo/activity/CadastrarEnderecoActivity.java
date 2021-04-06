@@ -1,12 +1,10 @@
 package com.example.gowo.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,7 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.gowo.R;
-import com.example.gowo.util.Config;
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 
@@ -24,7 +21,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -128,7 +124,6 @@ public class CadastrarEnderecoActivity extends AppCompatActivity {
                             final InputStream is = httpRequest.execute();
                             String result = Util.inputStream2String(is, "UTF-8");
                             httpRequest.finish();
-                            Log.d("result", result);
 
                             JSONObject jsonObject = new JSONObject(result);
                             final int success = jsonObject.getInt("success");

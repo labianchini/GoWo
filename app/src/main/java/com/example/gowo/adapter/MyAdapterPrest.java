@@ -2,7 +2,6 @@ package com.example.gowo.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gowo.R;
-import com.example.gowo.activity.FeedPrestadorActivity;
 import com.example.gowo.activity.ViewServicoActivity;
 import com.example.gowo.model.Servico;
-import com.example.gowo.model.Usuario;
 
 import java.util.List;
 

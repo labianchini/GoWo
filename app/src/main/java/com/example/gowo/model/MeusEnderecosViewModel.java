@@ -1,8 +1,5 @@
 package com.example.gowo.model;
 
-import android.graphics.Bitmap;
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

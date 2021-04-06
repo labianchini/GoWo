@@ -13,8 +13,7 @@ public class Endereco {
     String estado;
     String idUser;
 
-    public Endereco() {
-    }
+    public Endereco() { }
 
     public String getIdEnd() {
         return idEnd;

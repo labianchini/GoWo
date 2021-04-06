@@ -13,8 +13,7 @@ public class Servico {
     String idEndereco;
     String categoria;
 
-    public Servico() {
-    }
+    public Servico() { }
 
     public String getIdServ() {
         return idServ;
@@ -44,9 +43,7 @@ public class Servico {
         return descriptionServ;
     }
 
-    public void setDescriptionServ(String descriptionServ) {
-        this.descriptionServ = descriptionServ;
-    }
+    public void setDescriptionServ(String descriptionServ) { this.descriptionServ = descriptionServ; }
 
     public String getValorServ() {
         return valorServ;

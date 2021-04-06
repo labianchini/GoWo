@@ -16,13 +16,9 @@ import android.widget.Button;
 
 import com.example.gowo.R;
 import com.example.gowo.adapter.MyAdapterEndUser;
-import com.example.gowo.adapter.MyAdapterServUser;
 import com.example.gowo.model.Endereco;
 import com.example.gowo.model.MeusEnderecosViewModel;
-import com.example.gowo.model.MeusServicosViewModel;
-import com.example.gowo.model.Servico;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -68,8 +64,8 @@ public class MeusEnderecosActivity extends AppCompatActivity implements BottomNa
         meusEnderecos.observe(this, new Observer<List<Endereco>>() {
             @Override
             public void onChanged(List<Endereco> enderecos) {
-                MyAdapterEndUser myAdapterEndUser = new MyAdapterEndUser(MeusEnderecosActivity.this, enderecos); //A mainActivity é avisada que chegou uma nova lista
-                rvMeusEnd.setAdapter(myAdapterEndUser);  //A interface é atualizada
+                MyAdapterEndUser myAdapterEndUser = new MyAdapterEndUser(MeusEnderecosActivity.this, enderecos);
+                rvMeusEnd.setAdapter(myAdapterEndUser);
             }
         });
     }

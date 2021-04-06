@@ -71,7 +71,7 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvServUsu.setLayoutManager(layoutManager);
 
-        final LiveData<Usuario> usuario = feedPrestadorViewModel.getUsuario(); // Livedata- cria uma lista com os servicos que pode ser observada, mas não alterada
+        final LiveData<Usuario> usuario = feedPrestadorViewModel.getUsuario();
         usuario.observe(this, new Observer<Usuario>() {
             @Override
             public void onChanged(Usuario u) {
@@ -87,8 +87,8 @@ public class FeedPrestadorActivity extends AppCompatActivity {
         servicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
-                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, telefone, email, servicos); //A mainActivity é avisada que chegou uma nova lista
-                rvServUsu.setAdapter(myAdapterPrest);  //A interface é atualizada
+                MyAdapterPrest myAdapterPrest = new MyAdapterPrest(FeedPrestadorActivity.this, telefone, email, servicos);
+                rvServUsu.setAdapter(myAdapterPrest);
             }
         });
     }

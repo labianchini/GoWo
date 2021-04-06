@@ -39,8 +39,6 @@ public class MeusServicosActivity extends AppCompatActivity {
         BtnAddServ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(MeusServicosActivity.this, CadastrarServicoActivity.class);
-                //startActivity(i);
                 String url = "http://gowoifes.herokuapp.com/views/home/work/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
@@ -60,8 +58,8 @@ public class MeusServicosActivity extends AppCompatActivity {
         meusServicos.observe(this, new Observer<List<Servico>>() {
             @Override
             public void onChanged(List<Servico> servicos) {
-                MyAdapterServUser myAdapterServUser = new MyAdapterServUser(MeusServicosActivity.this, servicos); //A mainActivity é avisada que chegou uma nova lista
-                rvMeusServicos.setAdapter(myAdapterServUser);  //A interface é atualizada
+                MyAdapterServUser myAdapterServUser = new MyAdapterServUser(MeusServicosActivity.this, servicos);
+                rvMeusServicos.setAdapter(myAdapterServUser);
             }
         });
     }

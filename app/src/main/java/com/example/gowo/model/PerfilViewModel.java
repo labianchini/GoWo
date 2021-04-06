@@ -1,17 +1,12 @@
 package com.example.gowo.model;
 
 import android.graphics.Bitmap;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.gowo.R;
-import com.example.gowo.activity.PerfilActivity;
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 

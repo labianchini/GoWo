@@ -1,7 +1,6 @@
 package com.example.gowo.model;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -26,7 +25,6 @@ import java.util.concurrent.Executors;
 public class FeedCategoriaViewModel extends ViewModel {
 
     String categoria;
-
     MutableLiveData<List<Usuario>> usuarios;
 
     public FeedCategoriaViewModel(String categoria){ this.categoria = categoria; }

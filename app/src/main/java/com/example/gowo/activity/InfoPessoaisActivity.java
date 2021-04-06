@@ -1,6 +1,5 @@
 package com.example.gowo.activity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gowo.R;
-import com.example.gowo.model.Usuario;
 import com.example.gowo.util.HttpRequest;
 import com.example.gowo.util.Util;
 
